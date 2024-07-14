@@ -1,0 +1,350 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Dhruva Shekdar Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-gem"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Dhruva Shekdar</h1>
+								<p>Hi! I'm Dhruva and welcome to my website! See my <a href="https://drive.google.com/file/d/1J1ecz_PGxp3ugqV8Ni27F1yD7BHUo2uG/view?usp=sharing">resume!</a><br />
+								Check out my <a href="https://www.linkedin.com/in/dhruva-shekdar-906573280/">Linkedin</a> page and get in contact! Stay a while!</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#intro">About</a></li>
+								<li><a href="#work">Projects</a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Intro -->
+							<article id="intro">
+								<h2 class="major">About Me</h2>
+								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+								<p>My name is Dhruva Shekdar and I’m a 1B Mechatronics Engineering student at the University of Waterloo. I've previously worked as a Mechanical Designer at Mantecon Partners during my first co-op position. I have worked on multiple personal software projects focused around ML using platforms such as PyTorch, Tensorflow, and Scikit-Learn. I became interested in these projects due to the huge AI revolution currently happening. In the future, it is my goal to start my own company using AI to control and train automated prosthetics to help differently-abled individuals!</p>
+								<p>I’m a fitness enthusiast who finds joy in hitting the gym and going for runs. Engaging in physical activity is not just beneficial for my health, but it also serves as a personal stress reliever. Running specifically allows me to train my disipline and mental outlook. If I can stay consistent and positive with running, its impossible for those qualities to not help improve all aspects of my life! Currently, I'm training to participate in the Toronto Waterfront Marathon with my running club. My ultimate goal is to complete an 80km Ultra Marathon before I graduate from Waterloo. The picture above is an awesome moment of me at the debut of the Nike Pegasus 41 invitational!</p>
+							</article>
+
+						<!-- Work -->
+							<article id="work"> 
+								<!--Housing-->
+								<h2 class="major"><a href="https://github.com/Dhruva05/ML-Housing-Prediction">Housing Prices Prediction</a></h2>
+								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+								<p>This project is a comprehensive machine learning pipeline designed to predict housing prices based on various features. The task is a regression problem, aiming to predict the ‘median_house_value’ in a given dataset. The Python libraries used in this project include pandas for data manipulation, numpy for numerical operations, matplotlib and seaborn for data visualization, and scikit-learn for machine learning tasks.</p>
+								<p>The pipeline begins with data loading and cleaning, where missing values are identified and removed. The data is then split into training and testing sets. Exploratory Data Analysis (EDA) is performed through histogram generation, correlation heatmaps, and scatter plots. Feature engineering is applied to handle categorical variables and skewness in certain features, and new features are created to enhance the model’s predictive power. Two models, Linear Regression and Random Forest Regressor, are trained on the standardized features. The performance of these models is evaluated using the R-squared score. The Random Forest model undergoes further optimization through Grid Search to find the best hyperparameters.</p>
+								<p>This project has been instrumental in my career as a software engineer. It has allowed me to apply and enhance my skills in Python programming, data manipulation, data visualization, and machine learning. It has also provided me with practical experience in handling real-world datasets, performing EDA, engineering features, and optimizing machine learning models. This project has not only reinforced my understanding of the end-to-end machine learning pipeline but also highlighted the importance of each step in achieving the best possible model performance. These skills and experiences are invaluable in the field of software engineering, particularly in roles related to data science and machine learning.</p>
+								
+								<!--Digit Recognition-->
+								<h2 class="major"><a href="https://github.com/Dhruva05/ML-PyTorch--MNIST-Analysis">Digit Recognition</a></h2>
+								<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
+								<p>This project is a deep learning pipeline designed to classify handwritten digits using the MNIST dataset. The task is a multi-class classification problem, aiming to predict the digit (0-9) represented by each 28x28 pixel image in the dataset. The Python libraries used in this project include torchvision for data loading and transformations, torch for neural network and optimization operations, and matplotlib for data visualization.</p>
+								<p>The pipeline begins with data loading, where the MNIST dataset is downloaded and transformed into tensors. The data is then split into training and testing sets. A DataLoader is created for each set to handle batching, shuffling, and parallel processing. A Convolutional Neural Network (CNN) is defined with two convolutional layers, dropout, and two fully connected layers. The model is trained on a GPU if available, otherwise on a CPU. The optimizer used is Adam with a learning rate of 0.01, and the loss function is CrossEntropyLoss. The training function trains the model for a specified number of epochs, and the test function evaluates the model’s performance on the test set. The model’s performance is evaluated using the average loss and accuracy.</p>
+								<p>This project has played a pivotal role in my journey as a software engineer. It has served as a platform for honing my Python programming skills, deep learning techniques, and data visualization abilities. It has offered me hands-on experience in managing real-world datasets, architecting and training neural networks, and fine-tuning deep learning models. The project has not only solidified my grasp of the comprehensive deep learning pipeline but also underscored the significance of each phase in optimizing model performance. The competencies and experiences I’ve gained through this project are of immense value in the realm of software engineering, especially in positions that intersect with data science and machine learning.</p>
+								
+								<!--Security Alarm-->
+								<h2 class="major"><a href="https://github.com/Dhruva05/Security-Alarm-">Security Alarm</a></h2>
+								<span class="image main"><img src="images/pic05.jpg" alt="" /></span>
+								<p>This project involves the creation of a Python-based security alarm system designed to enhance home security following a break-in incident at a family friend’s home. The system leverages several Python libraries and APIs, including Twilio for sending text alerts, OpenCV for face detection, and DeepFace (which uses TensorFlow) for face verification.</p>
+								<p>The alarm system operates by monitoring the camera frame and triggering an alert when someone remains in the frame for more than two minutes. The alert is a text message sent to a predefined phone number via the Twilio API. To ensure privacy, all Twilio authentication codes are stored in a separate file that is imported into the main script. The system uses OpenCV’s face cascade classifier algorithm to recognize faces, specifically using my face as a reference. If a face that is not recognized is detected in the camera view for more than two minutes, a text alert is sent. The DeepFace library is used for face verification, comparing the reference image of my face to the camera input to perform facial detection.</p>
+								<p>This project has been a significant contribution to my software engineering career. It has allowed me to apply and enhance my skills in Python programming, API usage, and machine learning. It has also provided me with practical experience in designing and implementing a real-world application that addresses a specific need - in this case, home security. The project has not only reinforced my understanding of various Python libraries and APIs but also highlighted the importance of privacy and security considerations in software development. These skills and experiences are invaluable in the field of software engineering, particularly in roles related to data science, machine learning, and application development.</p>
+								
+								<!--Baggage Bot-->
+								<h2 class="major"><a href="https://docs.google.com/presentation/d/1gKGhAJc54z69Uonb6R4bWkVn4-Y16zmymIp33rxU0J8/edit?usp=sharing">Baggage Bot</a></h2>
+								<span class="image main"><img src="images/pic06.jpg" alt="" /></span>
+								<p>This project involves the creation of a Baggage Bot, an automated package delivery system designed to streamline the loading and unloading process at airports. The goal is to enhance productivity and efficiency. The bot operates in two modes - infinite delivery or a set number of packages, allowing flexibility based on user needs. It uses ultrasonic sensors for collision avoidance and a color sensor to determine the path to follow based on the color of stickers associated with each package.</p>
+								<p>The Baggage Bot’s functionality is governed by several key functions. The Menu function allows users to specify the number of packages to be delivered per trip. It uses the robot’s buttons to facilitate user interaction, offering options to unload a specific number of packages or an entire plane’s worth. The bot’s path is monitored by an ultrasonic sensor that checks for obstructions before each movement. If an obstruction is detected, the bot halts and signals that the path is blocked. If the obstruction persists for over 30 seconds, the bot executes the goHome function to return to its original location. If the obstruction is removed within 30 seconds, the bot awaits user input to resume its task. The bot also uses a color sensor to read the sticker color on each package, which determines the path it should follow.</p>
+								<p>This project was the reason I became interested in software. From the late nights grinding to fix the code, to a great presentation and demonstration of the Baggage Bot, I fell in love with all aspects of the software development process. It has allowed me to apply and enhance my skills in robotics, sensor integration, and user interaction design. It has also provided me with practical experience in designing and implementing a real-world application that addresses a specific need - in this case, improving efficiency in airport operations. The project has not only reinforced my understanding of robotics and sensor technology but also highlighted the importance of user-centric design and safety considerations in robotics. These skills and experiences are invaluable in the field of software engineering, particularly in roles related to robotics, automation, and user interface design.</p>
+								
+							</article>
+
+	
+
+
+
+						<!-- Elements -->
+							<article id="elements">
+								<h2 class="major">Elements</h2>
+
+								<section>
+									<h3 class="major">Text</h3>
+									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+									<hr />
+									<h2>Heading Level 2</h2>
+									<h3>Heading Level 3</h3>
+									<h4>Heading Level 4</h4>
+									<h5>Heading Level 5</h5>
+									<h6>Heading Level 6</h6>
+									<hr />
+									<h4>Blockquote</h4>
+									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+									<h4>Preformatted</h4>
+									<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+								</section>
+
+								<section>
+									<h3 class="major">Lists</h3>
+
+									<h4>Unordered</h4>
+									<ul>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Alternate</h4>
+									<ul class="alt">
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Ordered</h4>
+									<ol>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis viverra.</li>
+										<li>Felis enim feugiat.</li>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis lorem.</li>
+										<li>Felis enim et feugiat.</li>
+									</ol>
+									<h4>Icons</h4>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+									</ul>
+
+									<h4>Actions</h4>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions stacked">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Table</h3>
+									<h4>Default</h4>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+
+									<h4>Alternate</h4>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</section>
+
+								<section>
+									<h3 class="major">Buttons</h3>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Primary</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button">Default</a></li>
+										<li><a href="#" class="button small">Small</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+									</ul>
+									<ul class="actions">
+										<li><span class="button primary disabled">Disabled</span></li>
+										<li><span class="button disabled">Disabled</span></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Form</h3>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="demo-name">Name</label>
+												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Dhurva Shekdar" />
+											</div>
+											<div class="field half">
+												<label for="demo-email">Email</label>
+												<input type="email" name="demo-email" id="demo-email" value="" placeholder="" />
+											</div>
+											<div class="field">
+												<label for="demo-category">Category</label>
+												<select name="demo-category" id="demo-category">
+													<option value="">-</option>
+													<option value="1">Manufacturing</option>
+													<option value="1">Shipping</option>
+													<option value="1">Administration</option>
+													<option value="1">Human Resources</option>
+												</select>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+												<label for="demo-priority-low">Low</label>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-high" name="demo-priority">
+												<label for="demo-priority-high">High</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-copy" name="demo-copy">
+												<label for="demo-copy">Email me a copy</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-human" name="demo-human" checked>
+												<label for="demo-human">Not a robot</label>
+											</div>
+											<div class="field">
+												<label for="demo-message">Message</label>
+												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</section>
+
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright"> dshekdar@uwaterloo.ca</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
