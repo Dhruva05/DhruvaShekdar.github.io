@@ -25,14 +25,20 @@
 						<div class="content">
 							<div class="inner">
 								<h1>Dhruva Shekdar</h1>
-								<p>Hi! I'm Dhruva and welcome to my website! See my <a href="https://drive.google.com/file/d/1Ze2oCuo-G1KUD2nF4CJcRhatJY34ords/view?usp=sharing">resume!</a><br />
-								Check out my <a href="https://www.linkedin.com/in/dhruva-shekdar-906573280/">Linkedin</a> page and get in contact! Stay a while!</p>
+								<p class="subtitle">Mechatronics @ Waterloo · Software + ML projects · Ex-Tesla</p>
+								<p>Hi! I'm Dhruva — welcome! Explore my work and feel free to reach out.</p>
+								<ul class="actions cta-actions">
+									<li><a href="https://drive.google.com/file/d/1BftZPhvnSqCXvA4zlN97Al6nff7yuFhL/view?usp=share_link" class="button primary icon solid fa-file-alt">View Resume</a></li>
+									<li><a href="#intro" class="button icon solid fa-user">About Me</a></li>
+									<li><a href="#internships" class="button icon solid fa-briefcase">Internships</a></li>
+									<li><a href="#work" class="button icon solid fa-code">View Projects</a></li>
+									<li><a href="mailto:dshekdar@uwaterloo.ca" class="button icon solid fa-envelope">Contact</a></li>
+								</ul>
 							</div>
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#intro">About</a></li>
-								<li><a href="#work">Projects</a></li>
+								
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
 						</nav>
@@ -45,42 +51,150 @@
 							<article id="intro">
 								<h2 class="major">About Me</h2>
 								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>My name is Dhruva Shekdar and I’m a 2A Mechatronics Engineering student at the University of Waterloo. I've previously worked as a Computer Vision and Automation Intern at Toromont Mechanical Data Analyst at Mantecon Partners during my first co-op position. I have worked on multiple personal software projects focused around ML using platforms such as PyTorch, Tensorflow, and Scikit-Learn. I became interested in these projects due to the huge AI revolution currently happening. In the future, it is my goal to start my own company using AI to control and train automated prosthetics to help differently-abled individuals!</p>
-								<p>I’m a fitness enthusiast who finds joy in hitting the gym and going for runs. Engaging in physical activity is not just beneficial for my health, but it also serves as a personal stress reliever. Running specifically allows me to train my disipline and mental outlook. If I can stay consistent and positive with running, its impossible for those qualities to not help improve all aspects of my life! Currently, I'm training to participate in the Toronto Waterfront Marathon with my running club. My ultimate goal is to complete an 80km Ultra Marathon before I graduate from Waterloo. The picture above is an awesome moment of me at the debut of the Nike Pegasus 41 invitational!</p>
+								<p>Hi I'm Dhruva! I'm a student at the University of Waterloo pursuing a Bachelor of Science in Mechatronics Engineering with an Option in A.I.I've previously worked at Tesla as a software development intern with the Cell Material Flow Engineering team!</p>
+								<p>I'm a fitness enthusiast who finds joy in hitting the gym and going for runs. My ultimate goal is to complete an 80km Ultra Marathon before I graduate from Waterloo!</p>
+								<p></p>
+								<p></p>
+								<p></p>
+								<p></p>
+								<p></p>
+								<p></p>
+								<p></p>
+								<p></p>
+								<p></p>
+								<p></p>
+								<p></p>
+								<ul class="actions">
+									<li><a href="#" class="button home-btn">Home</a></li>
+								</ul>
 							</article>
 
 						<!-- Work -->
 							<article id="work"> 
-								<!--Housing-->
-								<h2 class="major"><a href="https://github.com/Dhruva05/ML-Housing-Prediction">Housing Prices Prediction</a></h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<p>This project is a comprehensive machine learning pipeline designed to predict housing prices based on various features. The task is a regression problem, aiming to predict the ‘median_house_value’ in a given dataset. The Python libraries used in this project include pandas for data manipulation, numpy for numerical operations, matplotlib and seaborn for data visualization, and scikit-learn for machine learning tasks.</p>
-								<p>The pipeline begins with data loading and cleaning, where missing values are identified and removed. The data is then split into training and testing sets. Exploratory Data Analysis (EDA) is performed through histogram generation, correlation heatmaps, and scatter plots. Feature engineering is applied to handle categorical variables and skewness in certain features, and new features are created to enhance the model’s predictive power. Two models, Linear Regression and Random Forest Regressor, are trained on the standardized features. The performance of these models is evaluated using the R-squared score. The Random Forest model undergoes further optimization through Grid Search to find the best hyperparameters.</p>
-								<p>This project has been instrumental in my career as a software engineer. It has allowed me to apply and enhance my skills in Python programming, data manipulation, data visualization, and machine learning. It has also provided me with practical experience in handling real-world datasets, performing EDA, engineering features, and optimizing machine learning models. This project has not only reinforced my understanding of the end-to-end machine learning pipeline but also highlighted the importance of each step in achieving the best possible model performance. These skills and experiences are invaluable in the field of software engineering, particularly in roles related to data science and machine learning.</p>
-								
-								<!--Digit Recognition-->
-								<h2 class="major"><a href="https://github.com/Dhruva05/ML-PyTorch--MNIST-Analysis">Digit Recognition</a></h2>
-								<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
-								<p>This project is a deep learning pipeline designed to classify handwritten digits using the MNIST dataset. The task is a multi-class classification problem, aiming to predict the digit (0-9) represented by each 28x28 pixel image in the dataset. The Python libraries used in this project include torchvision for data loading and transformations, torch for neural network and optimization operations, and matplotlib for data visualization.</p>
-								<p>The pipeline begins with data loading, where the MNIST dataset is downloaded and transformed into tensors. The data is then split into training and testing sets. A DataLoader is created for each set to handle batching, shuffling, and parallel processing. A Convolutional Neural Network (CNN) is defined with two convolutional layers, dropout, and two fully connected layers. The model is trained on a GPU if available, otherwise on a CPU. The optimizer used is Adam with a learning rate of 0.01, and the loss function is CrossEntropyLoss. The training function trains the model for a specified number of epochs, and the test function evaluates the model’s performance on the test set. The model’s performance is evaluated using the average loss and accuracy.</p>
-								<p>This project has played a pivotal role in my journey as a software engineer. It has served as a platform for honing my Python programming skills, deep learning techniques, and data visualization abilities. It has offered me hands-on experience in managing real-world datasets, architecting and training neural networks, and fine-tuning deep learning models. The project has not only solidified my grasp of the comprehensive deep learning pipeline but also underscored the significance of each phase in optimizing model performance. The competencies and experiences I’ve gained through this project are of immense value in the realm of software engineering, especially in positions that intersect with data science and machine learning.</p>
-								
-								<!--Security Alarm-->
-								<h2 class="major"><a href="https://github.com/Dhruva05/Security-Alarm-">Security Alarm</a></h2>
-								<span class="image main"><img src="images/pic05.jpg" alt="" /></span>
-								<p>This project involves the creation of a Python-based security alarm system designed to enhance home security following a break-in incident at a family friend’s home. The system leverages several Python libraries and APIs, including Twilio for sending text alerts, OpenCV for face detection, and DeepFace (which uses TensorFlow) for face verification.</p>
-								<p>The alarm system operates by monitoring the camera frame and triggering an alert when someone remains in the frame for more than two minutes. The alert is a text message sent to a predefined phone number via the Twilio API. To ensure privacy, all Twilio authentication codes are stored in a separate file that is imported into the main script. The system uses OpenCV’s face cascade classifier algorithm to recognize faces, specifically using my face as a reference. If a face that is not recognized is detected in the camera view for more than two minutes, a text alert is sent. The DeepFace library is used for face verification, comparing the reference image of my face to the camera input to perform facial detection.</p>
-								<p>This project has been a significant contribution to my software engineering career. It has allowed me to apply and enhance my skills in Python programming, API usage, and machine learning. It has also provided me with practical experience in designing and implementing a real-world application that addresses a specific need - in this case, home security. The project has not only reinforced my understanding of various Python libraries and APIs but also highlighted the importance of privacy and security considerations in software development. These skills and experiences are invaluable in the field of software engineering, particularly in roles related to data science, machine learning, and application development.</p>
-								
-								<!--Baggage Bot-->
-								<h2 class="major"><a href="https://docs.google.com/presentation/d/1gKGhAJc54z69Uonb6R4bWkVn4-Y16zmymIp33rxU0J8/edit?usp=sharing">Baggage Bot</a></h2>
-								<span class="image main"><img src="images/pic06.jpg" alt="" /></span>
-								<p>This project involves the creation of a Baggage Bot, an automated package delivery system designed to streamline the loading and unloading process at airports. The goal is to enhance productivity and efficiency. The bot operates in two modes - infinite delivery or a set number of packages, allowing flexibility based on user needs. It uses ultrasonic sensors for collision avoidance and a color sensor to determine the path to follow based on the color of stickers associated with each package.</p>
-								<p>The Baggage Bot’s functionality is governed by several key functions. The Menu function allows users to specify the number of packages to be delivered per trip. It uses the robot’s buttons to facilitate user interaction, offering options to unload a specific number of packages or an entire plane’s worth. The bot’s path is monitored by an ultrasonic sensor that checks for obstructions before each movement. If an obstruction is detected, the bot halts and signals that the path is blocked. If the obstruction persists for over 30 seconds, the bot executes the goHome function to return to its original location. If the obstruction is removed within 30 seconds, the bot awaits user input to resume its task. The bot also uses a color sensor to read the sticker color on each package, which determines the path it should follow.</p>
-								<p>This project was the reason I became interested in software. From the late nights grinding to fix the code, to a great presentation and demonstration of the Baggage Bot, I fell in love with all aspects of the software development process. It has allowed me to apply and enhance my skills in robotics, sensor integration, and user interaction design. It has also provided me with practical experience in designing and implementing a real-world application that addresses a specific need - in this case, improving efficiency in airport operations. The project has not only reinforced my understanding of robotics and sensor technology but also highlighted the importance of user-centric design and safety considerations in robotics. These skills and experiences are invaluable in the field of software engineering, particularly in roles related to robotics, automation, and user interface design.</p>
-								
+								<h2 class="major">Projects</h2>
+								<div class="cards">
+									<a class="card" href="#project-housing">
+										<div class="card-image" style="background-image:url('images/pic02.jpg')"></div>
+										<div class="card-body">
+											<h3>Housing Prices Prediction</h3>
+											<p>ML pipeline for regression using scikit-learn, pandas, and data visualization.</p>
+										</div>
+									</a>
+									<a class="card" href="#project-digit">
+										<div class="card-image" style="background-image:url('images/pic04.jpg')"></div>
+										<div class="card-body">
+											<h3>Digit Recognition</h3>
+											<p>CNN on MNIST with PyTorch, training and evaluation pipeline.</p>
+										</div>
+									</a>
+									<a class="card" href="#project-running">
+										<div class="card-image" style="background-image:url('images/pic05.jpg')"></div>
+										<div class="card-body">
+											<h3>Running Project</h3>
+											<p>Training analytics + consistency tracker for marathon prep and performance.</p>
+										</div>
+									</a>
+									<a class="card" href="#project-baggage">
+										<div class="card-image" style="background-image:url('images/pic06.jpg')"></div>
+										<div class="card-body">
+											<h3>Baggage Bot</h3>
+											<p>Autonomous package delivery robot with sensors and safety logic.</p>
+										</div>
+									</a>
+								</div>
+								<p></p>
+								<p></p>
+								<p></p>
+								<p></p>
+								<p></p>
+								<ul class="actions">
+									<li><a href="#" class="button home-btn">Home</a></li>
+								</ul>
 							</article>
 
+							<!-- Internships -->
+							<article id="internships">
+								<h2 class="major">Internships</h2>
+								<div class="cards">
+									<a class="card" href="#project-tesla">
+										<div class="card-image" style="background-image:url('images/pic02.jpg')"></div>
+										<div class="card-body">
+											<h3>Tesla Internship</h3>
+											<p>Software intern, Cell Material Flow Engineering. Impact, tooling, and automation.</p>
+										</div>
+									</a>
+									<a class="card" href="#project-cimco">
+										<div class="card-image" style="background-image:url('images/pic04.jpg')"></div>
+										<div class="card-body">
+											<h3>CIMCO Automation & Computer Vision</h3>
+											<p>Automation and CV workstreams: data flows, CV pipelines, production reliability.</p>
+										</div>
+									</a>
+								</div>
+								<p></p>
+								<p></p>
+								<p></p>
+								<p></p>
+								<p></p>
+								<ul class="actions">
+									<li><a href="#" class="button home-btn">Home</a></li>
+								</ul>
+							</article>
+
+							<!-- Project Details: Tesla -->
+							<article id="project-tesla">
+								<h2 class="major">Tesla Internship</h2>
+								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+								<p>Software Development Intern, Cell Material Flow Engineering team at Tesla. Worked on automation and tooling solutions to improve manufacturing efficiency and data flow processes.</p>
+								<p>Key contributions included developing software tools for material tracking, implementing data pipelines for real-time monitoring, and creating automation scripts to streamline production workflows.</p>
+							</article>
+
+							<!-- Project Details: CIMCO -->
+							<article id="project-cimco">
+								<h2 class="major">CIMCO Automation Intern</h2>
+								<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
+								<p>Automation Internship focued on workstreams focusing on data flows, CV pipelines, and production reliability improvements.</p>
+								<p>Developed automated systems for quality control, implemented computer vision models for defect detection, and created data processing pipelines to enhance manufacturing efficiency.</p>
+							</article>
+
+							<!-- Project Details: Running -->
+							<article id="project-running">
+								<h2 class="major">Running Project</h2>
+								<span class="image main"><img src="images/pic05.jpg" alt="" /></span>
+								<p>Personal training analytics and consistency tracker for marathon preparation and performance optimization.</p>
+								<p>Currently training for the Toronto Waterfront Marathon with my running club, with the ultimate goal of completing an 80km Ultra Marathon before graduating from Waterloo.</p>
+							</article>
+
+							<!-- Project Details: Baggage Bot -->
+							<article id="project-baggage">
+								<h2 class="major">Baggage Bot</h2>
+								<span class="image main"><img src="images/pic06.jpg" alt="" /></span>
+								<p>This project involves the creation of a Baggage Bot, an automated package delivery system designed to streamline the loading and unloading process at airports. The goal is to enhance productivity and efficiency. The bot operates in two modes - infinite delivery or a set number of packages, allowing flexibility based on user needs. It uses ultrasonic sensors for collision avoidance and a color sensor to determine the path to follow based on the color of stickers associated with each package.</p>
+								
+								<p>The Baggage Bot's functionality is governed by several key functions. The Menu function allows users to specify the number of packages to be delivered per trip. It uses the robot's buttons to facilitate user interaction, offering options to unload a specific number of packages or an entire plane's worth. The bot's path is monitored by an ultrasonic sensor that checks for obstructions before each movement. If an obstruction is detected, the bot halts and signals that the path is blocked. If the obstruction persists for over 30 seconds, the bot executes the goHome function to return to its original location. If the obstruction is removed within 30 seconds, the bot awaits user input to resume its task. The bot also uses a color sensor to read the sticker color on each package, which determines the path it should follow.</p>
+								
+								<p>This project was the reason I became interested in software. From the late nights grinding to fix the code, to a great presentation and demonstration of the Baggage Bot, I fell in love with all aspects of the software development process. It has allowed me to apply and enhance my skills in robotics, sensor integration, and user interaction design. It has also provided me with practical experience in designing and implementing a real-world application that addresses a specific need - in this case, improving efficiency in airport operations. The project has not only reinforced my understanding of robotics and sensor technology but also highlighted the importance of user-centric design and safety considerations in robotics. These skills and experiences are invaluable in the field of software engineering, particularly in roles related to robotics, automation, and user interface design.</p>
+							</article>
+
+							<!-- Project Details: Housing Prices Prediction -->
+							<article id="project-housing">
+								<h2 class="major">Housing Prices Prediction</h2>
+								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+								<p>This project is a machine learning pipeline for predicting housing prices, specifically the <em>median_house_value</em>, using Python libraries such as pandas, numpy, matplotlib, seaborn, and scikit-learn. It covers the full workflow: data loading and cleaning, exploratory data analysis with visualizations, feature engineering to address categorical variables and skewness, and model training with Linear Regression and Random Forest Regressor. Model performance is evaluated using R-squared, with Random Forest further optimized through Grid Search.</p>
+								
+								<p>Through this project, I gained hands-on experience with real-world datasets, strengthened my skills in Python, data manipulation, visualization, and machine learning, and developed a deeper understanding of end-to-end pipelines and their importance in building accurate, optimized models—skills that are directly applicable to data science and software engineering roles.</p>
+							</article>
+
+							<!-- Project Details: Digit Recognition -->
+							<article id="project-digit">
+								<h2 class="major">Digit Recognition</h2>
+								<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
+								<p>This project is a deep learning pipeline designed to classify handwritten digits using the MNIST dataset. The task is a multi-class classification problem, aiming to predict the digit (0-9) represented by each 28x28 pixel image in the dataset. The Python libraries used in this project include torchvision for data loading and transformations, torch for neural network and optimization operations, and matplotlib for data visualization.</p>
+								
+								<p>The pipeline begins with data loading, where the MNIST dataset is downloaded and transformed into tensors. The data is then split into training and testing sets. A DataLoader is created for each set to handle batching, shuffling, and parallel processing. A Convolutional Neural Network (CNN) is defined with two convolutional layers, dropout, and two fully connected layers. The model is trained on a GPU if available, otherwise on a CPU. The optimizer used is Adam with a learning rate of 0.01, and the loss function is CrossEntropyLoss. The training function trains the model for a specified number of epochs, and the test function evaluates the model's performance on the test set. The model's performance is evaluated using the average loss and accuracy.</p>
+								
+								<p>This project has played a pivotal role in my journey as a software engineer. It has served as a platform for honing my Python programming skills, deep learning techniques, and data visualization abilities. It has offered me hands-on experience in managing real-world datasets, architecting and training neural networks, and fine-tuning deep learning models. The project has not only solidified my grasp of the comprehensive deep learning pipeline but also underscored the significance of each phase in optimizing model performance. The competencies and experiences I've gained through this project are of immense value in the realm of software engineering, especially in positions that intersect with data science and machine learning.</p>
+							</article>
 	
 
 
@@ -331,13 +445,18 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright"> dshekdar@uwaterloo.ca</p>
+						<ul class="icons">
+							<li><a href="mailto:dshekdar@uwaterloo.ca" class="icon solid fa-envelope" aria-label="Email"><span class="label">Email</span></a></li>
+							<li><a href="https://www.linkedin.com/in/dhruva-shekdar-906573280/" class="icon brands fa-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/Dhruva05" class="icon brands fa-github" aria-label="GitHub" target="_blank" rel="noopener"><span class="label">GitHub</span></a></li>
+						</ul>
+						<p class="copyright">dshekdar@uwaterloo.ca</p>
 					</footer>
 
 			</div>
 
 		<!-- BG -->
-			<div id="bg"></div>
+			<div id="bg"><canvas id="bg-canvas" aria-hidden="true"></canvas></div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

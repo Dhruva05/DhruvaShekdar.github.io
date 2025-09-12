@@ -14,6 +14,61 @@
 		$main = $('#main'),
 		$main_articles = $main.children('article');
 
+	// A11y: focus trap support
+	var lastFocusedElement = null;
+	var sourceSection = null; // Track which section user came from
+	
+	function setupFocusTrap($article) {
+		lastFocusedElement = document.activeElement;
+		var $focusables = $article.find('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])').filter(':visible');
+		if ($focusables.length === 0) {
+			$article.attr('tabindex', '-1');
+			$article.focus();
+			return;
+		}
+		var first = $focusables.first()[0];
+		var last = $focusables.last()[0];
+		$(document).on('keydown.focus-trap', function(e) {
+			if (e.key === 'Tab') {
+				if (e.shiftKey) {
+					if (document.activeElement === first) {
+						e.preventDefault();
+						last.focus();
+					}
+				} else {
+					if (document.activeElement === last) {
+						e.preventDefault();
+						first.focus();
+					}
+				}
+			}
+		});
+		first.focus();
+	}
+
+	function teardownFocusTrap() {
+		$(document).off('keydown.focus-trap');
+		if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+			lastFocusedElement.focus();
+		}
+		lastFocusedElement = null;
+	}
+	
+	function getSourceSection(articleId) {
+		// Determine source section based on article ID
+		if (articleId.startsWith('project-')) {
+			// Check if it's an internship project
+			if (articleId === 'project-tesla' || articleId === 'project-cimco') {
+				return '#internships';
+			}
+			return '#work';
+		}
+		if (articleId === 'intro') {
+			return ''; // Return to home for About Me
+		}
+		return ''; // Default fallback to home
+	}
+
 	// Breakpoints.
 		breakpoints({
 			xlarge:   [ '1281px',  '1680px' ],
@@ -102,6 +157,7 @@
 
 							// Activate article.
 								$article.addClass('active');
+								setupFocusTrap($article);
 
 							// Unlock.
 								locked = false;
@@ -139,6 +195,7 @@
 									setTimeout(function() {
 
 										$article.addClass('active');
+										setupFocusTrap($article);
 
 										// Window stuff.
 											$window
@@ -178,6 +235,7 @@
 									setTimeout(function() {
 
 										$article.addClass('active');
+										setupFocusTrap($article);
 
 										// Window stuff.
 											$window
@@ -222,6 +280,7 @@
 								$article.removeClass('active');
 
 							// Hide article, main.
+								teardownFocusTrap();
 								$article.hide();
 								$main.hide();
 
@@ -257,6 +316,7 @@
 					setTimeout(function() {
 
 						// Hide article, main.
+							teardownFocusTrap();
 							$article.hide();
 							$main.hide();
 
@@ -292,11 +352,21 @@
 				var $this = $(this);
 
 				// Close.
-					$('<div class="close">Close</div>')
+					$('<div class="close" role="button" tabindex="0" aria-label="Close panel">Close</div>')
 						.appendTo($this)
 						.on('click', function() {
-							location.hash = '';
+							var targetSection = getSourceSection($this.attr('id'));
+							location.hash = targetSection;
 						});
+
+					// Keyboard activate close (Enter/Space)
+					$this.find('.close').on('keydown', function(e) {
+						if (e.key === 'Enter' || e.key === ' ') {
+							e.preventDefault();
+							var targetSection = getSourceSection($this.attr('id'));
+							location.hash = targetSection;
+						}
+					});
 
 				// Prevent clicks from inside article from bubbling.
 					$this.on('click', function(event) {
@@ -312,6 +382,13 @@
 					if ($body.hasClass('is-article-visible'))
 						$main._hide(true);
 
+			});
+
+			// Home button click handler
+			$body.on('click', '.home-btn', function(event) {
+				event.preventDefault();
+				event.stopPropagation();
+				location.hash = '';
 			});
 
 			$window.on('keyup', function(event) {
@@ -399,3 +476,114 @@
 					});
 
 })(jQuery);
+
+// Background Canvas Animation
+(function(){
+	var canvas = document.getElementById('bg-canvas');
+	if (!canvas) return;
+	var ctx = canvas.getContext('2d');
+	var width, height, dpr = window.devicePixelRatio || 1;
+	var particles = [];
+	var num = 60;
+	var hue = 210;
+	var rafId = null;
+	var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	var maxDist = 140; // px
+
+	function resize() {
+		width = canvas.clientWidth;
+		height = canvas.clientHeight;
+		canvas.width = Math.floor(width * dpr);
+		canvas.height = Math.floor(height * dpr);
+		ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+	}
+
+	function rand(min, max){ return Math.random() * (max - min) + min; }
+
+	function initParticles(){
+		particles = [];
+		for (var i = 0; i < num; i++) {
+			particles.push({
+				x: rand(0, width),
+				y: rand(0, height),
+				vx: rand(-0.4, 0.4),
+				vy: rand(-0.4, 0.4),
+				size: rand(1, 2.5),
+				life: rand(0.5, 1.0)
+			});
+		}
+	}
+
+	function step(){
+		ctx.clearRect(0, 0, width, height);
+		var grad = ctx.createLinearGradient(0, 0, width, height);
+		grad.addColorStop(0, 'rgba(20,24,28,0.4)');
+		grad.addColorStop(1, 'rgba(20,24,28,0.1)');
+		ctx.fillStyle = grad;
+		ctx.fillRect(0, 0, width, height);
+
+		ctx.fillStyle = 'hsla(' + hue + ',70%,70%,0.9)';
+		ctx.shadowColor = 'hsla(' + hue + ',70%,70%,0.8)';
+		ctx.shadowBlur = 8;
+		for (var i = 0; i < particles.length; i++) {
+			var p = particles[i];
+			p.x += p.vx;
+			p.y += p.vy;
+			if (p.x < -10) p.x = width + 10; else if (p.x > width + 10) p.x = -10;
+			if (p.y < -10) p.y = height + 10; else if (p.y > height + 10) p.y = -10;
+			ctx.beginPath();
+			ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+			ctx.fill();
+		}
+		ctx.shadowBlur = 0;
+
+		// Constellation lines
+		ctx.lineWidth = 1.25;
+		for (var i = 0; i < particles.length; i++) {
+			for (var j = i + 1; j < particles.length; j++) {
+				var a = particles[i];
+				var b = particles[j];
+				var dx = a.x - b.x;
+				var dy = a.y - b.y;
+				var d2 = dx*dx + dy*dy;
+				if (d2 < maxDist * maxDist) {
+					var d = Math.sqrt(d2);
+					var alpha = (1 - d / maxDist) * 0.9; // brighter lines
+					ctx.strokeStyle = 'hsla(' + hue + ',70%,60%,' + alpha.toFixed(3) + ')';
+					ctx.beginPath();
+					ctx.moveTo(a.x, a.y);
+					ctx.lineTo(b.x, b.y);
+					ctx.stroke();
+				}
+			}
+		}
+
+		hue += 0.05;
+		rafId = requestAnimationFrame(step);
+	}
+
+	function start(){
+		resize();
+		initParticles();
+		if (!reduceMotion) step();
+	}
+
+	function stop(){
+		if (rafId) cancelAnimationFrame(rafId);
+		rafId = null;
+	}
+
+	window.addEventListener('resize', function(){
+		resize();
+		initParticles();
+	});
+
+	if (reduceMotion) {
+		// Draw static background
+		resize();
+		ctx.fillStyle = 'rgba(20,24,28,0.5)';
+		ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+	} else {
+		start();
+	}
+})();
