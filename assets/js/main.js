@@ -352,18 +352,21 @@
 				var $this = $(this);
 
 				// Close.
-					$('<div class="close" role="button" tabindex="0" aria-label="Return home">Home</div>')
+					var targetSection = getSourceSection($this.attr('id'));
+					var closeLabel = targetSection ? 'Back' : 'Home';
+					var closeAriaLabel = targetSection ? 'Go back to previous section' : 'Return home';
+
+					var $close = $('<div class="close" role="button" tabindex="0">' + closeLabel + '</div>')
+						.attr('aria-label', closeAriaLabel)
 						.appendTo($this)
 						.on('click', function() {
-							var targetSection = getSourceSection($this.attr('id'));
 							location.hash = targetSection;
 						});
 
 					// Keyboard activate close (Enter/Space)
-					$this.find('.close').on('keydown', function(e) {
+					$close.on('keydown', function(e) {
 						if (e.key === 'Enter' || e.key === ' ') {
 							e.preventDefault();
-							var targetSection = getSourceSection($this.attr('id'));
 							location.hash = targetSection;
 						}
 					});

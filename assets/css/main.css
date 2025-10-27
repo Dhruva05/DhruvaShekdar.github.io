@@ -1913,6 +1913,123 @@ input, select, textarea {
 	font-size: 0.85rem;
 }
 
+.project-showcase {
+	display: grid;
+	grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+	gap: 2.75rem;
+	border-radius: 28px;
+	padding: 2.75rem;
+	background: rgba(9, 15, 28, 0.78);
+	box-shadow: 0 32px 60px rgba(6, 10, 26, 0.42);
+}
+
+.project-showcase--running {
+	background: linear-gradient(145deg, rgba(9, 15, 28, 0.88), rgba(17, 20, 38, 0.78));
+}
+
+.project-showcase__media {
+	position: relative;
+	border-radius: 22px;
+	overflow: hidden;
+	min-height: 320px;
+	box-shadow: 0 24px 48px rgba(0, 234, 255, 0.25);
+}
+
+.project-showcase__media img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.project-showcase__body {
+	display: flex;
+	flex-direction: column;
+	gap: 1.3rem;
+}
+
+.project-showcase__body p {
+	margin: 0;
+}
+
+.project-showcase__eyebrow {
+	text-transform: uppercase;
+	font-size: 0.78rem;
+	letter-spacing: 0.18em;
+	color: rgba(150, 222, 255, 0.8);
+	font-weight: 600;
+}
+
+.project-showcase__links {
+	margin-top: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 0.85rem;
+}
+
+.project-showcase__cta {
+	align-self: flex-start;
+	padding: 0.85rem 1.75rem;
+	box-shadow: 0 20px 36px rgba(0, 234, 255, 0.22);
+	text-transform: uppercase;
+	letter-spacing: 0.09em;
+}
+
+.project-showcase__link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-weight: 600;
+	color: #9effff;
+	text-decoration: none;
+	transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.project-showcase__link::after {
+	content: '↗';
+	font-size: 0.95rem;
+}
+
+.project-showcase__link:hover,
+.project-showcase__link:focus {
+	color: #ffffff;
+	transform: translateY(-1px);
+}
+
+.project-showcase__note {
+	margin: 2rem 0 2.75rem;
+	color: rgba(185, 203, 232, 0.74);
+	font-size: 0.9rem;
+}
+
+@media screen and (max-width: 980px) {
+	.project-showcase {
+		grid-template-columns: 1fr;
+		padding: 2.25rem;
+	}
+
+	.project-showcase__media {
+		min-height: 260px;
+	}
+
+	.project-showcase__links {
+		margin-top: 0.5rem;
+		align-items: flex-start;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.project-showcase {
+		padding: 1.75rem;
+		gap: 2rem;
+	}
+
+	.project-showcase__note {
+		font-size: 0.85rem;
+		margin-bottom: 2.25rem;
+	}
+}
+
 .panel--link {
 	display: flex;
 	flex-direction: column;
