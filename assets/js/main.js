@@ -352,7 +352,7 @@
 				var $this = $(this);
 
 				// Close.
-					$('<div class="close" role="button" tabindex="0" aria-label="Close panel">Close</div>')
+					$('<div class="close" role="button" tabindex="0" aria-label="Return home">Home</div>')
 						.appendTo($this)
 						.on('click', function() {
 							var targetSection = getSourceSection($this.attr('id'));

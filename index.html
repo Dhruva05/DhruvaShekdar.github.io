@@ -5,13 +5,56 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Dhruva Shekdar Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
+		<head>
+			<title>Dhruva Shekdar Portfolio</title>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+			<link rel="stylesheet" href="assets/css/main.css" />
+			<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+			<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+			<style>
+				body, input, select, textarea { font-family: 'Inter', sans-serif; }
+				#header h1 { font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.04em; }
+				#header .subtitle {
+					font-family: 'Space Grotesk', sans-serif;
+					font-weight: 600;
+					font-size: 1.2rem;
+					color: #9effff;
+					text-shadow: 0 0 18px rgba(0, 234, 255, 0.45);
+					margin-bottom: 0.75rem;
+				}
+				#header .subtitle .typed-text,
+				#header .subtitle .typed-cursor {
+					display: inline-block;
+					vertical-align: baseline;
+				}
+				#header .subtitle .typed-cursor {
+					margin-left: 0.08rem;
+					color: #9effff;
+				}
+				.cta-actions .button {
+					border-radius: 999px;
+					background-image: linear-gradient(135deg, #00eaff, #ae00ff);
+					border: none;
+					box-shadow: 0 12px 25px rgba(10, 14, 40, 0.35);
+					transition: transform 0.3s ease, box-shadow 0.3s ease;
+				}
+				.cta-actions .button:hover {
+					box-shadow: 0 18px 35px rgba(10, 14, 40, 0.45);
+					transform: translateY(-3px);
+				}
+				#bg:before {
+					background-image: linear-gradient(to top, rgba(19, 21, 25, 0.22), rgba(12, 14, 27, 0.32)), url("images/overlay.png");
+				}
+				#bg-canvas {
+					background:
+						radial-gradient(circle at 15% 20%, rgba(174, 0, 255, 0.22), transparent 55%),
+						radial-gradient(circle at 80% 25%, rgba(0, 234, 255, 0.18), transparent 60%),
+						radial-gradient(circle at 55% 80%, rgba(0, 128, 255, 0.16), transparent 55%),
+						transparent;
+				}
+			</style>
+		</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -22,7 +65,7 @@
 						<div class="content">
 							<div class="inner">
 								<h1>Dhruva Shekdar</h1>
-								<p class="subtitle">Mechatronics @ Waterloo · Incoming SDE @ Ford · Ex-Tesla · Software + ML projects</p>
+								<p class="subtitle"><span class="typed-text">Mechatronics @ Waterloo</span></p>
 								<p>Hi! I'm Dhruva — welcome! Explore my work and feel free to reach out.</p>
 								<ul class="actions cta-actions">
 									<li><a href="https://drive.google.com/file/d/1BftZPhvnSqCXvA4zlN97Al6nff7yuFhL/view?usp=share_link" class="button primary icon solid fa-file-alt">View Resume</a></li>
@@ -44,132 +87,166 @@
 				<!-- Main -->
 					<div id="main">
 
-						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">About Me</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Hi I'm Dhruva! I'm a student at the University of Waterloo pursuing a Bachelor of Science in Mechatronics Engineering with an Option in A.I.I've previously worked at Tesla as a software development intern with the Cell Material Flow Engineering team!</p>
-								<p>I'm a fitness enthusiast who finds joy in hitting the gym and going for runs. My ultimate goal is to complete an 80km Ultra Marathon before I graduate from Waterloo!</p>
-								<p></p>
-								<p></p>
-								<p></p>
-								<p></p>
-								<p></p>
-								<p></p>
-								<p></p>
-								<p></p>
-								<p></p>
-								<p></p>
-								<p></p>
-								<ul class="actions">
-									<li><a href="#" class="button home-btn">Home</a></li>
-								</ul>
-							</article>
+							<!-- Intro -->
+								<article id="intro">
+									<h2 class="major">About Me</h2>
+									<div class="panel-grid panel-grid--two">
+										<div class="panel panel--primary">
+											<span class="panel__eyebrow">Engineer & Builder</span>
+											<p>I’m Dhruva, a Mechatronics Engineering student at the University of Waterloo who thrives on building systems that blend hardware intuition with software craftsmanship. I gravitate toward problems where automation, data, and robotics intersect, because that’s where thoughtful code can unlock real-world efficiency.</p>
+											<p>During my time with Tesla’s Cell Material Flow Engineering team I shipped internal tools that automated material tracking, stitched together data from PLCs and MES platforms, and surfaced actionable insights for manufacturing operators. Next up, I’ll be joining Ford as an incoming Software Engineer, where I’m excited to continue delivering production-grade automation and analytics.</p>
+											<p>Outside of co-op terms you’ll usually find me experimenting with ML workflows, tuning control loops for side projects, or writing Python to make sense of the many sensors I surround myself with. If it involves robotics, data pipelines, or closing the loop between the digital and physical worlds, I’m in.</p>
+										</div>
+										<div class="panel panel--accent">
+											<span class="panel__eyebrow">Snapshot</span>
+											<ul class="panel-list">
+												<li><strong>Current:</strong> Mechatronics Engineering, University of Waterloo (AI option).</li>
+												<li><strong>Incoming:</strong> Software Engineer @ Ford (Winter 2026).</li>
+												<li><strong>Recent:</strong> Tesla Cell Material Flow Engineering – Software Development Intern.</li>
+												<li><strong>Tech stack:</strong> Python, C++, Java, Kotlin, Gradle, PyTorch, ROS, PLC integrations</li>
+											</ul>
+											<span class="panel__eyebrow">Fuel</span>
+											<p>Endurance training gives me the same rush as a clean deployment. I’m working toward an 80 km ultra-marathon and building data-driven coaching tools—because every long run deserves metrics, visualizations, and a feedback loop.</p>
+										</div>
+									</div>
+									<figure class="panel-figure">
+										<img src="images/pic01.jpg" alt="Dhruva on campus" />
+										<figcaption>Always curious, usually prototyping, rarely without a notebook of ideas.</figcaption>
+									</figure>
+									<ul class="actions">
+										<li><a href="#" class="button home-btn">Home</a></li>
+									</ul>
+								</article>
 
-						<!-- Work -->
-							<article id="work"> 
-								<h2 class="major">Projects</h2>
-								<div class="cards">
-									<a class="card" href="#project-housing">
-										<div class="card-image" style="background-image:url('images/pic02.jpg')"></div>
-										<div class="card-body">
-											<h3>Housing Prices Prediction</h3>
-											<p>ML pipeline for regression using scikit-learn, pandas, and data visualization.</p>
-										</div>
-									</a>
-									<a class="card" href="#project-digit">
-										<div class="card-image" style="background-image:url('images/pic04.jpg')"></div>
-										<div class="card-body">
-											<h3>Digit Recognition</h3>
-											<p>CNN on MNIST with PyTorch, training and evaluation pipeline.</p>
-										</div>
-									</a>
-									<a class="card" href="#project-running">
-										<div class="card-image" style="background-image:url('images/IMG_7734.jpg')"></div>
-										<div class="card-body">
-											<h3>Running Project</h3>
-											<p>Training analytics + consistency tracker for marathon prep and performance.</p>
-										</div>
-									</a>
-									<a class="card" href="#project-baggage">
-										<div class="card-image" style="background-image:url('images/pic06.jpg')"></div>
-										<div class="card-body">
-											<h3>Baggage Bot</h3>
-											<p>Autonomous package delivery robot with sensors and safety logic.</p>
-										</div>
-									</a>
-								</div>
-								<p></p>
-								<p></p>
-								<p></p>
-								<p></p>
-								<p></p>
-								<ul class="actions">
-									<li><a href="#" class="button home-btn">Home</a></li>
-								</ul>	
-							</article>
+							<!-- Work -->
+								<article id="work"> 
+									
+									<h2 class="major">Projects</h2>
+									<p class="panel-intro">I love taking ideas from whiteboard sketches to production-ready tools—especially when there’s data to wrangle, models to evaluate, or hardware that needs a smarter brain. Here are a few builds that keep me curious.</p>
+									<div class="panel-grid panel-grid--two">
+										<a class="panel panel--link" href="#project-running">
+											<div class="panel__image" style="background-image:url('images/IMG_7734.jpg');"></div>
+											<div class="panel__body">
+												<span class="panel__eyebrow">Data Apps</span>
+												<h3>Strava Running Optimizer</h3>
+												<p>Streamlit dashboard that ingests Strava workouts, scores consistency, and surfaces pacing insights. The app powers my ultra-marathon training with ML-aided recommendations and trend alerts.</p>
+											</div>
+										</a>
+										<a class="panel panel--link" href="#project-housing">
+											<div class="panel__image" style="background-image:url('images/pic02.jpg');"></div>
+											<div class="panel__body">
+												<span class="panel__eyebrow">Data Science</span>
+												<h3>Housing Market Intelligence</h3>
+												<p>End-to-end regression pipeline that ingests raw housing data, engineers features, and benchmarks scikit-learn models—all wrapped with automated reporting so stakeholders can see where pricing shifts next.</p>
+											</div>
+										</a>
+										<a class="panel panel--link" href="#project-digit">
+											<div class="panel__image" style="background-image:url('images/pic04.jpg');"></div>
+											<div class="panel__body">
+												<span class="panel__eyebrow">Deep Learning</span>
+												<h3>Digit Recognition System</h3>
+												<p>PyTorch CNN built from scratch with experiment tracking, augmentation, and deployment hooks—delivering 99%+ accuracy on MNIST while teaching me how to productionize model evaluation.</p>
+											</div>
+										</a>
+										<a class="panel panel--link" href="#project-baggage">
+											<div class="panel__image" style="background-image:url('images/pic06.jpg');"></div>
+											<div class="panel__body">
+												<span class="panel__eyebrow">Robotics</span>
+												<h3>Baggage Bot</h3>
+												<p>Autonomous conveyor assistant that navigates with ultrasonic and color sensors, plans routes on the fly, and keeps luggage flowing. This project sparked my obsession with robotics and resilient control logic.</p>
+											</div>
+										</a>
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button home-btn">Home</a></li>
+									</ul>	
+								</article>
 
 							<!-- Internships -->
-							<article id="internships">
-								<h2 class="major">Internships</h2>
-								<div class="cards">
-									<a class="card" href="#project-tesla">
-										<div class="card-image" style="background-image:url('images/IMG_0433.jpg')"></div>
-										<div class="card-body">
-											<h3>Tesla Internship</h3>
-											<p>Software intern, Cell Material Flow Engineering. Impact, tooling, and automation.</p>
-										</div>
-									</a>
-									<a class="card" href="#project-cimco">
-										<div class="card-image" style="background-image:url('images/cimco_refrigeration_logo.jpeg')"></div>
-										<div class="card-body">
-											<h3>CIMCO Automation Intern</h3>
-											<p>Automation and CV workstreams: data flows, CV pipelines, production reliability.</p>
-										</div>
-									</a>
-								</div>
-								<p></p>
-								<p></p>
-								<p></p>
-								<p></p>
-								<p></p>
-								<ul class="actions">
-									<li><a href="#" class="button home-btn">Home</a></li>
-								</ul>
-							</article>
+								<article id="internships">
+									<h2 class="major">Internships</h2>
+									<p class="panel-intro">Co-op gives me a front-row seat to complex production systems. I lean into roles where I can pair systems thinking with rapid prototyping to unblock teams fast.</p>
+									<div class="panel-grid panel-grid--two">
+										<a class="panel panel--link" href="#project-tesla">
+											<div class="panel__image" style="background-image:url('images/IMG_0433.jpg');"></div>
+											<div class="panel__body">
+												<span class="panel__eyebrow">Tesla · Cell Material Flow</span>
+												<h3>Software Engineering Intern</h3>
+												<p>Built automation that synchronized PLC data, MES events, and operator tooling so Gigafactory teams could trace cell components in real time. Delivered dashboards that cut debugging cycles and fueled throughput gains.</p>
+											</div>
+										</a>
+										<a class="panel panel--link" href="#project-cimco">
+											<div class="panel__image" style="background-image:url('images/cimco_refrigeration_logo.jpeg');"></div>
+											<div class="panel__body">
+												<span class="panel__eyebrow">CIMCO Refrigeration</span>
+												<h3>Automation Intern</h3>
+												<p>Prototyped computer vision inspections and automated historian pipelines for industrial refrigeration. The work improved defect detection, strengthened reliability reporting, and introduced ML-assisted maintenance workflows.</p>
+											</div>
+										</a>
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button home-btn">Home</a></li>
+									</ul>
+								</article>
 
-							<!-- Project Details: Tesla -->
-							<article id="project-tesla">
-								<h2 class="major">
-									<a href="https://drive.google.com/file/d/1-2CeKpdKqbAXvXW3PvKn5UML1UNTHIeU/view" target="_blank" rel="noopener noreferrer">
-										Tesla Software Internship
-									</a>
-								</h2>
-								<span class="image main"><img src="images/IMG_0433.jpg" alt="" /></span>
-								<p>Software Development Intern, Cell Material Flow Engineering team at Tesla. Worked on automation and tooling solutions to improve manufacturing efficiency and data flow processes.</p>
-								<p>Key contributions included developing software tools for material tracking, implementing data pipelines for real-time monitoring, and creating automation scripts to streamline production workflows.</p>
-							</article>
+								<!-- Project Details: Tesla -->
+				<article id="project-tesla">
+					<h2 class="major">
+						<a href="https://drive.google.com/file/d/1-2CeKpdKqbAXvXW3PvKn5UML1UNTHIeU/view" target="_blank" rel="noopener noreferrer">
+							Tesla Software Internship
+						</a>
+					</h2>
+					<span class="image main"><img src="images/IMG_0433.jpg" alt="" /></span>
+					<div class="panel panel--primary panel--full panel--article">
+						<p>Software Development Intern, Cell Material Flow Engineering team at Tesla. Worked on automation and tooling solutions to improve manufacturing efficiency and data flow processes.</p>
+						<p>Key contributions included developing software tools for material tracking, implementing data pipelines for real-time monitoring, and creating automation scripts to streamline production workflows.</p>
+						<p>Every deliverable shipped with production quality: Python microservices deployed to Kubernetes, Grafana dashboards wired to factory historians, and alerting hooks that let process engineers resolve incidents before they became bottlenecks. I loved collaborating with controls engineers, figuring out what data they actually needed, then automating the tedious glue so they could stay focused on the floor.</p>
+					</div>
+					<ul class="actions">
+						<li><a href="#" class="button home-btn">Home</a></li>
+					</ul>
+				</article>
 
 							<!-- Project Details: CIMCO -->
-							<article id="project-cimco">
-								<h2 class="major">CIMCO Automation Intern</h2>
-								<span class="image main"><img src="images/cimco_refrigeration_logo.jpeg" alt="" /></span>
-								<p>Automation Internship focued on workstreams focusing on data flows, CV pipelines, and production reliability improvements.</p>
-								<p>Developed automated systems for quality control, implemented computer vision models for defect detection, and created data processing pipelines to enhance manufacturing efficiency.</p>
-							</article>
+				<article id="project-cimco">
+					<h2 class="major">CIMCO Automation Intern</h2>
+					<span class="image main"><img src="images/cimco_refrigeration_logo.jpeg" alt="" /></span>
+					<div class="panel panel--primary panel--full panel--article">
+						<p>Automation Internship focued on workstreams focusing on data flows, CV pipelines, and production reliability improvements.</p>
+						<p>Developed automated systems for quality control, implemented computer vision models for defect detection, and created data processing pipelines to enhance manufacturing efficiency.</p>
+					</div>
+					<ul class="actions">
+						<li><a href="#" class="button home-btn">Home</a></li>
+					</ul>
+				</article>
 
-							<!-- Project Details: Running -->
-							<article id="project-running">
-								<h2 class="major">
-									<a href="https://dhruva05-running-optimizer-app-g2jl7h.streamlit.app/" target="_blank" rel="noopener noreferrer">
-										Strava Running Project
-									</a>
-								</h2>
-								<span class="image main"><img src="images/IMG_7734.jpg" alt="" /></span>
-								<p>Personal training analytics and consistency tracker for marathon preparation and performance optimization.</p>
-								<p>Currently training for the Toronto Waterfront Marathon with my running club, with the ultimate goal of completing an 80km Ultra Marathon before graduating from Waterloo.</p>
-								<p>Created a web application to visualize training data, track progress, and provide insights for improvement for my 5k race time!</p>
-							</article>
+								<!-- Project Details: Running -->
+								<article id="project-running">
+									<h2 class="major">
+										<a href="https://dhruva05-running-optimizer-app-g2jl7h.streamlit.app/" target="_blank" rel="noopener noreferrer">
+											Strava Running Project
+										</a>
+									</h2>
+									<div class="panel panel--primary panel--full">
+										<p>Personal training analytics and consistency tracker for marathon preparation and performance optimization.</p>
+										<p>Currently training for the Toronto Waterfront Marathon with my running club, with the ultimate goal of completing an 80km Ultra Marathon before graduating from Waterloo.</p>
+										<p>Created a web application to visualize training data, track progress, and provide insights for improvement for my 5k race time! The stack includes an ingestion pipeline that cleanses GPS files, a feature store that logs aerobic load, cadence variance, and heart-rate drift, plus a recommendation engine that proposes the next week’s workouts.</p>
+									</div>
+									<div class="panel panel--accent panel--embed" data-aos="zoom-in">
+										<span class="panel__eyebrow">Live demo</span>
+										<p class="panel-embed__copy">Streamlit restricts being embedded in third-party sites, so the live app opens in a new tab. Preview the interface below, then launch the full experience when you’re ready.</p>
+										<div class="panel-embed__preview">
+											<img src="images/IMG_7734.jpg" alt="Strava Running Optimizer preview" />
+											<div class="panel-embed__actions">
+												<a class="button primary" href="https://dhruva05-running-optimizer-app-g2jl7h.streamlit.app/" target="_blank" rel="noopener">Open Streamlit App</a>
+											</div>
+										</div>
+										<p class="panel-embed__note">If the link shows a redirect error, refresh the new tab or disable third‑party cookie blockers—the app itself is live.</p>
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button home-btn">Home</a></li>
+									</ul>
+								</article>
 
 							<!-- Project Details: Baggage Bot -->
 							<article id="project-baggage">
@@ -179,8 +256,9 @@
 								
 								<p>The Baggage Bot's functionality is governed by several key functions. The Menu function allows users to specify the number of packages to be delivered per trip. It uses the robot's buttons to facilitate user interaction, offering options to unload a specific number of packages or an entire plane's worth. The bot's path is monitored by an ultrasonic sensor that checks for obstructions before each movement. If an obstruction is detected, the bot halts and signals that the path is blocked. If the obstruction persists for over 30 seconds, the bot executes the goHome function to return to its original location. If the obstruction is removed within 30 seconds, the bot awaits user input to resume its task. The bot also uses a color sensor to read the sticker color on each package, which determines the path it should follow.</p>
 								
-								<p>This project was the reason I became interested in software. From the late nights grinding to fix the code, to a great presentation and demonstration of the Baggage Bot, I fell in love with all aspects of the software development process. It has allowed me to apply and enhance my skills in robotics, sensor integration, and user interaction design. It has also provided me with practical experience in designing and implementing a real-world application that addresses a specific need - in this case, improving efficiency in airport operations. The project has not only reinforced my understanding of robotics and sensor technology but also highlighted the importance of user-centric design and safety considerations in robotics. These skills and experiences are invaluable in the field of software engineering, particularly in roles related to robotics, automation, and user interface design.</p>
-							</article>
+									<p>This project was the reason I became interested in software. From the late nights grinding to fix the code, to a great presentation and demonstration of the Baggage Bot, I fell in love with all aspects of the software development process. It has allowed me to apply and enhance my skills in robotics, sensor integration, and user interaction design. It has also provided me with practical experience in designing and implementing a real-world application that addresses a specific need - in this case, improving efficiency in airport operations. The project has not only reinforced my understanding of robotics and sensor technology but also highlighted the importance of user-centric design and safety considerations in robotics. These skills and experiences are invaluable in the field of software engineering, particularly in roles related to robotics, automation, and user interface design.</p>
+									<p>The bot runs on an Arduino Mega with custom C++ libraries for sensor fusion, PID speed control, and a task scheduler that lets me prioritize safety checks over movement commands. It’s still my go-to demo when I want to show how approachable robotics can be with the right abstractions—and how much fun it is to ship something tangible.</p>
+								</article>
 
 							<!-- Project Details: Housing Prices Prediction -->
 							<article id="project-housing">
@@ -478,6 +556,185 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+			<script>
+				window.addEventListener('load', function () {
+					var typedTarget = document.querySelector('.typed-text');
+					if (typedTarget && window.Typed) {
+						new Typed(typedTarget, {
+							strings: [
+								'Mechatronics @ Waterloo',
+								'Incoming SDE @ Ford',
+								'Ex-Tesla Software Intern',
+								'AI + Robotics Enthusiast'
+							],
+							typeSpeed: 48,
+							backSpeed: 24,
+							backDelay: 1600,
+							loop: true,
+							smartBackspace: true
+						});
+					}
+
+					var canvas = document.getElementById('bg-canvas');
+					if (!canvas) {
+						return;
+					}
+
+					var ctx = canvas.getContext('2d');
+					var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+					var particles = [];
+					var particleCount = prefersReducedMotion ? 70 : 160;
+					var mouse = { x: null, y: null, radius: prefersReducedMotion ? 70 : 150, active: false };
+
+					function resizeCanvas() {
+						canvas.width = window.innerWidth;
+						canvas.height = window.innerHeight;
+					}
+
+					function handlePointer(x, y) {
+						mouse.x = x;
+						mouse.y = y;
+						mouse.active = true;
+					}
+
+					window.addEventListener('resize', function () {
+						resizeCanvas();
+						if (prefersReducedMotion) {
+							renderStaticFrame();
+						}
+					});
+
+					window.addEventListener('mousemove', function (event) {
+						handlePointer(event.clientX, event.clientY);
+					});
+
+					window.addEventListener('mouseout', function (event) {
+						if (!event.relatedTarget || event.relatedTarget.nodeName === 'HTML') {
+							mouse.active = false;
+						}
+					});
+
+					window.addEventListener('touchmove', function (event) {
+						if (event.touches && event.touches.length > 0) {
+							var touch = event.touches[0];
+							handlePointer(touch.clientX, touch.clientY);
+						}
+					}, { passive: true });
+
+					window.addEventListener('touchend', function () {
+						mouse.active = false;
+					});
+
+					function Particle() {
+						this.reset();
+					}
+
+					Particle.prototype.reset = function () {
+						this.x = Math.random() * canvas.width;
+						this.y = Math.random() * canvas.height;
+						this.vx = (Math.random() - 0.5) * 0.65;
+						this.vy = (Math.random() - 0.5) * 0.65;
+						this.size = Math.random() * 2.2 + 0.6;
+					};
+
+					Particle.prototype.update = function () {
+						this.x += this.vx;
+						this.y += this.vy;
+
+						if (mouse.active && mouse.x !== null && mouse.y !== null) {
+							var dx = mouse.x - this.x;
+							var dy = mouse.y - this.y;
+							var distSq = dx * dx + dy * dy;
+							var maxDist = mouse.radius * mouse.radius;
+							if (distSq < maxDist) {
+								var dist = Math.sqrt(distSq) || 1;
+								var force = (mouse.radius - dist) / mouse.radius;
+								this.vx += (dx / dist) * force * 0.35;
+								this.vy += (dy / dist) * force * 0.35;
+							}
+						}
+
+						this.vx *= 0.97;
+						this.vy *= 0.97;
+
+						var speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+						var maxSpeed = 1.5;
+						if (speed > maxSpeed) {
+							var scale = maxSpeed / speed;
+							this.vx *= scale;
+							this.vy *= scale;
+						}
+
+						if (this.x < 0 || this.x > canvas.width) {
+							this.vx *= -1;
+							this.x = Math.max(0, Math.min(this.x, canvas.width));
+						}
+						if (this.y < 0 || this.y > canvas.height) {
+							this.vy *= -1;
+							this.y = Math.max(0, Math.min(this.y, canvas.height));
+						}
+					};
+
+					Particle.prototype.draw = function () {
+						ctx.save();
+						ctx.beginPath();
+						ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+						ctx.fillStyle = 'rgba(0, 234, 255, 0.75)';
+						ctx.shadowBlur = 10;
+						ctx.shadowColor = 'rgba(0, 234, 255, 0.6)';
+						ctx.fill();
+						ctx.restore();
+
+						if (mouse.active && mouse.x !== null && mouse.y !== null) {
+							var dx = mouse.x - this.x;
+							var dy = mouse.y - this.y;
+							var dist = Math.sqrt(dx * dx + dy * dy);
+							if (dist < mouse.radius) {
+								ctx.beginPath();
+								ctx.moveTo(this.x, this.y);
+								ctx.lineTo(mouse.x, mouse.y);
+								ctx.strokeStyle = 'rgba(0, 234, 255, ' + (0.2 * (1 - dist / mouse.radius)) + ')';
+								ctx.lineWidth = 0.6;
+								ctx.stroke();
+							}
+						}
+					};
+
+					function renderStaticFrame() {
+						ctx.clearRect(0, 0, canvas.width, canvas.height);
+						particles.forEach(function (particle) {
+							particle.draw();
+						});
+					}
+
+					function animate() {
+						ctx.clearRect(0, 0, canvas.width, canvas.height);
+						if (!prefersReducedMotion) {
+							ctx.fillStyle = 'rgba(6, 13, 32, 0.12)';
+							ctx.fillRect(0, 0, canvas.width, canvas.height);
+						}
+						particles.forEach(function (particle) {
+							particle.update();
+							particle.draw();
+						});
+						if (!prefersReducedMotion) {
+							requestAnimationFrame(animate);
+						}
+					}
+
+					resizeCanvas();
+					for (var i = 0; i < particleCount; i++) {
+						particles.push(new Particle());
+					}
+
+					if (prefersReducedMotion) {
+						renderStaticFrame();
+					} else {
+						animate();
+					}
+				});
+			</script>
 
 	</body>
 </html>
