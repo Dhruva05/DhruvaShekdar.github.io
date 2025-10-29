@@ -784,6 +784,16 @@ input, select, textarea {
 		padding-left: 0;
 	}
 
+	ul.actions.actions--return-home {
+		margin-top: 2.5rem;
+		margin-left: 0;
+		justify-content: center;
+	}
+
+		ul.actions.actions--return-home li {
+			padding-left: 0;
+		}
+
 		ul.actions li {
 			padding: 0 0 0 1rem;
 			vertical-align: middle;

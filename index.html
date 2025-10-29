@@ -94,7 +94,7 @@
 										<div class="panel panel--primary">
 											<span class="panel__eyebrow">Engineer & Builder</span>
 											<p>I’m Dhruva, a Mechatronics Engineering student at the University of Waterloo who thrives on building systems that blend hardware intuition with software craftsmanship. I gravitate toward problems where automation, data, and robotics intersect, because that’s where thoughtful code can unlock real-world efficiency.</p>
-											<p>During my time with Tesla’s Cell Material Flow Engineering team I shipped internal tools that automated material tracking, stitched together data from PLCs and MES platforms, and surfaced actionable insights for manufacturing operators. Next up, I’ll be joining Ford as an incoming Software Engineer, where I’m excited to continue delivering production-grade automation and analytics.</p>
+												<p>During my time with Tesla’s Cell Material Flow Engineering team I built MVVM-based Android features in Kotlin and Java that connected Tesla APIs to 12 Zebra handheld scanners, letting operators associate or clear RFID tags for 100+ containers each day while staying aligned with Beckhoff PLC logic on the floor. Next up, I’ll be joining Ford as an incoming Software Engineer, where I’m excited to continue delivering production-grade automation and analytics.</p>
 											<p>Outside of co-op terms you’ll usually find me experimenting with ML workflows, tuning control loops for side projects, or writing Python to make sense of the many sensors I surround myself with. If it involves robotics, data pipelines, or closing the loop between the digital and physical worlds, I’m in.</p>
 										</div>
 										<div class="panel panel--accent">
@@ -113,9 +113,9 @@
 										<img src="images/pic01.jpg" alt="Dhruva on campus" />
 										<figcaption>Always curious, usually prototyping, rarely without a notebook of ideas.</figcaption>
 									</figure>
-									<ul class="actions">
-										<li><a href="#" class="button home-btn">Home</a></li>
-									</ul>
+										<ul class="actions actions--return-home">
+											<li><a href="#" class="button home-btn">Home</a></li>
+										</ul>
 								</article>
 
 							<!-- Work -->
@@ -157,7 +157,7 @@
 											</div>
 										</a>
 									</div>
-									<ul class="actions">
+									<ul class="actions actions--return-home">
 										<li><a href="#" class="button home-btn">Home</a></li>
 									</ul>	
 								</article>
@@ -172,7 +172,7 @@
 											<div class="panel__body">
 												<span class="panel__eyebrow">Tesla · Cell Material Flow</span>
 												<h3>Software Engineering Intern</h3>
-												<p>Built automation that synchronized PLC data, MES events, and operator tooling so Gigafactory teams could trace cell components in real time. Delivered dashboards that cut debugging cycles and fueled throughput gains.</p>
+													<p>Built Android tooling that connected handheld scanners with Tesla’s material-tracking systems, streamlining RFID updates for cell components on the factory floor.</p>
 											</div>
 										</a>
 										<a class="panel panel--link" href="#project-cimco">
@@ -180,11 +180,11 @@
 											<div class="panel__body">
 												<span class="panel__eyebrow">CIMCO Refrigeration</span>
 												<h3>Automation Intern</h3>
-												<p>Prototyped computer vision inspections and automated historian pipelines for industrial refrigeration. The work improved defect detection, strengthened reliability reporting, and introduced ML-assisted maintenance workflows.</p>
+												<p>Designed OpenCV-based vision tooling for ice plants and paired it with Python, Ladder Logic, and AutoCAD Electrical automation that boosted system reliability and sped up PLC/DDC panel testing by 50%.</p>
 											</div>
 										</a>
 									</div>
-									<ul class="actions">
+									<ul class="actions actions--return-home">
 										<li><a href="#" class="button home-btn">Home</a></li>
 									</ul>
 								</article>
@@ -197,12 +197,12 @@
 						</a>
 					</h2>
 					<span class="image main"><img src="images/IMG_0433.jpg" alt="" /></span>
-					<div class="panel panel--primary panel--full panel--article">
-						<p>Software Development Intern, Cell Material Flow Engineering team at Tesla. Worked on automation and tooling solutions to improve manufacturing efficiency and data flow processes.</p>
-						<p>Key contributions included developing software tools for material tracking, implementing data pipelines for real-time monitoring, and creating automation scripts to streamline production workflows.</p>
-						<p>Every deliverable shipped with production quality: Python microservices deployed to Kubernetes, Grafana dashboards wired to factory historians, and alerting hooks that let process engineers resolve incidents before they became bottlenecks. I loved collaborating with controls engineers, figuring out what data they actually needed, then automating the tedious glue so they could stay focused on the floor.</p>
-					</div>
-					<ul class="actions">
+						<div class="panel panel--primary panel--full panel--article">
+							<p>As a Software Development Intern on Tesla’s Cell Material Flow Engineering team, I delivered Android app features that track and identify cell materials across Giga Texas. The release deployed to 12 Zebra handheld scanners and let operators dynamically associate or clear RFID tags, giving real-time traceability for 100+ containers each day.</p>
+							<p>I implemented an MVVM architecture with Kotlin, Java, and Gradle to keep the codebase modular, and generated gRPC clients from .proto files so the scanners could query Tesla internal APIs for material quality data without latency.</p>
+							<p>I partnered with controls engineers to weave Beckhoff PLC logic into the handheld workflow, then led a gap analysis across 200+ tracking failures to surface issues like sensor misalignment and ambiguous clear logic—informing system updates that improved reliability and reduced material loss incidents.</p>
+						</div>
+					<ul class="actions actions--return-home">
 						<li><a href="#" class="button home-btn">Home</a></li>
 					</ul>
 				</article>
@@ -211,11 +211,11 @@
 				<article id="project-cimco">
 					<h2 class="major">CIMCO Automation Intern</h2>
 					<span class="image main"><img src="images/cimco_refrigeration_logo.jpeg" alt="" /></span>
-					<div class="panel panel--primary panel--full panel--article">
-						<p>Automation Internship focued on workstreams focusing on data flows, CV pipelines, and production reliability improvements.</p>
-						<p>Developed automated systems for quality control, implemented computer vision models for defect detection, and created data processing pipelines to enhance manufacturing efficiency.</p>
-					</div>
-					<ul class="actions">
+						<div class="panel panel--primary panel--full panel--article">
+							<p>At CIMCO Refrigeration I designed and implemented a computer vision script in OpenCV that segments players, equipment, and other thermal bodies from ice rink imagery, improving temperature calculations and reducing calibration downtime for arena systems.</p>
+							<p>I used Python, Ladder Logic, and AutoCAD Electrical to optimize automation sequences, and streamlined PLC/DDC panel testing procedures—cutting test time by 50% while keeping electrical and software compliance intact.</p>
+						</div>
+					<ul class="actions actions--return-home">
 						<li><a href="#" class="button home-btn">Home</a></li>
 					</ul>
 				</article>
@@ -234,27 +234,31 @@
 											<p>The Streamlit app ingests GPS files, cleanses features, and maintains a lightweight feature store for aerobic load, cadence variance, and heart-rate drift. A recommendation engine then proposes next week’s workouts so I stay balanced between tempo work and easy miles.</p>
 											<div class="project-showcase__links">
 												<a class="button primary project-showcase__cta" href="https://dhruva05-running-optimizer-app-g2jl7h.streamlit.app/" target="_blank" rel="noopener">Launch Live App</a>
-												<a class="project-showcase__link" href="https://dhruva05-running-optimizer-app-g2jl7h.streamlit.app/" target="_blank" rel="noopener">Open the Streamlit app in a new tab</a>
 											</div>
 										</div>
 									</div>
-									<ul class="actions">
-										<p></p>
-										<li><a href="#" class="button home-btn">Home</a></li>
-									</ul>
+										<ul class="actions actions--return-home">
+											<p></p>
+											<li><a href="#" class="button home-btn">Home</a></li>
+										</ul>
 								</article>
 
 							<!-- Project Details: Baggage Bot -->
-							<article id="project-baggage">
+								<article id="project-baggage">
 								<h2 class="major">Baggage Bot</h2>
 								<span class="image main"><img src="images/pic06.jpg" alt="" /></span>
-								<p>This project involves the creation of a Baggage Bot, an automated package delivery system designed to streamline the loading and unloading process at airports. The goal is to enhance productivity and efficiency. The bot operates in two modes - infinite delivery or a set number of packages, allowing flexibility based on user needs. It uses ultrasonic sensors for collision avoidance and a color sensor to determine the path to follow based on the color of stickers associated with each package.</p>
-								
-								<p>The Baggage Bot's functionality is governed by several key functions. The Menu function allows users to specify the number of packages to be delivered per trip. It uses the robot's buttons to facilitate user interaction, offering options to unload a specific number of packages or an entire plane's worth. The bot's path is monitored by an ultrasonic sensor that checks for obstructions before each movement. If an obstruction is detected, the bot halts and signals that the path is blocked. If the obstruction persists for over 30 seconds, the bot executes the goHome function to return to its original location. If the obstruction is removed within 30 seconds, the bot awaits user input to resume its task. The bot also uses a color sensor to read the sticker color on each package, which determines the path it should follow.</p>
-								
-									<p>This project was the reason I became interested in software. From the late nights grinding to fix the code, to a great presentation and demonstration of the Baggage Bot, I fell in love with all aspects of the software development process. It has allowed me to apply and enhance my skills in robotics, sensor integration, and user interaction design. It has also provided me with practical experience in designing and implementing a real-world application that addresses a specific need - in this case, improving efficiency in airport operations. The project has not only reinforced my understanding of robotics and sensor technology but also highlighted the importance of user-centric design and safety considerations in robotics. These skills and experiences are invaluable in the field of software engineering, particularly in roles related to robotics, automation, and user interface design.</p>
-									<p>The bot runs on an Arduino Mega with custom C++ libraries for sensor fusion, PID speed control, and a task scheduler that lets me prioritize safety checks over movement commands. It’s still my go-to demo when I want to show how approachable robotics can be with the right abstractions—and how much fun it is to ship something tangible.</p>
-								</article>
+									<div class="panel panel--primary panel--full panel--article">
+										<p>This project involves the creation of a Baggage Bot, an automated package delivery system designed to streamline the loading and unloading process at airports. The goal is to enhance productivity and efficiency. The bot operates in two modes - infinite delivery or a set number of packages, allowing flexibility based on user needs. It uses ultrasonic sensors for collision avoidance and a color sensor to determine the path to follow based on the color of stickers associated with each package.</p>
+										
+										<p>The Baggage Bot's functionality is governed by several key functions. The Menu function allows users to specify the number of packages to be delivered per trip. It uses the robot's buttons to facilitate user interaction, offering options to unload a specific number of packages or an entire plane's worth. The bot's path is monitored by an ultrasonic sensor that checks for obstructions before each movement. If an obstruction is detected, the bot halts and signals that the path is blocked. If the obstruction persists for over 30 seconds, the bot executes the goHome function to return to its original location. If the obstruction is removed within 30 seconds, the bot awaits user input to resume its task. The bot also uses a color sensor to read the sticker color on each package, which determines the path it should follow.</p>
+										
+										<p>This project was the reason I became interested in software. From the late nights grinding to fix the code, to a great presentation and demonstration of the Baggage Bot, I fell in love with all aspects of the software development process. It has allowed me to apply and enhance my skills in robotics, sensor integration, and user interaction design. It has also provided me with practical experience in designing and implementing a real-world application that addresses a specific need - in this case, improving efficiency in airport operations. The project has not only reinforced my understanding of robotics and sensor technology but also highlighted the importance of user-centric design and safety considerations in robotics. These skills and experiences are invaluable in the field of software engineering, particularly in roles related to robotics, automation, and user interface design.</p>
+										<p>The bot runs on an Arduino Mega with custom C++ libraries for sensor fusion, PID speed control, and a task scheduler that lets me prioritize safety checks over movement commands. It’s still my go-to demo when I want to show how approachable robotics can be with the right abstractions—and how much fun it is to ship something tangible.</p>
+									</div>
+									<ul class="actions actions--return-home">
+										<li><a href="#" class="button home-btn">Home</a></li>
+									</ul>
+									</article>
 
 							<!-- Project Details: Housing Prices Prediction -->
 							<article id="project-housing">
@@ -264,9 +268,14 @@
 									</a>
 								</h2>
 								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<p>This project is a machine learning pipeline for predicting housing prices, specifically the <em>median_house_value</em>, using Python libraries such as pandas, numpy, matplotlib, seaborn, and scikit-learn. It covers the full workflow: data loading and cleaning, exploratory data analysis with visualizations, feature engineering to address categorical variables and skewness, and model training with Linear Regression and Random Forest Regressor. Model performance is evaluated using R-squared, with Random Forest further optimized through Grid Search.</p>
-								
-								<p>Through this project, I gained hands-on experience with real-world datasets, strengthened my skills in Python, data manipulation, visualization, and machine learning, and developed a deeper understanding of end-to-end pipelines and their importance in building accurate, optimized models—skills that are directly applicable to data science and software engineering roles.</p>
+									<div class="panel panel--primary panel--full panel--article">
+										<p>This project is a machine learning pipeline for predicting housing prices, specifically the <em>median_house_value</em>, using Python libraries such as pandas, numpy, matplotlib, seaborn, and scikit-learn. It covers the full workflow: data loading and cleaning, exploratory data analysis with visualizations, feature engineering to address categorical variables and skewness, and model training with Linear Regression and Random Forest Regressor. Model performance is evaluated using R-squared, with Random Forest further optimized through Grid Search.</p>
+										
+										<p>Through this project, I gained hands-on experience with real-world datasets, strengthened my skills in Python, data manipulation, visualization, and machine learning, and developed a deeper understanding of end-to-end pipelines and their importance in building accurate, optimized models—skills that are directly applicable to data science and software engineering roles.</p>
+									</div>
+									<ul class="actions actions--return-home">
+										<li><a href="#" class="button home-btn">Home</a></li>
+									</ul>
 							</article>
 
 							<!-- Project Details: Digit Recognition -->
@@ -277,11 +286,16 @@
 									</a>
 								</h2>
 								<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
-								<p>This project is a deep learning pipeline designed to classify handwritten digits using the MNIST dataset. The task is a multi-class classification problem, aiming to predict the digit (0-9) represented by each 28x28 pixel image in the dataset. The Python libraries used in this project include torchvision for data loading and transformations, torch for neural network and optimization operations, and matplotlib for data visualization.</p>
-								
-								<p>The pipeline begins with data loading, where the MNIST dataset is downloaded and transformed into tensors. The data is then split into training and testing sets. A DataLoader is created for each set to handle batching, shuffling, and parallel processing. A Convolutional Neural Network (CNN) is defined with two convolutional layers, dropout, and two fully connected layers. The model is trained on a GPU if available, otherwise on a CPU. The optimizer used is Adam with a learning rate of 0.01, and the loss function is CrossEntropyLoss. The training function trains the model for a specified number of epochs, and the test function evaluates the model's performance on the test set. The model's performance is evaluated using the average loss and accuracy.</p>
-								
-								<p>This project has played a pivotal role in my journey as a software engineer. It has served as a platform for honing my Python programming skills, deep learning techniques, and data visualization abilities. It has offered me hands-on experience in managing real-world datasets, architecting and training neural networks, and fine-tuning deep learning models. The project has not only solidified my grasp of the comprehensive deep learning pipeline but also underscored the significance of each phase in optimizing model performance. The competencies and experiences I've gained through this project are of immense value in the realm of software engineering, especially in positions that intersect with data science and machine learning.</p>
+									<div class="panel panel--primary panel--full panel--article">
+										<p>This project is a deep learning pipeline designed to classify handwritten digits using the MNIST dataset. The task is a multi-class classification problem, aiming to predict the digit (0-9) represented by each 28x28 pixel image in the dataset. The Python libraries used in this project include torchvision for data loading and transformations, torch for neural network and optimization operations, and matplotlib for data visualization.</p>
+										
+										<p>The pipeline begins with data loading, where the MNIST dataset is downloaded and transformed into tensors. The data is then split into training and testing sets. A DataLoader is created for each set to handle batching, shuffling, and parallel processing. A Convolutional Neural Network (CNN) is defined with two convolutional layers, dropout, and two fully connected layers. The model is trained on a GPU if available, otherwise on a CPU. The optimizer used is Adam with a learning rate of 0.01, and the loss function is CrossEntropyLoss. The training function trains the model for a specified number of epochs, and the test function evaluates the model's performance on the test set. The model's performance is evaluated using the average loss and accuracy.</p>
+										
+										<p>This project has played a pivotal role in my journey as a software engineer. It has served as a platform for honing my Python programming skills, deep learning techniques, and data visualization abilities. It has offered me hands-on experience in managing real-world datasets, architecting and training neural networks, and fine-tuning deep learning models. The project has not only solidified my grasp of the comprehensive deep learning pipeline but also underscored the significance of each phase in optimizing model performance. The competencies and experiences I've gained through this project are of immense value in the realm of software engineering, especially in positions that intersect with data science and machine learning.</p>
+									</div>
+									<ul class="actions actions--return-home">
+										<li><a href="#" class="button home-btn">Home</a></li>
+									</ul>
 							</article>
 	
 
