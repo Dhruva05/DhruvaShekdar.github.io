@@ -53,6 +53,38 @@
 						radial-gradient(circle at 55% 80%, rgba(0, 128, 255, 0.16), transparent 55%),
 						transparent;
 				}
+				#particle-counter {
+					position: fixed;
+					top: 20px;
+					right: 20px;
+					background: rgba(19, 21, 25, 0.85);
+					backdrop-filter: blur(10px);
+					padding: 12px 20px;
+					border-radius: 8px;
+					border: 1px solid rgba(0, 234, 255, 0.3);
+					box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+					font-family: 'Space Grotesk', sans-serif;
+					font-size: 0.9rem;
+					color: #9effff;
+					text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+					z-index: 10000;
+					transition: all 0.3s ease;
+					opacity: 0;
+					pointer-events: none;
+				}
+				#particle-counter.visible {
+					opacity: 1;
+				}
+				#particle-counter.completed {
+					border-color: rgba(255, 215, 0, 0.5);
+					color: #ffd700;
+					text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+					background: rgba(255, 140, 0, 0.15);
+				}
+				#particle-counter .count {
+					font-weight: 600;
+					font-size: 1.1rem;
+				}
 			</style>
 		</head>
 	<body class="is-preload">
@@ -93,20 +125,22 @@
 									<div class="panel-grid panel-grid--two">
 										<div class="panel panel--primary">
 											<span class="panel__eyebrow">Engineer & Builder</span>
-											<p>I’m Dhruva, a Mechatronics Engineering student at the University of Waterloo who thrives on building systems that blend hardware intuition with software craftsmanship. I gravitate toward problems where automation, data, and robotics intersect, because that’s where thoughtful code can unlock real-world efficiency.</p>
-												<p>During my time with Tesla’s Cell Material Flow Engineering team I built MVVM-based Android features in Kotlin and Java that connected Tesla APIs to 12 Zebra handheld scanners, letting operators associate or clear RFID tags for 100+ containers each day while staying aligned with Beckhoff PLC logic on the floor. Next up, I’ll be joining Ford as an incoming Software Engineer, where I’m excited to continue delivering production-grade automation and analytics.</p>
-											<p>Outside of co-op terms you’ll usually find me experimenting with ML workflows, tuning control loops for side projects, or writing Python to make sense of the many sensors I surround myself with. If it involves robotics, data pipelines, or closing the loop between the digital and physical worlds, I’m in.</p>
+											<p>I'm Dhruva, a Mechatronics Engineering student at the University of Waterloo who thrives on building systems that blend hardware intuition with software craftsmanship. I gravitate toward problems where automation, data, and robotics intersect, because that's where thoughtful code can unlock real-world efficiency.</p>
+												<p>During my time with Tesla's Cell Material Flow Engineering team I built MVVM-based Android features in Kotlin and Java that connected Tesla APIs to 12 Zebra handheld scanners, letting operators associate or clear RFID tags for 100+ containers each day while staying aligned with Beckhoff PLC logic on the floor. I'm currently working at Ford as a Software Engineer, where I'm delivering production-grade automation and analytics solutions.</p>
+											<p>I'm also an Undergraduate Research Assistant at the Critical ML Lab under Prof. Rambhatla, where I work on machine learning research that bridges theory and real-world applications.</p>
+											<p>Outside of co-op terms you'll usually find me experimenting with ML workflows, tuning control loops for side projects, or writing Python to make sense of the many sensors I surround myself with. If it involves robotics, data pipelines, or closing the loop between the digital and physical worlds, I'm in.</p>
 										</div>
 										<div class="panel panel--accent">
 											<span class="panel__eyebrow">Snapshot</span>
 											<ul class="panel-list">
 												<li><strong>Current:</strong> Mechatronics Engineering, University of Waterloo (AI option).</li>
-												<li><strong>Incoming:</strong> Software Engineer @ Ford (Winter 2026).</li>
+												<li><strong>Current Role:</strong> Software Engineer @ Ford (Winter 2026 - Present).</li>
+												<li><strong>Research:</strong> Undergraduate Research Assistant @ Critical ML Lab, University of Waterloo (Prof. Rambhatla).</li>
 												<li><strong>Recent:</strong> Tesla Cell Material Flow Engineering – Software Development Intern.</li>
 												<li><strong>Tech stack:</strong> Python, C++, Java, Kotlin, Gradle, PyTorch, ROS, PLC integrations</li>
 											</ul>
 											<span class="panel__eyebrow">Fuel</span>
-											<p>Endurance training gives me the same rush as a clean deployment. I’m working toward an 80 km ultra-marathon and building data-driven coaching tools—because every long run deserves metrics, visualizations, and a feedback loop.</p>
+											<p>Endurance training gives me the same rush as a clean deployment. I'm working toward an 80 km ultra-marathon and building data-driven coaching tools—because every long run deserves metrics, visualizations, and a feedback loop.</p>
 										</div>
 									</div>
 									<figure class="panel-figure">
@@ -122,7 +156,7 @@
 								<article id="work"> 
 									
 									<h2 class="major">Projects</h2>
-									<p class="panel-intro">I love taking ideas from whiteboard sketches to production-ready tools—especially when there’s data to wrangle, models to evaluate, or hardware that needs a smarter brain. Here are a few builds that keep me curious.</p>
+									<p class="panel-intro">I love taking ideas from whiteboard sketches to production-ready tools—especially when there's data to wrangle, models to evaluate, or hardware that needs a smarter brain. Here are a few builds that keep me curious.</p>
 									<div class="panel-grid panel-grid--two">
 										<a class="panel panel--link" href="#project-running">
 											<div class="panel__image" style="background-image:url('images/IMG_7734.jpg');"></div>
@@ -164,15 +198,31 @@
 
 							<!-- Internships -->
 								<article id="internships">
-									<h2 class="major">Internships</h2>
-									<p class="panel-intro">Co-op gives me a front-row seat to complex production systems. I lean into roles where I can pair systems thinking with rapid prototyping to unblock teams fast.</p>
+									<h2 class="major">Internships & Research</h2>
+									<p class="panel-intro">Co-op and research give me a front-row seat to complex production systems and cutting-edge ML applications. I lean into roles where I can pair systems thinking with rapid prototyping to unblock teams fast.</p>
 									<div class="panel-grid panel-grid--two">
+										<a class="panel panel--link" href="#project-ford">
+											<div class="panel__image" style="background-image:url('images/large-ford-logo-0.png');"></div>
+											<div class="panel__body">
+												<span class="panel__eyebrow">Ford Motor Company · Software Engineering</span>
+												<h3>Software Engineering Intern</h3>
+												<p>Developing production-grade automation and analytics solutions for Ford's manufacturing and engineering systems, applying full-stack development skills to real-world challenges.</p>
+											</div>
+										</a>
 										<a class="panel panel--link" href="#project-tesla">
 											<div class="panel__image" style="background-image:url('images/IMG_0433.jpg');"></div>
 											<div class="panel__body">
 												<span class="panel__eyebrow">Tesla · Cell Material Flow</span>
 												<h3>Software Engineering Intern</h3>
-													<p>Built Android tooling that connected handheld scanners with Tesla’s material-tracking systems, streamlining RFID updates for cell components on the factory floor.</p>
+													<p>Built Android tooling that connected handheld scanners with Tesla's material-tracking systems, streamlining RFID updates for cell components on the factory floor.</p>
+											</div>
+										</a>
+										<a class="panel panel--link" href="#project-cml">
+											<div class="panel__image" style="background-image:url('images/CriticalML.png');"></div>
+											<div class="panel__body">
+												<span class="panel__eyebrow">Critical ML Lab · University of Waterloo</span>
+												<h3>Undergraduate Research Assistant</h3>
+												<p>Working under Prof. Rambhatla on machine learning research that bridges theory and real-world applications, focusing on model evaluation, experimental design, and the iterative nature of ML research.</p>
 											</div>
 										</a>
 										<a class="panel panel--link" href="#project-cimco">
@@ -189,6 +239,19 @@
 									</ul>
 								</article>
 
+								<!-- Project Details: Ford -->
+				<article id="project-ford">
+					<h2 class="major">Ford Software Engineering Internship</h2>
+					<span class="image main"><img src="images/large-ford-logo-0.png" alt="" /></span>
+						<div class="panel panel--primary panel--full panel--article">
+							<p>As a Software Engineering Intern at Ford Motor Company, I'm developing automation and analytics solutions that support manufacturing operations and engineering workflows. My work focuses on building scalable systems that improve efficiency and data-driven decision-making across teams.</p>
+							<p>I'm working with modern software development practices, contributing to production codebases, and collaborating with cross-functional teams to deliver features that have measurable impact on Ford's operations.</p>
+						</div>
+					<ul class="actions actions--return-home">
+						<li><a href="#" class="button home-btn">Home</a></li>
+					</ul>
+				</article>
+
 								<!-- Project Details: Tesla -->
 				<article id="project-tesla">
 					<h2 class="major">
@@ -198,9 +261,23 @@
 					</h2>
 					<span class="image main"><img src="images/IMG_0433.jpg" alt="" /></span>
 						<div class="panel panel--primary panel--full panel--article">
-							<p>As a Software Development Intern on Tesla’s Cell Material Flow Engineering team, I delivered Android app features that track and identify cell materials across Giga Texas. The release deployed to 12 Zebra handheld scanners and let operators dynamically associate or clear RFID tags, giving real-time traceability for 100+ containers each day.</p>
+							<p>As a Software Development Intern on Tesla's Cell Material Flow Engineering team, I delivered Android app features that track and identify cell materials across Giga Texas. The release deployed to 12 Zebra handheld scanners and let operators dynamically associate or clear RFID tags, giving real-time traceability for 100+ containers each day.</p>
 							<p>I implemented an MVVM architecture with Kotlin, Java, and Gradle to keep the codebase modular, and generated gRPC clients from .proto files so the scanners could query Tesla internal APIs for material quality data without latency.</p>
 							<p>I partnered with controls engineers to weave Beckhoff PLC logic into the handheld workflow, then led a gap analysis across 200+ tracking failures to surface issues like sensor misalignment and ambiguous clear logic—informing system updates that improved reliability and reduced material loss incidents.</p>
+						</div>
+					<ul class="actions actions--return-home">
+						<li><a href="#" class="button home-btn">Home</a></li>
+					</ul>
+				</article>
+
+								<!-- Project Details: Critical ML Lab -->
+				<article id="project-cml">
+					<h2 class="major">Critical ML Lab Research</h2>
+					<span class="image main"><img src="images/CriticalML.png" alt="" /></span>
+						<div class="panel panel--primary panel--full panel--article">
+							<p>As an Undergraduate Research Assistant at the Critical Machine Learning Lab under Prof. Rambhatla, I'm working on machine learning research that bridges theoretical foundations with practical applications. My work focuses on understanding and improving model evaluation techniques, experimental design methodologies, and the iterative research process that drives ML innovation.</p>
+							<p>This research position has deepened my understanding of how machine learning models behave in real-world scenarios, the importance of rigorous experimental validation, and the nuances of translating research insights into actionable improvements. The experience complements my industry work by exposing me to the fundamental questions that shape the future of AI systems.</p>
+							<p>Working in an academic research setting has taught me to approach problems with scientific rigor, think critically about model assumptions, and communicate complex technical concepts effectively—skills that translate directly to building robust, production-ready ML systems.</p>
 						</div>
 					<ul class="actions actions--return-home">
 						<li><a href="#" class="button home-btn">Home</a></li>
@@ -231,7 +308,7 @@
 											<span class="project-showcase__eyebrow">Personal analytics · Streamlit</span>
 											<p>Personal training analytics and consistency tracker that turns Strava history into actionable workouts for marathon prep.</p>
 											<p>Currently training for the Toronto Waterfront Marathon with my running club, and building toward an 80km ultra before graduating from Waterloo.</p>
-											<p>The Streamlit app ingests GPS files, cleanses features, and maintains a lightweight feature store for aerobic load, cadence variance, and heart-rate drift. A recommendation engine then proposes next week’s workouts so I stay balanced between tempo work and easy miles.</p>
+											<p>The Streamlit app ingests GPS files, cleanses features, and maintains a lightweight feature store for aerobic load, cadence variance, and heart-rate drift. A recommendation engine then proposes next week's workouts so I stay balanced between tempo work and easy miles.</p>
 											<div class="project-showcase__links">
 												<a class="button primary project-showcase__cta" href="https://dhruva05-running-optimizer-app-g2jl7h.streamlit.app/" target="_blank" rel="noopener">Launch Live App</a>
 											</div>
@@ -253,7 +330,7 @@
 										<p>The Baggage Bot's functionality is governed by several key functions. The Menu function allows users to specify the number of packages to be delivered per trip. It uses the robot's buttons to facilitate user interaction, offering options to unload a specific number of packages or an entire plane's worth. The bot's path is monitored by an ultrasonic sensor that checks for obstructions before each movement. If an obstruction is detected, the bot halts and signals that the path is blocked. If the obstruction persists for over 30 seconds, the bot executes the goHome function to return to its original location. If the obstruction is removed within 30 seconds, the bot awaits user input to resume its task. The bot also uses a color sensor to read the sticker color on each package, which determines the path it should follow.</p>
 										
 										<p>This project was the reason I became interested in software. From the late nights grinding to fix the code, to a great presentation and demonstration of the Baggage Bot, I fell in love with all aspects of the software development process. It has allowed me to apply and enhance my skills in robotics, sensor integration, and user interaction design. It has also provided me with practical experience in designing and implementing a real-world application that addresses a specific need - in this case, improving efficiency in airport operations. The project has not only reinforced my understanding of robotics and sensor technology but also highlighted the importance of user-centric design and safety considerations in robotics. These skills and experiences are invaluable in the field of software engineering, particularly in roles related to robotics, automation, and user interface design.</p>
-										<p>The bot runs on an Arduino Mega with custom C++ libraries for sensor fusion, PID speed control, and a task scheduler that lets me prioritize safety checks over movement commands. It’s still my go-to demo when I want to show how approachable robotics can be with the right abstractions—and how much fun it is to ship something tangible.</p>
+										<p>The bot runs on an Arduino Mega with custom C++ libraries for sensor fusion, PID speed control, and a task scheduler that lets me prioritize safety checks over movement commands. It's still my go-to demo when I want to show how approachable robotics can be with the right abstractions—and how much fun it is to ship something tangible.</p>
 									</div>
 									<ul class="actions actions--return-home">
 										<li><a href="#" class="button home-btn">Home</a></li>
@@ -560,6 +637,11 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		<!-- BG -->
 			<div id="bg"><canvas id="bg-canvas" aria-hidden="true"></canvas></div>
 
+		<!-- Particle Counter -->
+			<div id="particle-counter">
+				<span class="count">0</span> / <span class="total">0</span> particles collected
+			</div>
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
@@ -574,10 +656,11 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						new Typed(typedTarget, {
 							strings: [
 								'Mechatronics @ Waterloo',
-								'Incoming SDE @ Ford',
+								'SDE @ Ford',
 								'Ex-Tesla Software Intern',
 								'AI + Robotics Enthusiast',
-								'Everything Earned. Nothing Given.'
+								'Everything Earned. Nothing Given.',
+								'P.S Collect All The Particles!'
 							],
 							typeSpeed: 48,
 							backSpeed: 24,
@@ -597,6 +680,64 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					var particles = [];
 					var particleCount = prefersReducedMotion ? 70 : 160;
 					var mouse = { x: null, y: null, radius: prefersReducedMotion ? 70 : 150, active: false };
+					var collectedParticles = 0;
+					var easterEggActivated = false;
+					var celebrationColors = {
+						particle: 'rgba(255, 215, 0, 0.75)',
+						shadow: 'rgba(255, 215, 0, 0.6)',
+						line: 'rgba(255, 215, 0, ',
+						bg1: 'rgba(255, 215, 0, 0.22)',
+						bg2: 'rgba(255, 140, 0, 0.18)',
+						bg3: 'rgba(255, 69, 0, 0.16)'
+					};
+
+					// Get counter elements
+					var counterElement = document.getElementById('particle-counter');
+					var countSpan = counterElement.querySelector('.count');
+					var totalSpan = counterElement.querySelector('.total');
+					
+					// Function to update counter display
+					function updateCounter() {
+						countSpan.textContent = collectedParticles;
+						totalSpan.textContent = particleCount;
+						
+						// Show counter when first particle is collected
+						if (collectedParticles > 0) {
+							counterElement.classList.add('visible');
+						}
+						
+						// Add completed class when all collected
+						if (collectedParticles >= particleCount) {
+							counterElement.classList.add('completed');
+						}
+					}
+					
+					// Initialize counter display
+					updateCounter();
+
+					// Function to interpolate between two colors based on progress
+					function interpolateColor(progress) {
+						// Start color: cyan (0, 234, 255)
+						// End color: gold (255, 215, 0)
+						var r = Math.round(0 + (255 - 0) * progress);
+						var g = Math.round(234 + (215 - 234) * progress);
+						var b = Math.round(255 + (0 - 255) * progress);
+						return 'rgba(' + r + ', ' + g + ', ' + b + ', 0.75)';
+					}
+
+					function interpolateShadowColor(progress) {
+						var r = Math.round(0 + (255 - 0) * progress);
+						var g = Math.round(234 + (215 - 234) * progress);
+						var b = Math.round(255 + (0 - 255) * progress);
+						return 'rgba(' + r + ', ' + g + ', ' + b + ', 0.6)';
+					}
+
+					function interpolateLineColor(progress) {
+						var r = Math.round(0 + (255 - 0) * progress);
+						var g = Math.round(234 + (215 - 234) * progress);
+						var b = Math.round(255 + (0 - 255) * progress);
+						return 'rgba(' + r + ', ' + g + ', ' + b + ', ';
+					}
 
 					function resizeCanvas() {
 						canvas.width = window.innerWidth;
@@ -646,7 +787,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						this.y = Math.random() * canvas.height;
 						this.vx = (Math.random() - 0.5) * 0.65;
 						this.vy = (Math.random() - 0.5) * 0.65;
-						this.size = Math.random() * 2.2 + 0.6;
+						this.size = Math.random() * 3.0 + 1.2; // Slightly reduced from 3.5 + 1.5
+						this.collected = false;
 					};
 
 					Particle.prototype.update = function () {
@@ -658,6 +800,28 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 							var dy = mouse.y - this.y;
 							var distSq = dx * dx + dy * dy;
 							var maxDist = mouse.radius * mouse.radius;
+							
+							// Check if particle is collected (very close to cursor)
+							if (!this.collected && distSq < 400) { // within 20px radius
+								this.collected = true;
+								collectedParticles++;
+								updateCounter(); // Update the counter display
+								
+								// Check if all particles are collected
+								if (collectedParticles >= particleCount && !easterEggActivated) {
+									easterEggActivated = true;
+									// Update background gradient
+									var bgCanvas = document.getElementById('bg-canvas');
+									if (bgCanvas) {
+										bgCanvas.style.background = 
+											'radial-gradient(circle at 15% 20%, ' + celebrationColors.bg1 + ', transparent 55%), ' +
+											'radial-gradient(circle at 80% 25%, ' + celebrationColors.bg2 + ', transparent 60%), ' +
+											'radial-gradient(circle at 55% 80%, ' + celebrationColors.bg3 + ', transparent 55%), ' +
+											'transparent';
+									}
+								}
+							}
+							
 							if (distSq < maxDist) {
 								var dist = Math.sqrt(distSq) || 1;
 								var force = (mouse.radius - dist) / mouse.radius;
@@ -688,12 +852,27 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					};
 
 					Particle.prototype.draw = function () {
+						// Skip drawing if collected
+						if (this.collected) return;
+						
+						// Calculate color transition progress (0 to 1)
+						var progress = collectedParticles / particleCount;
+						
 						ctx.save();
 						ctx.beginPath();
 						ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-						ctx.fillStyle = 'rgba(0, 234, 255, 0.75)';
-						ctx.shadowBlur = 10;
-						ctx.shadowColor = 'rgba(0, 234, 255, 0.6)';
+						
+						// Use interpolated colors based on progress, or celebration colors if activated
+						if (easterEggActivated) {
+							ctx.fillStyle = celebrationColors.particle;
+							ctx.shadowBlur = 15;
+							ctx.shadowColor = celebrationColors.shadow;
+						} else {
+							ctx.fillStyle = interpolateColor(progress);
+							ctx.shadowBlur = 10 + (progress * 5); // Shadow grows slightly
+							ctx.shadowColor = interpolateShadowColor(progress);
+						}
+						
 						ctx.fill();
 						ctx.restore();
 
@@ -705,7 +884,14 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 								ctx.beginPath();
 								ctx.moveTo(this.x, this.y);
 								ctx.lineTo(mouse.x, mouse.y);
-								ctx.strokeStyle = 'rgba(0, 234, 255, ' + (0.2 * (1 - dist / mouse.radius)) + ')';
+								
+								// Use interpolated colors based on progress
+								if (easterEggActivated) {
+									ctx.strokeStyle = celebrationColors.line + (0.2 * (1 - dist / mouse.radius)) + ')';
+								} else {
+									ctx.strokeStyle = interpolateLineColor(progress) + (0.2 * (1 - dist / mouse.radius)) + ')';
+								}
+								
 								ctx.lineWidth = 0.6;
 								ctx.stroke();
 							}

@@ -511,7 +511,7 @@
 				y: rand(0, height),
 				vx: rand(-0.4, 0.4),
 				vy: rand(-0.4, 0.4),
-				size: rand(1, 2.5),
+				size: rand(0.9, 2.2),
 				life: rand(0.5, 1.0)
 			});
 		}
