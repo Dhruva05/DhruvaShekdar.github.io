@@ -55,18 +55,15 @@
 	}
 	
 	function getSourceSection(articleId) {
-		// Determine source section based on article ID
+		// Map article IDs to scroll section anchors
+		if (articleId === 'project-ford' || articleId === 'project-tesla' ||
+			articleId === 'project-cml' || articleId === 'project-cimco') {
+			return '#experience';
+		}
 		if (articleId.startsWith('project-')) {
-			// Check if it's an internship project
-			if (articleId === 'project-tesla' || articleId === 'project-cimco') {
-				return '#internships';
-			}
-			return '#work';
+			return '#projects';
 		}
-		if (articleId === 'intro') {
-			return ''; // Return to home for About Me
-		}
-		return ''; // Default fallback to home
+		return '';
 	}
 
 	// Breakpoints.
@@ -201,6 +198,7 @@
 											$window
 												.scrollTop(0)
 												.triggerHandler('resize.flexbox-fix');
+												$main.scrollTop(0);
 
 										// Unlock.
 											setTimeout(function() {
@@ -241,6 +239,7 @@
 											$window
 												.scrollTop(0)
 												.triggerHandler('resize.flexbox-fix');
+												$main.scrollTop(0);
 
 										// Unlock.
 											setTimeout(function() {
@@ -301,6 +300,7 @@
 								$window
 									.scrollTop(0)
 									.triggerHandler('resize.flexbox-fix');
+									$main.scrollTop(0);
 
 							return;
 
@@ -333,6 +333,7 @@
 									$window
 										.scrollTop(0)
 										.triggerHandler('resize.flexbox-fix');
+										$main.scrollTop(0);
 
 								// Unlock.
 									setTimeout(function() {
@@ -360,14 +361,26 @@
 						.attr('aria-label', closeAriaLabel)
 						.appendTo($this)
 						.on('click', function() {
-							location.hash = targetSection;
+							$main._hide(true);
+							if (targetSection) {
+								setTimeout(function() {
+									var el = document.querySelector(targetSection);
+									if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+								}, 700);
+							}
 						});
 
 					// Keyboard activate close (Enter/Space)
 					$close.on('keydown', function(e) {
 						if (e.key === 'Enter' || e.key === ' ') {
 							e.preventDefault();
-							location.hash = targetSection;
+							$main._hide(true);
+							if (targetSection) {
+								setTimeout(function() {
+									var el = document.querySelector(targetSection);
+									if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+								}, 700);
+							}
 						}
 					});
 
@@ -440,6 +453,13 @@
 
 					}
 
+					// Hash is a scroll section (not an article) — just close any open modal.
+					else if ($body.hasClass('is-article-visible')) {
+						event.preventDefault();
+						event.stopPropagation();
+						$main._hide();
+					}
+
 			});
 
 		// Scroll restoration.
@@ -479,114 +499,3 @@
 					});
 
 })(jQuery);
-
-// Background Canvas Animation
-(function(){
-	var canvas = document.getElementById('bg-canvas');
-	if (!canvas) return;
-	var ctx = canvas.getContext('2d');
-	var width, height, dpr = window.devicePixelRatio || 1;
-	var particles = [];
-	var num = 60;
-	var hue = 210;
-	var rafId = null;
-	var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-	var maxDist = 140; // px
-
-	function resize() {
-		width = canvas.clientWidth;
-		height = canvas.clientHeight;
-		canvas.width = Math.floor(width * dpr);
-		canvas.height = Math.floor(height * dpr);
-		ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-	}
-
-	function rand(min, max){ return Math.random() * (max - min) + min; }
-
-	function initParticles(){
-		particles = [];
-		for (var i = 0; i < num; i++) {
-			particles.push({
-				x: rand(0, width),
-				y: rand(0, height),
-				vx: rand(-0.4, 0.4),
-				vy: rand(-0.4, 0.4),
-				size: rand(0.9, 2.2),
-				life: rand(0.5, 1.0)
-			});
-		}
-	}
-
-	function step(){
-		ctx.clearRect(0, 0, width, height);
-		var grad = ctx.createLinearGradient(0, 0, width, height);
-		grad.addColorStop(0, 'rgba(20,24,28,0.4)');
-		grad.addColorStop(1, 'rgba(20,24,28,0.1)');
-		ctx.fillStyle = grad;
-		ctx.fillRect(0, 0, width, height);
-
-		ctx.fillStyle = 'hsla(' + hue + ',70%,70%,0.9)';
-		ctx.shadowColor = 'hsla(' + hue + ',70%,70%,0.8)';
-		ctx.shadowBlur = 8;
-		for (var i = 0; i < particles.length; i++) {
-			var p = particles[i];
-			p.x += p.vx;
-			p.y += p.vy;
-			if (p.x < -10) p.x = width + 10; else if (p.x > width + 10) p.x = -10;
-			if (p.y < -10) p.y = height + 10; else if (p.y > height + 10) p.y = -10;
-			ctx.beginPath();
-			ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-			ctx.fill();
-		}
-		ctx.shadowBlur = 0;
-
-		// Constellation lines
-		ctx.lineWidth = 1.25;
-		for (var i = 0; i < particles.length; i++) {
-			for (var j = i + 1; j < particles.length; j++) {
-				var a = particles[i];
-				var b = particles[j];
-				var dx = a.x - b.x;
-				var dy = a.y - b.y;
-				var d2 = dx*dx + dy*dy;
-				if (d2 < maxDist * maxDist) {
-					var d = Math.sqrt(d2);
-					var alpha = (1 - d / maxDist) * 0.9; // brighter lines
-					ctx.strokeStyle = 'hsla(' + hue + ',70%,60%,' + alpha.toFixed(3) + ')';
-					ctx.beginPath();
-					ctx.moveTo(a.x, a.y);
-					ctx.lineTo(b.x, b.y);
-					ctx.stroke();
-				}
-			}
-		}
-
-		hue += 0.05;
-		rafId = requestAnimationFrame(step);
-	}
-
-	function start(){
-		resize();
-		initParticles();
-		if (!reduceMotion) step();
-	}
-
-	function stop(){
-		if (rafId) cancelAnimationFrame(rafId);
-		rafId = null;
-	}
-
-	window.addEventListener('resize', function(){
-		resize();
-		initParticles();
-	});
-
-	if (reduceMotion) {
-		// Draw static background
-		resize();
-		ctx.fillStyle = 'rgba(20,24,28,0.5)';
-		ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-	} else {
-		start();
-	}
-})();

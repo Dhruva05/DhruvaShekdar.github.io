@@ -1,937 +1,1142 @@
 <!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-		<head>
-			<title>Dhruva Shekdar Portfolio</title>
-			<meta charset="utf-8" />
-			<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-			<link rel="stylesheet" href="assets/css/main.css" />
-			<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-			<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
-			<style>
-				body, input, select, textarea { font-family: 'Inter', sans-serif; }
-				#header h1 { font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.04em; }
-				#header .subtitle {
-					font-family: 'Space Grotesk', sans-serif;
-					font-weight: 600;
-					font-size: 1.2rem;
-					color: #9effff;
-					text-shadow: 0 0 18px rgba(0, 234, 255, 0.45);
-					margin-bottom: 0.75rem;
-				}
-				#header .subtitle .typed-text,
-				#header .subtitle .typed-cursor {
-					display: inline-block;
-					vertical-align: baseline;
-				}
-				#header .subtitle .typed-cursor {
-					margin-left: 0.08rem;
-					color: #9effff;
-				}
-				.cta-actions .button {
-					border-radius: 999px;
-					background-image: linear-gradient(135deg, #00eaff, #ae00ff);
-					border: none;
-					box-shadow: 0 12px 25px rgba(10, 14, 40, 0.35);
-					transition: transform 0.3s ease, box-shadow 0.3s ease;
-				}
-				.cta-actions .button:hover {
-					box-shadow: 0 18px 35px rgba(10, 14, 40, 0.45);
-					transform: translateY(-3px);
-				}
-				#bg:before {
-					background-image: linear-gradient(to top, rgba(19, 21, 25, 0.22), rgba(12, 14, 27, 0.32)), url("images/overlay.png");
-				}
-				#bg-canvas {
-					background:
-						radial-gradient(circle at 15% 20%, rgba(174, 0, 255, 0.22), transparent 55%),
-						radial-gradient(circle at 80% 25%, rgba(0, 234, 255, 0.18), transparent 60%),
-						radial-gradient(circle at 55% 80%, rgba(0, 128, 255, 0.16), transparent 55%),
-						transparent;
-				}
-				#particle-counter {
-					position: fixed;
-					top: 20px;
-					right: 20px;
-					background: rgba(19, 21, 25, 0.85);
-					backdrop-filter: blur(10px);
-					padding: 12px 20px;
-					border-radius: 8px;
-					border: 1px solid rgba(0, 234, 255, 0.3);
-					box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-					font-family: 'Space Grotesk', sans-serif;
-					font-size: 0.9rem;
-					color: #9effff;
-					text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
-					z-index: 10000;
-					transition: all 0.3s ease;
-					opacity: 0;
-					pointer-events: none;
-				}
-				#particle-counter.visible {
-					opacity: 1;
-				}
-				#particle-counter.completed {
-					border-color: rgba(255, 215, 0, 0.5);
-					color: #ffd700;
-					text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
-					background: rgba(255, 140, 0, 0.15);
-				}
-				#particle-counter .count {
-					font-weight: 600;
-					font-size: 1.1rem;
-				}
-			</style>
-		</head>
-	<body class="is-preload">
+<head>
+<title>Dhruva Shekdar Portfolio</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* === Base === */
+:root {
+--site-nav-offset: 6.75rem;
+}
+html {
+scroll-behavior: smooth;
+scroll-padding-top: calc(var(--site-nav-offset) + 0.75rem);
+}
+body, input, select, textarea { font-family: 'Inter', sans-serif; }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+/* === Hero Typography === */
+#header h1 { font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.04em; }
+#header .subtitle {
+font-family: 'Space Grotesk', sans-serif;
+font-weight: 600;
+font-size: 1.2rem;
+color: #9effff;
+text-shadow: 0 0 18px rgba(0, 234, 255, 0.45);
+margin-bottom: 0.75rem;
+}
+#header .subtitle .typed-text,
+#header .subtitle .typed-cursor { display: inline-block; vertical-align: baseline; }
+#header .subtitle .typed-cursor { margin-left: 0.08rem; color: #9effff; }
 
-				<!-- Header -->
-					<header id="header">
-						<div class="content">
-							<div class="inner">
-								<h1>Dhruva Shekdar</h1>
-								<p class="subtitle"><span class="typed-text">Mechatronics @ Waterloo</span></p>
-								<p>Hi! I'm Dhruva — welcome! Explore my work and feel free to reach out.</p>
-								<ul class="actions cta-actions">
-									<li><a href="https://drive.google.com/file/d/1BftZPhvnSqCXvA4zlN97Al6nff7yuFhL/view?usp=share_link" class="button primary icon solid fa-file-alt">View Resume</a></li>
-									<li><a href="#intro" class="button icon solid fa-user">About Me</a></li>
-									<li><a href="#internships" class="button icon solid fa-briefcase">Internships</a></li>
-									<li><a href="#work" class="button icon solid fa-code">View Projects</a></li>
-									<li><a href="mailto:dshekdar@uwaterloo.ca" class="button icon solid fa-envelope">Contact</a></li>
-								</ul>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
-
-				<!-- Main -->
-					<div id="main">
-
-							<!-- Intro -->
-								<article id="intro">
-									<h2 class="major">About Me</h2>
-									<div class="panel-grid panel-grid--two">
-										<div class="panel panel--primary">
-											<span class="panel__eyebrow">Engineer & Builder</span>
-											<p>I'm Dhruva, a Mechatronics Engineering student at the University of Waterloo who thrives on building systems that blend hardware intuition with software craftsmanship. I gravitate toward problems where automation, data, and robotics intersect, because that's where thoughtful code can unlock real-world efficiency.</p>
-												<p>During my time with Tesla's Cell Material Flow Engineering team I built MVVM-based Android features in Kotlin and Java that connected Tesla APIs to 12 Zebra handheld scanners, letting operators associate or clear RFID tags for 100+ containers each day while staying aligned with Beckhoff PLC logic on the floor. I'm currently working at Ford as a Software Engineer, where I'm delivering production-grade automation and analytics solutions.</p>
-											<p>I'm also an Undergraduate Research Assistant at the Critical ML Lab under Prof. Rambhatla, where I work on machine learning research that bridges theory and real-world applications.</p>
-											<p>Outside of co-op terms you'll usually find me experimenting with ML workflows, tuning control loops for side projects, or writing Python to make sense of the many sensors I surround myself with. If it involves robotics, data pipelines, or closing the loop between the digital and physical worlds, I'm in.</p>
-										</div>
-										<div class="panel panel--accent">
-											<span class="panel__eyebrow">Snapshot</span>
-											<ul class="panel-list">
-												<li><strong>Current:</strong> Mechatronics Engineering, University of Waterloo (AI option).</li>
-												<li><strong>Current Role:</strong> Software Engineer @ Ford (Winter 2026 - Present).</li>
-												<li><strong>Research:</strong> Undergraduate Research Assistant @ Critical ML Lab, University of Waterloo (Prof. Rambhatla).</li>
-												<li><strong>Recent:</strong> Tesla Cell Material Flow Engineering – Software Development Intern.</li>
-												<li><strong>Tech stack:</strong> Python, C++, Java, Kotlin, Gradle, PyTorch, ROS, PLC integrations</li>
-											</ul>
-											<span class="panel__eyebrow">Fuel</span>
-											<p>Endurance training gives me the same rush as a clean deployment. I'm working toward an 80 km ultra-marathon and building data-driven coaching tools—because every long run deserves metrics, visualizations, and a feedback loop.</p>
-										</div>
-									</div>
-									<figure class="panel-figure">
-										<img src="images/pic01.jpg" alt="Dhruva on campus" />
-										<figcaption>Always curious, usually prototyping, rarely without a notebook of ideas.</figcaption>
-									</figure>
-										<ul class="actions actions--return-home">
-											<li><a href="#" class="button home-btn">Home</a></li>
-										</ul>
-								</article>
-
-							<!-- Work -->
-								<article id="work"> 
-									
-									<h2 class="major">Projects</h2>
-									<p class="panel-intro">I love taking ideas from whiteboard sketches to production-ready tools—especially when there's data to wrangle, models to evaluate, or hardware that needs a smarter brain. Here are a few builds that keep me curious.</p>
-									<div class="panel-grid panel-grid--two">
-										<a class="panel panel--link" href="#project-running">
-											<div class="panel__image" style="background-image:url('images/IMG_7734.jpg');"></div>
-											<div class="panel__body">
-												<span class="panel__eyebrow">Data Apps</span>
-												<h3>Strava Running Optimizer</h3>
-												<p>Streamlit dashboard that ingests Strava workouts, scores consistency, and surfaces pacing insights. The app powers my ultra-marathon training with ML-aided recommendations and trend alerts.</p>
-											</div>
-										</a>
-										<a class="panel panel--link" href="#project-housing">
-											<div class="panel__image" style="background-image:url('images/pic02.jpg');"></div>
-											<div class="panel__body">
-												<span class="panel__eyebrow">Data Science</span>
-												<h3>Housing Market Intelligence</h3>
-												<p>End-to-end regression pipeline that ingests raw housing data, engineers features, and benchmarks scikit-learn models—all wrapped with automated reporting so stakeholders can see where pricing shifts next.</p>
-											</div>
-										</a>
-										<a class="panel panel--link" href="#project-digit">
-											<div class="panel__image" style="background-image:url('images/pic04.jpg');"></div>
-											<div class="panel__body">
-												<span class="panel__eyebrow">Deep Learning</span>
-												<h3>Digit Recognition System</h3>
-												<p>PyTorch CNN built from scratch with experiment tracking, augmentation, and deployment hooks—delivering 99%+ accuracy on MNIST while teaching me how to productionize model evaluation.</p>
-											</div>
-										</a>
-										<a class="panel panel--link" href="#project-baggage">
-											<div class="panel__image" style="background-image:url('images/pic06.jpg');"></div>
-											<div class="panel__body">
-												<span class="panel__eyebrow">Robotics</span>
-												<h3>Baggage Bot</h3>
-												<p>Autonomous conveyor assistant that navigates with ultrasonic and color sensors, plans routes on the fly, and keeps luggage flowing. This project sparked my obsession with robotics and resilient control logic.</p>
-											</div>
-										</a>
-									</div>
-									<ul class="actions actions--return-home">
-										<li><a href="#" class="button home-btn">Home</a></li>
-									</ul>	
-								</article>
-
-							<!-- Internships -->
-								<article id="internships">
-									<h2 class="major">Internships & Research</h2>
-									<p class="panel-intro">Co-op and research give me a front-row seat to complex production systems and cutting-edge ML applications. I lean into roles where I can pair systems thinking with rapid prototyping to unblock teams fast.</p>
-									<div class="panel-grid panel-grid--two">
-										<a class="panel panel--link" href="#project-ford">
-											<div class="panel__image" style="background-image:url('images/large-ford-logo-0.png');"></div>
-											<div class="panel__body">
-												<span class="panel__eyebrow">Ford Motor Company · Software Engineering</span>
-												<h3>Software Engineering Intern</h3>
-												<p>Developing production-grade automation and analytics solutions for Ford's manufacturing and engineering systems, applying full-stack development skills to real-world challenges.</p>
-											</div>
-										</a>
-										<a class="panel panel--link" href="#project-tesla">
-											<div class="panel__image" style="background-image:url('images/IMG_0433.jpg');"></div>
-											<div class="panel__body">
-												<span class="panel__eyebrow">Tesla · Cell Material Flow</span>
-												<h3>Software Engineering Intern</h3>
-													<p>Built Android tooling that connected handheld scanners with Tesla's material-tracking systems, streamlining RFID updates for cell components on the factory floor.</p>
-											</div>
-										</a>
-										<a class="panel panel--link" href="#project-cml">
-											<div class="panel__image" style="background-image:url('images/CriticalML.png');"></div>
-											<div class="panel__body">
-												<span class="panel__eyebrow">Critical ML Lab · University of Waterloo</span>
-												<h3>Undergraduate Research Assistant</h3>
-												<p>Working under Prof. Rambhatla on machine learning research that bridges theory and real-world applications, focusing on model evaluation, experimental design, and the iterative nature of ML research.</p>
-											</div>
-										</a>
-										<a class="panel panel--link" href="#project-cimco">
-											<div class="panel__image" style="background-image:url('images/cimco_refrigeration_logo.jpeg');"></div>
-											<div class="panel__body">
-												<span class="panel__eyebrow">CIMCO Refrigeration</span>
-												<h3>Automation Intern</h3>
-												<p>Designed OpenCV-based vision tooling for ice plants and paired it with Python, Ladder Logic, and AutoCAD Electrical automation that boosted system reliability and sped up PLC/DDC panel testing by 50%.</p>
-											</div>
-										</a>
-									</div>
-									<ul class="actions actions--return-home">
-										<li><a href="#" class="button home-btn">Home</a></li>
-									</ul>
-								</article>
-
-								<!-- Project Details: Ford -->
-				<article id="project-ford">
-					<h2 class="major">Ford Software Engineering Internship</h2>
-					<span class="image main"><img src="images/large-ford-logo-0.png" alt="" /></span>
-						<div class="panel panel--primary panel--full panel--article">
-							<p>As a Software Engineering Intern at Ford Motor Company, I'm developing automation and analytics solutions that support manufacturing operations and engineering workflows. My work focuses on building scalable systems that improve efficiency and data-driven decision-making across teams.</p>
-							<p>I'm working with modern software development practices, contributing to production codebases, and collaborating with cross-functional teams to deliver features that have measurable impact on Ford's operations.</p>
-						</div>
-					<ul class="actions actions--return-home">
-						<li><a href="#" class="button home-btn">Home</a></li>
-					</ul>
-				</article>
-
-								<!-- Project Details: Tesla -->
-				<article id="project-tesla">
-					<h2 class="major">
-						<a href="https://drive.google.com/file/d/1-2CeKpdKqbAXvXW3PvKn5UML1UNTHIeU/view" target="_blank" rel="noopener noreferrer">
-							Tesla Software Internship
-						</a>
-					</h2>
-					<span class="image main"><img src="images/IMG_0433.jpg" alt="" /></span>
-						<div class="panel panel--primary panel--full panel--article">
-							<p>As a Software Development Intern on Tesla's Cell Material Flow Engineering team, I delivered Android app features that track and identify cell materials across Giga Texas. The release deployed to 12 Zebra handheld scanners and let operators dynamically associate or clear RFID tags, giving real-time traceability for 100+ containers each day.</p>
-							<p>I implemented an MVVM architecture with Kotlin, Java, and Gradle to keep the codebase modular, and generated gRPC clients from .proto files so the scanners could query Tesla internal APIs for material quality data without latency.</p>
-							<p>I partnered with controls engineers to weave Beckhoff PLC logic into the handheld workflow, then led a gap analysis across 200+ tracking failures to surface issues like sensor misalignment and ambiguous clear logic—informing system updates that improved reliability and reduced material loss incidents.</p>
-						</div>
-					<ul class="actions actions--return-home">
-						<li><a href="#" class="button home-btn">Home</a></li>
-					</ul>
-				</article>
-
-								<!-- Project Details: Critical ML Lab -->
-				<article id="project-cml">
-					<h2 class="major">Critical ML Lab Research</h2>
-					<span class="image main"><img src="images/CriticalML.png" alt="" /></span>
-						<div class="panel panel--primary panel--full panel--article">
-							<p>As an Undergraduate Research Assistant at the Critical Machine Learning Lab under Prof. Rambhatla, I'm working on machine learning research that bridges theoretical foundations with practical applications. My work focuses on understanding and improving model evaluation techniques, experimental design methodologies, and the iterative research process that drives ML innovation.</p>
-							<p>This research position has deepened my understanding of how machine learning models behave in real-world scenarios, the importance of rigorous experimental validation, and the nuances of translating research insights into actionable improvements. The experience complements my industry work by exposing me to the fundamental questions that shape the future of AI systems.</p>
-							<p>Working in an academic research setting has taught me to approach problems with scientific rigor, think critically about model assumptions, and communicate complex technical concepts effectively—skills that translate directly to building robust, production-ready ML systems.</p>
-						</div>
-					<ul class="actions actions--return-home">
-						<li><a href="#" class="button home-btn">Home</a></li>
-					</ul>
-				</article>
-
-							<!-- Project Details: CIMCO -->
-				<article id="project-cimco">
-					<h2 class="major">CIMCO Automation Intern</h2>
-					<span class="image main"><img src="images/cimco_refrigeration_logo.jpeg" alt="" /></span>
-						<div class="panel panel--primary panel--full panel--article">
-							<p>At CIMCO Refrigeration I designed and implemented a computer vision script in OpenCV that segments players, equipment, and other thermal bodies from ice rink imagery, improving temperature calculations and reducing calibration downtime for arena systems.</p>
-							<p>I used Python, Ladder Logic, and AutoCAD Electrical to optimize automation sequences, and streamlined PLC/DDC panel testing procedures—cutting test time by 50% while keeping electrical and software compliance intact.</p>
-						</div>
-					<ul class="actions actions--return-home">
-						<li><a href="#" class="button home-btn">Home</a></li>
-					</ul>
-				</article>
-
-								<!-- Project Details: Running -->
-								<article id="project-running">
-									<h2 class="major">Strava Running Project</h2>
-									<div class="project-showcase project-showcase--running">
-										<div class="project-showcase__media">
-											<img src="images/IMG_7734.jpg" alt="Strava Running Optimizer dashboard preview" />
-										</div>
-										<div class="project-showcase__body">
-											<span class="project-showcase__eyebrow">Personal analytics · Streamlit</span>
-											<p>Personal training analytics and consistency tracker that turns Strava history into actionable workouts for marathon prep.</p>
-											<p>Currently training for the Toronto Waterfront Marathon with my running club, and building toward an 80km ultra before graduating from Waterloo.</p>
-											<p>The Streamlit app ingests GPS files, cleanses features, and maintains a lightweight feature store for aerobic load, cadence variance, and heart-rate drift. A recommendation engine then proposes next week's workouts so I stay balanced between tempo work and easy miles.</p>
-											<div class="project-showcase__links">
-												<a class="button primary project-showcase__cta" href="https://dhruva05-running-optimizer-app-g2jl7h.streamlit.app/" target="_blank" rel="noopener">Launch Live App</a>
-											</div>
-										</div>
-									</div>
-										<ul class="actions actions--return-home">
-											<p></p>
-											<li><a href="#" class="button home-btn">Home</a></li>
-										</ul>
-								</article>
-
-							<!-- Project Details: Baggage Bot -->
-								<article id="project-baggage">
-								<h2 class="major">Baggage Bot</h2>
-								<span class="image main"><img src="images/pic06.jpg" alt="" /></span>
-									<div class="panel panel--primary panel--full panel--article">
-										<p>This project involves the creation of a Baggage Bot, an automated package delivery system designed to streamline the loading and unloading process at airports. The goal is to enhance productivity and efficiency. The bot operates in two modes - infinite delivery or a set number of packages, allowing flexibility based on user needs. It uses ultrasonic sensors for collision avoidance and a color sensor to determine the path to follow based on the color of stickers associated with each package.</p>
-										
-										<p>The Baggage Bot's functionality is governed by several key functions. The Menu function allows users to specify the number of packages to be delivered per trip. It uses the robot's buttons to facilitate user interaction, offering options to unload a specific number of packages or an entire plane's worth. The bot's path is monitored by an ultrasonic sensor that checks for obstructions before each movement. If an obstruction is detected, the bot halts and signals that the path is blocked. If the obstruction persists for over 30 seconds, the bot executes the goHome function to return to its original location. If the obstruction is removed within 30 seconds, the bot awaits user input to resume its task. The bot also uses a color sensor to read the sticker color on each package, which determines the path it should follow.</p>
-										
-										<p>This project was the reason I became interested in software. From the late nights grinding to fix the code, to a great presentation and demonstration of the Baggage Bot, I fell in love with all aspects of the software development process. It has allowed me to apply and enhance my skills in robotics, sensor integration, and user interaction design. It has also provided me with practical experience in designing and implementing a real-world application that addresses a specific need - in this case, improving efficiency in airport operations. The project has not only reinforced my understanding of robotics and sensor technology but also highlighted the importance of user-centric design and safety considerations in robotics. These skills and experiences are invaluable in the field of software engineering, particularly in roles related to robotics, automation, and user interface design.</p>
-										<p>The bot runs on an Arduino Mega with custom C++ libraries for sensor fusion, PID speed control, and a task scheduler that lets me prioritize safety checks over movement commands. It's still my go-to demo when I want to show how approachable robotics can be with the right abstractions—and how much fun it is to ship something tangible.</p>
-									</div>
-									<ul class="actions actions--return-home">
-										<li><a href="#" class="button home-btn">Home</a></li>
-									</ul>
-									</article>
-
-							<!-- Project Details: Housing Prices Prediction -->
-							<article id="project-housing">
-								<h2 class="major">
-									<a href="https://github.com/Dhruva05/ML-Housing-Prediction" target="_blank" rel="noopener noreferrer">
-										Housing Prices Prediction
-									</a>
-								</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-									<div class="panel panel--primary panel--full panel--article">
-										<p>This project is a machine learning pipeline for predicting housing prices, specifically the <em>median_house_value</em>, using Python libraries such as pandas, numpy, matplotlib, seaborn, and scikit-learn. It covers the full workflow: data loading and cleaning, exploratory data analysis with visualizations, feature engineering to address categorical variables and skewness, and model training with Linear Regression and Random Forest Regressor. Model performance is evaluated using R-squared, with Random Forest further optimized through Grid Search.</p>
-										
-										<p>Through this project, I gained hands-on experience with real-world datasets, strengthened my skills in Python, data manipulation, visualization, and machine learning, and developed a deeper understanding of end-to-end pipelines and their importance in building accurate, optimized models—skills that are directly applicable to data science and software engineering roles.</p>
-									</div>
-									<ul class="actions actions--return-home">
-										<li><a href="#" class="button home-btn">Home</a></li>
-									</ul>
-							</article>
-
-							<!-- Project Details: Digit Recognition -->
-							<article id="project-digit">
-								<h2 class="major">
-									<a href="https://github.com/Dhruva05/ML-PyTorch--MNIST-Analysis" target="_blank" rel="noopener noreferrer">
-										Digit Recognition
-									</a>
-								</h2>
-								<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
-									<div class="panel panel--primary panel--full panel--article">
-										<p>This project is a deep learning pipeline designed to classify handwritten digits using the MNIST dataset. The task is a multi-class classification problem, aiming to predict the digit (0-9) represented by each 28x28 pixel image in the dataset. The Python libraries used in this project include torchvision for data loading and transformations, torch for neural network and optimization operations, and matplotlib for data visualization.</p>
-										
-										<p>The pipeline begins with data loading, where the MNIST dataset is downloaded and transformed into tensors. The data is then split into training and testing sets. A DataLoader is created for each set to handle batching, shuffling, and parallel processing. A Convolutional Neural Network (CNN) is defined with two convolutional layers, dropout, and two fully connected layers. The model is trained on a GPU if available, otherwise on a CPU. The optimizer used is Adam with a learning rate of 0.01, and the loss function is CrossEntropyLoss. The training function trains the model for a specified number of epochs, and the test function evaluates the model's performance on the test set. The model's performance is evaluated using the average loss and accuracy.</p>
-										
-										<p>This project has played a pivotal role in my journey as a software engineer. It has served as a platform for honing my Python programming skills, deep learning techniques, and data visualization abilities. It has offered me hands-on experience in managing real-world datasets, architecting and training neural networks, and fine-tuning deep learning models. The project has not only solidified my grasp of the comprehensive deep learning pipeline but also underscored the significance of each phase in optimizing model performance. The competencies and experiences I've gained through this project are of immense value in the realm of software engineering, especially in positions that intersect with data science and machine learning.</p>
-									</div>
-									<ul class="actions actions--return-home">
-										<li><a href="#" class="button home-btn">Home</a></li>
-									</ul>
-							</article>
-	
-
-
-
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
-
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
+/* === CTA Buttons === */
+.cta-actions .button {
+border-radius: 999px;
+background-image: linear-gradient(135deg, #00eaff, #ae00ff);
+border: none;
+box-shadow: 0 12px 25px rgba(10, 14, 40, 0.35);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cta-actions .button:hover {
+box-shadow: 0 18px 35px rgba(10, 14, 40, 0.45);
+transform: translateY(-3px);
 }
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
+/* === Background === */
+#bg:before {
+background-image: linear-gradient(to top, rgba(19, 21, 25, 0.22), rgba(12, 14, 27, 0.32)), url("images/overlay.png");
+}
+#bg-canvas {
+background:
+radial-gradient(circle at 15% 20%, rgba(174, 0, 255, 0.22), transparent 55%),
+radial-gradient(circle at 80% 25%, rgba(0, 234, 255, 0.18), transparent 60%),
+radial-gradient(circle at 55% 80%, rgba(0, 128, 255, 0.16), transparent 55%),
+transparent;
+}
 
-								<section>
-									<h3 class="major">Lists</h3>
+/* === Particle Counter HUD === */
+#particle-counter {
+position: fixed;
+bottom: 20px;
+right: 20px;
+background: rgba(19, 21, 25, 0.85);
+backdrop-filter: blur(10px);
+padding: 10px 18px;
+border-radius: 8px;
+border: 1px solid rgba(0, 234, 255, 0.3);
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+font-family: 'Space Grotesk', sans-serif;
+font-size: 0.85rem;
+color: #9effff;
+text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+z-index: 10000;
+transition: all 0.3s ease;
+opacity: 0;
+pointer-events: none;
+}
+#particle-counter.visible { opacity: 1; }
+#particle-counter.completed {
+border-color: rgba(255, 215, 0, 0.5);
+color: #ffd700;
+text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+background: rgba(255, 140, 0, 0.15);
+}
+#particle-counter .count { font-weight: 600; font-size: 1rem; }
 
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
+/* ============================================
+   SINGLE-PAGE SCROLL LAYOUT OVERRIDES
+============================================ */
 
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
+/* Remove Dimension flexbox centering from wrapper */
+#wrapper {
+display: block;
+min-height: unset;
+padding: 0;
+}
+#wrapper::before { display: none; }
 
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
+/* Hero fills viewport */
+#header {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 5rem 2rem 6rem;
+position: relative;
+z-index: 3;
+text-align: center;
+transform: none !important;
+filter: none !important;
+}
+body.is-article-visible #header { display: none !important; }
 
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
+/* === Sticky Navigation === */
+#site-nav {
+position: fixed;
+top: 0; left: 0; right: 0;
+z-index: 1000;
+padding: 0.85rem 2.5rem;
+background: rgba(6, 12, 25, 0.96);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+border-bottom: 1px solid rgba(0, 234, 255, 0.1);
+display: flex;
+align-items: center;
+justify-content: space-between;
+opacity: 0;
+transform: translateY(-100%);
+transition: opacity 0.35s ease, transform 0.35s ease;
+pointer-events: none;
+}
+#site-nav.is-visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+#site-nav .nav-brand {
+font-family: 'Space Grotesk', sans-serif;
+font-weight: 600;
+color: #9effff;
+text-decoration: none;
+font-size: 0.95rem;
+letter-spacing: 0.06em;
+}
+#site-nav .nav-links { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+#site-nav .nav-links a {
+color: rgba(255, 255, 255, 0.6);
+text-decoration: none;
+font-size: 0.78rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+transition: color 0.2s;
+}
+#site-nav .nav-links a:hover { color: #9effff; }
+body.is-article-visible #site-nav { z-index: 1001; }
 
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
+/* === Page Content (scroll sections) === */
+#page-content { position: relative; z-index: 3; }
+body.is-article-visible #page-content { display: none !important; }
 
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
+/* === Section bands — alternating bg tints === */
+.section-band {
+position: relative;
+overflow: hidden;
+scroll-margin-top: calc(var(--site-nav-offset) + 0.75rem);
+}
 
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
+/* Subtle colored glow blobs behind each section */
+.section-band::before {
+content: '';
+position: absolute;
+top: 0; left: 0;
+width: 100%; height: 100%;
+pointer-events: none;
+z-index: 0;
+}
+.section-band--about {
+background: rgba(10, 14, 28, 0.55);
+}
+.section-band--about::before {
+background:
+	radial-gradient(ellipse 70% 60% at 10% 30%, rgba(0, 234, 255, 0.06), transparent),
+	radial-gradient(ellipse 50% 70% at 90% 80%, rgba(174, 0, 255, 0.05), transparent);
+}
+.section-band--experience {
+background: rgba(14, 10, 28, 0.5);
+}
+.section-band--experience::before {
+background:
+	radial-gradient(ellipse 60% 50% at 85% 20%, rgba(174, 0, 255, 0.07), transparent),
+	radial-gradient(ellipse 65% 60% at 15% 75%, rgba(0, 128, 255, 0.05), transparent);
+}
+.section-band--projects {
+background: rgba(8, 16, 28, 0.5);
+}
+.section-band--projects::before {
+background:
+	radial-gradient(ellipse 55% 60% at 20% 25%, rgba(0, 200, 255, 0.06), transparent),
+	radial-gradient(ellipse 70% 50% at 80% 70%, rgba(100, 0, 255, 0.05), transparent);
+}
 
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Dhurva Shekdar" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
+/* Animated gradient divider between sections */
+.section-edge {
+width: 100%;
+height: 2px;
+position: relative;
+z-index: 1;
+}
+.section-edge::after {
+content: '';
+display: block;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg,
+	transparent 0%,
+	rgba(0, 234, 255, 0.0) 10%,
+	rgba(0, 234, 255, 0.3) 30%,
+	rgba(174, 0, 255, 0.35) 50%,
+	rgba(0, 128, 255, 0.3) 70%,
+	rgba(0, 234, 255, 0.0) 90%,
+	transparent 100%
+);
+background-size: 200% 100%;
+animation: edgeShimmer 6s ease-in-out infinite;
+}
+@keyframes edgeShimmer {
+0%, 100% { background-position: 0% 0; }
+50% { background-position: 100% 0; }
+}
 
-							</article>
+.page-section {
+position: relative;
+z-index: 1;
+padding: 5rem 2rem;
+max-width: 1100px;
+margin: 0 auto;
+}
 
-					</div>
+.section-label {
+display: block;
+font-family: 'Space Grotesk', sans-serif;
+font-size: 0.7rem;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: rgba(158, 255, 255, 0.5);
+margin-bottom: 0.4rem;
+}
 
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="icons">
-							<li><a href="mailto:dshekdar@uwaterloo.ca" class="icon solid fa-envelope" aria-label="Email"><span class="label">Email</span></a></li>
-							<li><a href="https://www.linkedin.com/in/dhruva-shekdar-906573280/" class="icon brands fa-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/Dhruva05" class="icon brands fa-github" aria-label="GitHub" target="_blank" rel="noopener"><span class="label">GitHub</span></a></li>
-						</ul>
-						<p class="copyright">dshekdar@uwaterloo.ca</p>
-					</footer>
+.page-section > h2.major {
+font-family: 'Space Grotesk', sans-serif;
+font-size: 2rem;
+letter-spacing: 0.03em;
+color: #fff;
+margin-bottom: 0.35rem;
+border-bottom: none;
+text-transform: none;
+}
 
-			</div>
+.page-section > .panel-intro {
+color: rgba(185, 210, 240, 0.7);
+font-size: 0.95rem;
+line-height: 1.7;
+max-width: 100%;
+margin: 0 0 2.5rem;
+}
 
-		<!-- BG -->
-			<div id="bg"><canvas id="bg-canvas" aria-hidden="true"></canvas></div>
+/* === Modal Overlay (#main) === */
+#main {
+position: fixed !important;
+top: 0; left: 0;
+width: 100%;
+height: 100%;
+overflow-y: auto !important;
+scroll-padding-top: calc(var(--site-nav-offset) + 1rem);
+z-index: 500;
+background: rgba(5, 10, 22, 0.97);
+backdrop-filter: blur(14px);
+-webkit-backdrop-filter: blur(14px);
+flex-grow: 0 !important;
+flex-shrink: 0 !important;
+-moz-align-items: flex-start !important;
+-webkit-align-items: flex-start !important;
+-ms-align-items: flex-start !important;
+align-items: flex-start !important;
+-moz-justify-content: center;
+-webkit-justify-content: center;
+-ms-justify-content: center;
+justify-content: center;
+padding: 0 !important;
+}
+#main article {
+margin: 0 auto !important;
+padding-top: calc(var(--site-nav-offset) + 2.5rem) !important;
+padding-bottom: 4rem !important;
+}
+#main article .image.main {
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 2rem 0;
+overflow: visible;
+}
+#main article .image.main img {
+width: auto;
+max-width: 100%;
+max-height: 450px;
+object-fit: contain;
+border-radius: 8px;
+}
+#main article .close {
+position: fixed !important;
+top: calc(var(--site-nav-offset) + 0.25rem);
+right: 1.5rem;
+z-index: 600;
+}
+/* project-showcase media images also constrained */
+#main article .project-showcase__media img {
+max-height: 400px;
+object-fit: contain;
+width: 100%;
+}
+/* Remove dark overlay from article images */
+#main article .image:before {
+display: none !important;
+}
 
-		<!-- Particle Counter -->
-			<div id="particle-counter">
-				<span class="count">0</span> / <span class="total">0</span> particles collected
-			</div>
+/* === Footer === */
+#footer {
+transform: none !important;
+filter: none !important;
+opacity: 1 !important;
+border-top: 1px solid rgba(0, 234, 255, 0.1);
+padding: 2.5rem 2rem !important;
+text-align: center;
+position: relative;
+z-index: 3;
+}
+body.is-article-visible #footer { display: none !important; }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-			<script>
-				window.addEventListener('load', function () {
-					var typedTarget = document.querySelector('.typed-text');
-					if (typedTarget && window.Typed) {
-						new Typed(typedTarget, {
-							strings: [
-								'Mechatronics @ Waterloo',
-								'SDE @ Ford',
-								'Ex-Tesla Software Intern',
-								'AI + Robotics Enthusiast',
-								'Everything Earned. Nothing Given.',
-								'P.S Collect All The Particles!'
-							],
-							typeSpeed: 48,
-							backSpeed: 24,
-							backDelay: 1600,
-							loop: true,
-							smartBackspace: true
-						});
-					}
+/* === Scroll Indicator === */
+.scroll-indicator {
+position: absolute;
+bottom: 2rem;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.5rem;
+color: rgba(158, 255, 255, 0.38);
+font-size: 0.68rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+pointer-events: none;
+user-select: none;
+}
+.scroll-indicator .chevron {
+display: block;
+width: 12px;
+height: 12px;
+border-right: 1.5px solid currentColor;
+border-bottom: 1.5px solid currentColor;
+transform: rotate(45deg);
+animation: scrollBob 2s ease-in-out infinite;
+}
+@keyframes scrollBob {
+0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.38; }
+50% { transform: rotate(45deg) translateY(5px); opacity: 0.85; }
+}
 
-					var canvas = document.getElementById('bg-canvas');
-					if (!canvas) {
-						return;
-					}
+/* === Project / Experience Card Panels === */
+.panel--link {
+text-decoration: none;
+display: block;
+color: inherit;
+cursor: pointer;
+}
+.panel--link:hover {
+transform: translateY(-4px);
+border-color: rgba(0, 234, 255, 0.3);
+box-shadow: 0 32px 56px rgba(4, 8, 24, 0.48), 0 0 0 1px rgba(0, 234, 255, 0.18);
+}
+.panel__image {
+border-radius: 10px;
+overflow: hidden;
+aspect-ratio: 16 / 9;
+background-size: cover;
+background-position: center;
+margin-bottom: 1.2rem;
+border: 1px solid rgba(255,255,255,0.05);
+}
+/* Logo images: contain instead of cover */
+.panel__image--logo {
+background-size: contain;
+background-repeat: no-repeat;
+background-color: rgba(10,16,34,0.9);
+}
+.panel__image--tesla {
+background-position: center 32%;
+}
+#project-tesla .image.main img {
+object-position: center 58%;
+}
+.panel__body h3 {
+font-family: 'Space Grotesk', sans-serif;
+font-size: 1.02rem;
+color: #fff;
+margin: 0.25rem 0 0.5rem;
+letter-spacing: 0.02em;
+}
+.panel__body p {
+font-size: 0.86rem;
+color: rgba(185, 210, 240, 0.7);
+line-height: 1.65;
+margin: 0;
+}
+.panel__eyebrow {
+font-size: 0.7rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: rgba(158, 255, 255, 0.65);
+font-weight: 600;
+}
 
-					var ctx = canvas.getContext('2d');
-					var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-					var particles = [];
-					var particleCount = prefersReducedMotion ? 70 : 160;
-					var mouse = { x: null, y: null, radius: prefersReducedMotion ? 70 : 150, active: false };
-					var collectedParticles = 0;
-					var easterEggActivated = false;
-					var celebrationColors = {
-						particle: 'rgba(255, 215, 0, 0.75)',
-						shadow: 'rgba(255, 215, 0, 0.6)',
-						line: 'rgba(255, 215, 0, ',
-						bg1: 'rgba(255, 215, 0, 0.22)',
-						bg2: 'rgba(255, 140, 0, 0.18)',
-						bg3: 'rgba(255, 69, 0, 0.16)'
-					};
+/* === About section — full-width intro === */
+.about-intro {
+padding: 2rem 2.5rem;
+border-radius: 18px;
+background: rgba(10, 16, 34, 0.82);
+border: 1px solid rgba(255, 255, 255, 0.08);
+box-shadow: 0 22px 40px rgba(4, 8, 24, 0.28);
+backdrop-filter: blur(18px);
+margin-bottom: 2.5rem;
+color: #f7f9ff;
+}
+.about-intro p {
+margin: 0 0 1rem;
+line-height: 1.75;
+font-size: 0.93rem;
+}
+.about-intro p:last-child { margin-bottom: 0; }
 
-					// Get counter elements
-					var counterElement = document.getElementById('particle-counter');
-					var countSpan = counterElement.querySelector('.count');
-					var totalSpan = counterElement.querySelector('.total');
-					
-					// Function to update counter display
-					function updateCounter() {
-						countSpan.textContent = collectedParticles;
-						totalSpan.textContent = particleCount;
-						
-						// Show counter when first particle is collected
-						if (collectedParticles > 0) {
-							counterElement.classList.add('visible');
-						}
-						
-						// Add completed class when all collected
-						if (collectedParticles >= particleCount) {
-							counterElement.classList.add('completed');
-						}
-					}
-					
-					// Initialize counter display
-					updateCounter();
+.panel-list { list-style: none; padding: 0; margin: 0 0 1.4rem; }
+.panel-list li {
+padding: 0.5rem 0;
+border-bottom: 1px solid rgba(255,255,255,0.05);
+font-size: 0.88rem;
+line-height: 1.6;
+color: rgba(220, 235, 255, 0.82);
+}
+.panel-list li:last-child { border-bottom: none; }
+.panel-figure {
+margin: 2rem 0 0;
+border-radius: 16px;
+overflow: hidden;
+border: 1px solid rgba(255,255,255,0.07);
+}
+.panel-figure-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 1.2rem;
+margin: 2rem 0 0;
+}
+.panel-figure-grid .panel-figure {
+margin: 0;
+}
+.panel-figure img {
+width: 100%;
+aspect-ratio: 4 / 3;
+object-fit: cover;
+object-position: center;
+display: block;
+}
+.panel-figure figcaption {
+padding: 0.85rem 1.2rem;
+font-size: 0.78rem;
+color: rgba(185, 210, 240, 0.5);
+font-style: italic;
+background: rgba(8, 14, 30, 0.65);
+}
 
-					// Function to interpolate between two colors based on progress
-					function interpolateColor(progress) {
-						// Start color: cyan (0, 234, 255)
-						// End color: gold (255, 215, 0)
-						var r = Math.round(0 + (255 - 0) * progress);
-						var g = Math.round(234 + (215 - 234) * progress);
-						var b = Math.round(255 + (0 - 255) * progress);
-						return 'rgba(' + r + ', ' + g + ', ' + b + ', 0.75)';
-					}
+/* === Responsive === */
+@media screen and (min-width: 740px) {
+.panel-grid--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media screen and (max-width: 700px) {
+:root { --site-nav-offset: 5.75rem; }
+#site-nav .nav-links { gap: 1.2rem; }
+#site-nav .nav-links li:nth-child(n+4) { display: none; }
+.page-section { padding: 3.5rem 1.2rem; }
+#site-nav { padding: 0.75rem 1.2rem; }
+.about-intro { padding: 1.5rem 1.25rem; }
+.panel-figure-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body class="is-preload">
 
-					function interpolateShadowColor(progress) {
-						var r = Math.round(0 + (255 - 0) * progress);
-						var g = Math.round(234 + (215 - 234) * progress);
-						var b = Math.round(255 + (0 - 255) * progress);
-						return 'rgba(' + r + ', ' + g + ', ' + b + ', 0.6)';
-					}
+<!-- Particle Counter HUD -->
+<div id="particle-counter">
+<span class="count">0</span> / <span class="total">0</span> particles
+</div>
 
-					function interpolateLineColor(progress) {
-						var r = Math.round(0 + (255 - 0) * progress);
-						var g = Math.round(234 + (215 - 234) * progress);
-						var b = Math.round(255 + (0 - 255) * progress);
-						return 'rgba(' + r + ', ' + g + ', ' + b + ', ';
-					}
+<!-- Sticky Navigation (slides in after scrolling past hero) -->
+<nav id="site-nav" aria-label="Site navigation">
+<a href="#hero-top" class="nav-brand">Dhruva Shekdar</a>
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="https://drive.google.com/file/d/1BftZPhvnSqCXvA4zlN97Al6nff7yuFhL/view?usp=share_link" target="_blank" rel="noopener">Resume</a></li>
+<li><a href="mailto:dshekdar@uwaterloo.ca">Contact</a></li>
+</ul>
+</nav>
 
-					function resizeCanvas() {
-						canvas.width = window.innerWidth;
-						canvas.height = window.innerHeight;
-					}
+<!-- Wrapper (hero + modal articles) -->
+<div id="wrapper">
 
-					function handlePointer(x, y) {
-						mouse.x = x;
-						mouse.y = y;
-						mouse.active = true;
-					}
+<!-- Hero -->
+<header id="header">
+<span id="hero-top" style="position:absolute;top:0;left:0;"></span>
+<div class="content">
+<div class="inner">
+<h1>Dhruva Shekdar</h1>
+<p class="subtitle"><span class="typed-text">Mechatronics @ Waterloo</span></p>
+<p>Hi! I'm Dhruva — welcome! Explore my work and feel free to reach out.</p>
+<ul class="actions cta-actions">
+<li><a href="https://drive.google.com/file/d/1BftZPhvnSqCXvA4zlN97Al6nff7yuFhL/view?usp=share_link" class="button primary icon solid fa-file-alt" target="_blank" rel="noopener">View Resume</a></li>
+<li><a href="#about" class="button icon solid fa-user">About Me</a></li>
+<li><a href="#experience" class="button icon solid fa-briefcase">Experience</a></li>
+<li><a href="#projects" class="button icon solid fa-code">Projects</a></li>
+<li><a href="mailto:dshekdar@uwaterloo.ca" class="button icon solid fa-envelope">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="scroll-indicator" aria-hidden="true">
+<span>Scroll</span>
+<span class="chevron"></span>
+</div>
+</header>
 
-					window.addEventListener('resize', function () {
-						resizeCanvas();
-						if (prefersReducedMotion) {
-							renderStaticFrame();
-						}
-					});
+<!-- Modal Overlay: Project / Internship Details -->
+<div id="main">
 
-					window.addEventListener('mousemove', function (event) {
-						handlePointer(event.clientX, event.clientY);
-					});
+<!-- Ford -->
+<article id="project-ford">
+<h2 class="major">Ford Software Engineering Internship</h2>
+<span class="image main"><img src="images/large-ford-logo-0.png" alt="Ford logo" /></span>
+<div class="panel panel--primary panel--full panel--article">
+<p>As a Software Engineering Intern at Ford Motor Company, I'm developing automation and analytics solutions that support manufacturing operations and engineering workflows. My work focuses on building scalable systems that improve efficiency and data-driven decision-making across teams.</p>
+<p>I'm working with modern software development practices, contributing to production codebases, and collaborating with cross-functional teams to deliver features that have measurable impact on Ford's operations.</p>
+</div>
+</article>
 
-					window.addEventListener('mouseout', function (event) {
-						if (!event.relatedTarget || event.relatedTarget.nodeName === 'HTML') {
-							mouse.active = false;
-						}
-					});
+<!-- Tesla -->
+<article id="project-tesla">
+<h2 class="major">
+<a href="https://drive.google.com/file/d/1-2CeKpdKqbAXvXW3PvKn5UML1UNTHIeU/view" target="_blank" rel="noopener noreferrer">Tesla Software Internship</a>
+</h2>
+<span class="image main"><img src="images/IMG_0433.jpg" alt="Tesla internship" /></span>
+<div class="panel panel--primary panel--full panel--article">
+<p>As a Software Development Intern on Tesla's Cell Material Flow Engineering team, I delivered Android app features that track and identify cell materials across Giga Texas. The release deployed to 12 Zebra handheld scanners and let operators dynamically associate or clear RFID tags, giving real-time traceability for 100+ containers each day.</p>
+<p>I implemented an MVVM architecture with Kotlin, Java, and Gradle to keep the codebase modular, and generated gRPC clients from .proto files so the scanners could query Tesla internal APIs for material quality data without latency.</p>
+<p>I partnered with controls engineers to weave Beckhoff PLC logic into the handheld workflow, then led a gap analysis across 200+ tracking failures to surface issues like sensor misalignment and ambiguous clear logic—informing system updates that improved reliability and reduced material loss incidents.</p>
+</div>
+</article>
 
-					window.addEventListener('touchmove', function (event) {
-						if (event.touches && event.touches.length > 0) {
-							var touch = event.touches[0];
-							handlePointer(touch.clientX, touch.clientY);
-						}
-					}, { passive: true });
+<!-- Critical ML Lab -->
+<article id="project-cml">
+<h2 class="major">Critical ML Lab Research</h2>
+<span class="image main"><img src="images/CriticalML.png" alt="Critical ML Lab" /></span>
+<div class="panel panel--primary panel--full panel--article">
+<p>As an Undergraduate Research Assistant at the Critical Machine Learning Lab under Prof. Rambhatla, I'm working on machine learning research that bridges theoretical foundations with practical applications. My work focuses on understanding and improving model evaluation techniques, experimental design methodologies, and the iterative research process that drives ML innovation.</p>
+<p>This research position has deepened my understanding of how machine learning models behave in real-world scenarios and the importance of rigorous experimental validation. Working in an academic research setting has taught me to approach problems with scientific rigor, think critically about model assumptions, and communicate complex technical concepts—skills that translate directly to building robust, production-ready ML systems.</p>
+</div>
+</article>
 
-					window.addEventListener('touchend', function () {
-						mouse.active = false;
-					});
+<!-- CIMCO -->
+<article id="project-cimco">
+<h2 class="major">CIMCO Automation Intern</h2>
+<span class="image main"><img src="images/cimco_refrigeration_logo.jpeg" alt="CIMCO Refrigeration" /></span>
+<div class="panel panel--primary panel--full panel--article">
+<p>At CIMCO Refrigeration I designed and implemented a computer vision script in OpenCV that segments players, equipment, and other thermal bodies from ice rink imagery, improving temperature calculations and reducing calibration downtime for arena systems.</p>
+<p>I used Python, Ladder Logic, and AutoCAD Electrical to optimize automation sequences, and streamlined PLC/DDC panel testing procedures—cutting test time by 50% while keeping electrical and software compliance intact.</p>
+</div>
+</article>
 
-					function Particle() {
-						this.reset();
-					}
+<!-- Strava Running -->
+<article id="project-running">
+<h2 class="major">Strava Running Optimizer</h2>
+<div class="project-showcase project-showcase--running">
+<div class="project-showcase__media">
+<img src="images/IMG_7734.jpg" alt="Strava Running Optimizer dashboard" />
+</div>
+<div class="project-showcase__body">
+<span class="project-showcase__eyebrow">Personal analytics · Streamlit</span>
+<p>Personal training analytics that turns Strava history into actionable workouts for marathon prep.</p>
+<p>Currently training for the Toronto Waterfront Marathon with my running club, building toward an 80km ultra before graduating from Waterloo.</p>
+<p>The Streamlit app ingests GPS files, cleanses features, and maintains a lightweight feature store for aerobic load, cadence variance, and heart-rate drift. A recommendation engine proposes next week's workouts to stay balanced between tempo work and easy miles.</p>
+<div class="project-showcase__links">
+<a class="button primary project-showcase__cta" href="https://dhruva05-running-optimizer-app-g2jl7h.streamlit.app/" target="_blank" rel="noopener">Launch Live App</a>
+</div>
+</div>
+</div>
+</article>
 
-					Particle.prototype.reset = function () {
-						this.x = Math.random() * canvas.width;
-						this.y = Math.random() * canvas.height;
-						this.vx = (Math.random() - 0.5) * 0.65;
-						this.vy = (Math.random() - 0.5) * 0.65;
-						this.size = Math.random() * 3.0 + 1.2; // Slightly reduced from 3.5 + 1.5
-						this.collected = false;
-					};
+<!-- UWAFT ECO Car -->
+<article id="project-uwaft">
+<h2 class="major">UWAFT ECO Car Hackathon — 1st Place</h2>
+<div class="project-showcase project-showcase--uwaft">
+<div class="project-showcase__media">
+<img src="images/DSC04170.JPG" alt="UWAFT ECO Car autonomous taxi" />
+</div>
+<div class="project-showcase__body">
+<span class="project-showcase__eyebrow">University of Waterloo · MATLAB/Simulink · YOLO · Computer Vision · AI/ML</span>
+<p>Built the full perception-to-control loop that let our autonomous taxi behave like a real "rules of the road" vehicle inside MATLAB/Simulink.</p>
+</div>
+</div>
 
-					Particle.prototype.update = function () {
-						this.x += this.vx;
-						this.y += this.vy;
+<div class="panel panel--primary panel--full panel--article">
+<h3>🔍 Computer Vision — Stop-Sign Detection (ACF)</h3>
+<p>Trained an <strong>ACF (Aggregated Channel Features)</strong> stop-sign detector in MATLAB using <strong>ground-truth bounding boxes</strong>. The trained model outputs a bounding box (where it believes the stop sign is) along with an <strong>ACF score</strong> — a match-strength value indicating how strongly that region matches learned stop-sign features. I validated the detector using held-out images and precision/recall-style evaluation, then tuned the <strong>detection threshold</strong> to balance missed detections vs. false positives. The score gap between real stop signs and false positives was used to set a reliable cutoff.</p>
+</div>
 
-						if (mouse.active && mouse.x !== null && mouse.y !== null) {
-							var dx = mouse.x - this.x;
-							var dy = mouse.y - this.y;
-							var distSq = dx * dx + dy * dy;
-							var maxDist = mouse.radius * mouse.radius;
-							
-							// Check if particle is collected (very close to cursor)
-							if (!this.collected && distSq < 400) { // within 20px radius
-								this.collected = true;
-								collectedParticles++;
-								updateCounter(); // Update the counter display
-								
-								// Check if all particles are collected
-								if (collectedParticles >= particleCount && !easterEggActivated) {
-									easterEggActivated = true;
-									// Update background gradient
-									var bgCanvas = document.getElementById('bg-canvas');
-									if (bgCanvas) {
-										bgCanvas.style.background = 
-											'radial-gradient(circle at 15% 20%, ' + celebrationColors.bg1 + ', transparent 55%), ' +
-											'radial-gradient(circle at 80% 25%, ' + celebrationColors.bg2 + ', transparent 60%), ' +
-											'radial-gradient(circle at 55% 80%, ' + celebrationColors.bg3 + ', transparent 55%), ' +
-											'transparent';
-									}
-								}
-							}
-							
-							if (distSq < maxDist) {
-								var dist = Math.sqrt(distSq) || 1;
-								var force = (mouse.radius - dist) / mouse.radius;
-								this.vx += (dx / dist) * force * 0.35;
-								this.vy += (dy / dist) * force * 0.35;
-							}
-						}
+<div class="panel panel--primary panel--full panel--article">
+<h3>🤖 AI/ML — Traffic-Light Detection (YOLO)</h3>
+<p>To extend perception beyond stop signs, I trained a <strong>YOLO-based traffic-light detector</strong> in Python using <strong>Google Colab GPUs (CUDA)</strong> to classify traffic-light states (red / yellow / green). On validation the model achieved:</p>
+<ul class="panel-list">
+<li><strong>88.7% Precision</strong> — high correctness of detections</li>
+<li><strong>86.2% Recall</strong> — strong coverage of actual objects</li>
+<li><strong>91.3% mAP@50</strong> — robust overall detection performance</li>
+</ul>
+<p>This gave us a modern deep-learning perception component that complements the lightweight ACF approach, evaluated using standard object-detection metrics rather than visual inspection alone.</p>
+</div>
 
-						this.vx *= 0.97;
-						this.vy *= 0.97;
+<div class="panel panel--primary panel--full panel--article">
+<h3>⚙️ Controls Integration — Simulink SpeedController</h3>
+<p>Integrated perception outputs into the Simulink control stack by converting detections into a <strong>desired-speed override</strong> that feeds the existing <strong>SpeedController</strong>. Rather than driving motors directly from vision, the perception layer produces a clean "stop / go" decision (based on detection confidence, thresholds, and stability), and the controller handles smooth deceleration to <strong>0 m/s</strong> and resumption to cruise speed.</p>
+<p>This separation kept the system modular: <em>perception answers what is present</em>, while <em>control answers how the vehicle should respond</em> — resulting in predictable behavior and higher trust in the vehicle's actions during live demos.</p>
 
-						var speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
-						var maxSpeed = 1.5;
-						if (speed > maxSpeed) {
-							var scale = maxSpeed / speed;
-							this.vx *= scale;
-							this.vy *= scale;
-						}
+<h4>Tech Stack</h4>
+<ul class="panel-list">
+<li><strong>MATLAB / Simulink</strong> — Vehicle simulation, ACF detector training, SpeedController integration</li>
+<li><strong>Python / YOLO</strong> — Deep-learning traffic-light classification</li>
+<li><strong>Google Colab (CUDA)</strong> — GPU-accelerated model training</li>
+<li><strong>Computer Vision</strong> — ACF feature extraction, bounding-box regression, threshold tuning</li>
+<li><strong>AI/ML Evaluation</strong> — Precision, recall, mAP@50, score-gap analysis</li>
+</ul>
+<div class="project-showcase__links">
+<a class="button primary project-showcase__cta" href="https://drive.google.com/file/d/1iQBF0_pDW-1ZpGI1z_9bXlIVTdOfZLcS/view?usp=sharing" target="_blank" rel="noopener noreferrer">Watch Demo Video</a>
+<a class="project-showcase__link" href="https://drive.google.com/file/d/1NJmJWHkhI-lPgQZuoq6totqQYCbXJvO1/view?usp=sharing" target="_blank" rel="noopener noreferrer">View Presentation</a>
+<a class="project-showcase__link" href="https://colab.research.google.com/drive/1Em6clFJ8_31MGjgpXO4gtigyZ3bZxnqY?usp=drive_link" target="_blank" rel="noopener noreferrer">Open Colab Notebook</a>
+<a class="project-showcase__link" href="https://github.com/Dhruva05/UWAFT-Hack-The-Move_2" target="_blank" rel="noopener noreferrer">Open GitHub Repo</a>
+</div>
+</div>
+<section class="project-gallery">
+<h3>Hackathon Gallery</h3>
+<div class="project-gallery__grid">
+<figure class="project-gallery__item"><img src="images/DSC03079.JPG" alt="UWAFT hackathon" /></figure>
+<figure class="project-gallery__item"><img src="images/DSC04170.JPG" alt="UWAFT hackathon" /></figure>
+<figure class="project-gallery__item"><img src="images/DSC04543.JPEG" alt="UWAFT hackathon" /></figure>
+<figure class="project-gallery__item"><img src="images/DSC04544.JPEG" alt="UWAFT hackathon" /></figure>
+<figure class="project-gallery__item"><img src="images/DSC04547.JPEG" alt="UWAFT hackathon" /></figure>
+<figure class="project-gallery__item"><img src="images/DSC04549.JPEG" alt="UWAFT hackathon" /></figure>
+<figure class="project-gallery__item"><img src="images/DSC04552.JPEG" alt="UWAFT hackathon" /></figure>
+</div>
+</section>
+</article>
 
-						if (this.x < 0 || this.x > canvas.width) {
-							this.vx *= -1;
-							this.x = Math.max(0, Math.min(this.x, canvas.width));
-						}
-						if (this.y < 0 || this.y > canvas.height) {
-							this.vy *= -1;
-							this.y = Math.max(0, Math.min(this.y, canvas.height));
-						}
-					};
+<!-- Baggage Bot -->
+<article id="project-baggage">
+<h2 class="major">Baggage Bot</h2>
+<span class="image main"><img src="images/pic06.jpg" alt="Baggage Bot" /></span>
+<div class="panel panel--primary panel--full panel--article">
+<p>An automated package delivery system designed to streamline airport loading/unloading operations. The bot operates in two modes—infinite delivery or a set number of packages—and uses ultrasonic sensors for collision avoidance and a color sensor to determine the path to follow based on the sticker color on each package.</p>
+<p>The bot's path is monitored before each movement. If an obstruction persists for over 30 seconds, the bot executes the goHome function to return to its original location. Otherwise it awaits user input to resume.</p>
+<p>This project was the reason I became interested in software. From the late nights fixing the code to the final demo, I fell in love with the entire development process. The bot runs on an Arduino Mega with custom C++ libraries for sensor fusion, PID speed control, and a task scheduler that prioritizes safety checks over movement commands.</p>
+</div>
+</article>
 
-					Particle.prototype.draw = function () {
-						// Skip drawing if collected
-						if (this.collected) return;
-						
-						// Calculate color transition progress (0 to 1)
-						var progress = collectedParticles / particleCount;
-						
-						ctx.save();
-						ctx.beginPath();
-						ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-						
-						// Use interpolated colors based on progress, or celebration colors if activated
-						if (easterEggActivated) {
-							ctx.fillStyle = celebrationColors.particle;
-							ctx.shadowBlur = 15;
-							ctx.shadowColor = celebrationColors.shadow;
-						} else {
-							ctx.fillStyle = interpolateColor(progress);
-							ctx.shadowBlur = 10 + (progress * 5); // Shadow grows slightly
-							ctx.shadowColor = interpolateShadowColor(progress);
-						}
-						
-						ctx.fill();
-						ctx.restore();
+<!-- Housing Prediction -->
+<article id="project-housing">
+<h2 class="major">
+<a href="https://github.com/Dhruva05/ML-Housing-Prediction" target="_blank" rel="noopener noreferrer">Housing Prices Prediction</a>
+</h2>
+<span class="image main"><img src="images/pic02.jpg" alt="Housing prediction" /></span>
+<div class="panel panel--primary panel--full panel--article">
+<p>An end-to-end ML pipeline for predicting housing prices using pandas, numpy, matplotlib, seaborn, and scikit-learn. Covers the full workflow: data loading and cleaning, exploratory data analysis with visualizations, feature engineering, and model training with Linear Regression and Random Forest Regressor. Model performance is evaluated using R-squared, with Random Forest further optimized through Grid Search.</p>
+<p>Through this project I strengthened my skills in Python, data manipulation, visualization, and machine learning—developing a deeper understanding of end-to-end pipelines and their importance in building accurate, optimized models.</p>
+</div>
+</article>
 
-						if (mouse.active && mouse.x !== null && mouse.y !== null) {
-							var dx = mouse.x - this.x;
-							var dy = mouse.y - this.y;
-							var dist = Math.sqrt(dx * dx + dy * dy);
-							if (dist < mouse.radius) {
-								ctx.beginPath();
-								ctx.moveTo(this.x, this.y);
-								ctx.lineTo(mouse.x, mouse.y);
-								
-								// Use interpolated colors based on progress
-								if (easterEggActivated) {
-									ctx.strokeStyle = celebrationColors.line + (0.2 * (1 - dist / mouse.radius)) + ')';
-								} else {
-									ctx.strokeStyle = interpolateLineColor(progress) + (0.2 * (1 - dist / mouse.radius)) + ')';
-								}
-								
-								ctx.lineWidth = 0.6;
-								ctx.stroke();
-							}
-						}
-					};
+<!-- Digit Recognition -->
+<article id="project-digit">
+<h2 class="major">
+<a href="https://github.com/Dhruva05/ML-PyTorch--MNIST-Analysis" target="_blank" rel="noopener noreferrer">Digit Recognition</a>
+</h2>
+<span class="image main"><img src="images/pic04.jpg" alt="Digit recognition" /></span>
+<div class="panel panel--primary panel--full panel--article">
+<p>A deep learning pipeline classifying handwritten digits using the MNIST dataset. A CNN with two convolutional layers, dropout, and two fully connected layers is trained with Adam optimizer and CrossEntropyLoss—delivering 99%+ accuracy while demonstrating how to productionize model evaluation with experiment tracking and augmentation hooks.</p>
+<p>This project honed my Python programming, deep learning techniques, and data visualization skills, providing hands-on experience in managing datasets, architecting neural networks, and fine-tuning deep learning models end to end.</p>
+</div>
+</article>
 
-					function renderStaticFrame() {
-						ctx.clearRect(0, 0, canvas.width, canvas.height);
-						particles.forEach(function (particle) {
-							particle.draw();
-						});
-					}
+</div><!-- /#main -->
 
-					function animate() {
-						ctx.clearRect(0, 0, canvas.width, canvas.height);
-						if (!prefersReducedMotion) {
-							ctx.fillStyle = 'rgba(6, 13, 32, 0.12)';
-							ctx.fillRect(0, 0, canvas.width, canvas.height);
-						}
-						particles.forEach(function (particle) {
-							particle.update();
-							particle.draw();
-						});
-						if (!prefersReducedMotion) {
-							requestAnimationFrame(animate);
-						}
-					}
+</div><!-- /#wrapper -->
 
-					resizeCanvas();
-					for (var i = 0; i < particleCount; i++) {
-						particles.push(new Particle());
-					}
+<!-- Page Content: scroll sections below hero -->
+<div id="page-content">
 
-					if (prefersReducedMotion) {
-						renderStaticFrame();
-					} else {
-						animate();
-					}
-				});
-			</script>
+<!-- About -->
+<div class="section-band section-band--about" id="about">
+<div class="section-edge"></div>
+<section class="page-section">
+<span class="section-label">01 — About</span>
+<h2 class="major">About Me</h2>
+<p class="panel-intro">Mechatronics Engineering @ Waterloo · I build systems where hardware meets software and data drives real-world decisions.</p>
+<div class="about-intro">
+<p>I'm Dhruva — a Mechatronics Engineering student at the University of Waterloo (AI option) who gravitates toward problems where automation, data, and robotics intersect. At Tesla I built MVVM-based Android features in Kotlin and Java connecting Tesla APIs to 12 Zebra handheld scanners on the factory floor. I'm currently at Ford as a Software Engineer, shipping production-grade automation and analytics. On the research side, I'm an Undergraduate Research Assistant at the Critical ML Lab under Prof. Rambhatla, working on ML research that bridges theory and practice.</p>
+</div>
+<div class="panel-grid panel-grid--two">
+<div class="panel panel--accent">
+<span class="panel__eyebrow">Snapshot</span>
+<ul class="panel-list">
+<li><strong>Program:</strong> Mechatronics Engineering, University of Waterloo (AI option)</li>
+<li><strong>Current Role:</strong> Software Engineer @ Ford (Winter 2026)</li>
+<li><strong>Research:</strong> URA @ Critical ML Lab (Prof. Rambhatla)</li>
+<li><strong>Recent:</strong> Tesla — Cell Material Flow, Software Intern</li>
+<li><strong>Stack:</strong> Python · C++ · Java · Kotlin · PyTorch · ROS · PLC</li>
+</ul>
+</div>
+<div class="panel panel--accent">
+<span class="panel__eyebrow">Beyond Code</span>
+<p>Endurance training gives me the same rush as a clean deployment. Working toward an 80 km ultra-marathon and building data-driven coaching tools to get there. I'm currently training for the Toronto Waterfront Marathon with my running club.</p>
+</div>
+</div>
+<div class="panel-figure-grid">
+<figure class="panel-figure">
+<img src="images/pic01.jpg" alt="Dhruva on campus" />
+<figcaption>Always curious, usually prototyping.</figcaption>
+</figure>
+<figure class="panel-figure">
+<img src="images/IMG_0464.jpg" alt="Dhruva" />
+<figcaption>Rarely without a notebook of ideas.</figcaption>
+</figure>
+</div>
+</section>
+</div>
 
-	</body>
+<!-- Experience -->
+<div class="section-band section-band--experience" id="experience">
+<div class="section-edge"></div>
+<section class="page-section">
+<span class="section-label">02 — Experience</span>
+<h2 class="major">Internships & Research</h2>
+<p class="panel-intro">Co-op and research give me a front-row seat to complex production systems and cutting-edge ML. Click any card for the full story.</p>
+<div class="panel-grid panel-grid--two">
+<a class="panel panel--link" href="#project-ford">
+<div class="panel__image panel__image--logo" style="background-image:url('images/large-ford-logo-0.png');"></div>
+<div class="panel__body">
+<span class="panel__eyebrow">Ford Motor Company · Software Engineering</span>
+<h3>Software Engineering Intern</h3>
+<p>Developing production-grade automation and analytics solutions for Ford's manufacturing and engineering systems.</p>
+</div>
+</a>
+<a class="panel panel--link" href="#project-tesla">
+<div class="panel__image panel__image--tesla" style="background-image:url('images/IMG_0433.jpg');"></div>
+<div class="panel__body">
+<span class="panel__eyebrow">Tesla · Cell Material Flow</span>
+<h3>Software Engineering Intern</h3>
+<p>Built Android tooling connecting handheld scanners with Tesla's material-tracking systems, streamlining RFID updates for cell components on the factory floor.</p>
+</div>
+</a>
+<a class="panel panel--link" href="#project-cml">
+<div class="panel__image panel__image--logo" style="background-image:url('images/CriticalML.png');"></div>
+<div class="panel__body">
+<span class="panel__eyebrow">Critical ML Lab · University of Waterloo</span>
+<h3>Undergraduate Research Assistant</h3>
+<p>Working under Prof. Rambhatla on ML research bridging theory and real-world applications, focusing on model evaluation and experimental design.</p>
+</div>
+</a>
+<a class="panel panel--link" href="#project-cimco">
+<div class="panel__image panel__image--logo" style="background-image:url('images/cimco_refrigeration_logo.jpeg');"></div>
+<div class="panel__body">
+<span class="panel__eyebrow">CIMCO Refrigeration · Automation</span>
+<h3>Automation Intern</h3>
+<p>Designed OpenCV-based vision tooling for ice plants with Python, Ladder Logic, and AutoCAD Electrical automation — boosting PLC/DDC panel testing speed by 50%.</p>
+</div>
+</a>
+</div>
+</section>
+</div>
+
+<!-- Projects -->
+<div class="section-band section-band--projects" id="projects">
+<div class="section-edge"></div>
+<section class="page-section">
+<span class="section-label">03 — Projects</span>
+<h2 class="major">Projects</h2>
+<p class="panel-intro">From whiteboard to production — builds across autonomy, ML, data science, and robotics. Click any card for the full story.</p>
+<div class="panel-grid panel-grid--two">
+<a class="panel panel--link" href="#project-uwaft">
+<div class="panel__image" style="background-image:url('images/DSC04170.JPG');"></div>
+<div class="panel__body">
+<span class="panel__eyebrow">Autonomy · 1st Place</span>
+<h3>UWAFT ECO Car Hackathon Winner</h3>
+<p>Perception-to-control loop for an autonomous taxi: stop-sign + traffic-light detection feeding a clean stop/go decision into the SpeedController.</p>
+</div>
+</a>
+<a class="panel panel--link" href="#project-running">
+<div class="panel__image" style="background-image:url('images/IMG_7734.jpg');"></div>
+<div class="panel__body">
+<span class="panel__eyebrow">Data Apps · Streamlit</span>
+<h3>Strava Running Optimizer</h3>
+<p>Streamlit dashboard ingesting Strava workouts, scoring consistency, and surfacing pacing insights with ML-aided recommendations.</p>
+</div>
+</a>
+<a class="panel panel--link" href="#project-housing">
+<div class="panel__image" style="background-image:url('images/pic02.jpg');"></div>
+<div class="panel__body">
+<span class="panel__eyebrow">Data Science · scikit-learn</span>
+<h3>Housing Market Intelligence</h3>
+<p>End-to-end regression pipeline ingesting raw housing data, engineering features, and benchmarking scikit-learn models with automated reporting.</p>
+</div>
+</a>
+<a class="panel panel--link" href="#project-digit">
+<div class="panel__image" style="background-image:url('images/pic04.jpg');"></div>
+<div class="panel__body">
+<span class="panel__eyebrow">Deep Learning · PyTorch</span>
+<h3>Digit Recognition System</h3>
+<p>PyTorch CNN built from scratch with experiment tracking and augmentation — 99%+ accuracy on MNIST.</p>
+</div>
+</a>
+<a class="panel panel--link" href="#project-baggage">
+<div class="panel__image" style="background-image:url('images/pic06.jpg');"></div>
+<div class="panel__body">
+<span class="panel__eyebrow">Robotics · Arduino</span>
+<h3>Baggage Bot</h3>
+<p>Autonomous conveyor assistant navigating with ultrasonic and color sensors — the project that sparked my obsession with robotics.</p>
+</div>
+</a>
+</div>
+</section>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+<ul class="icons">
+<li><a href="mailto:dshekdar@uwaterloo.ca" class="icon solid fa-envelope" aria-label="Email"><span class="label">Email</span></a></li>
+<li><a href="https://www.linkedin.com/in/dhruva-shekdar-906573280/" class="icon brands fa-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"><span class="label">LinkedIn</span></a></li>
+<li><a href="https://github.com/Dhruva05" class="icon brands fa-github" aria-label="GitHub" target="_blank" rel="noopener"><span class="label">GitHub</span></a></li>
+</ul>
+<p class="copyright">dshekdar@uwaterloo.ca</p>
+</footer>
+
+</div><!-- /#page-content -->
+
+<!-- BG -->
+<div id="bg"><canvas id="bg-canvas" aria-hidden="true"></canvas></div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+// === Sticky Nav: appear after scrolling past hero OR when article is open ===
+(function () {
+var nav = document.getElementById('site-nav');
+var hero = document.getElementById('header');
+function checkScroll() {
+if (!hero || !nav) return;
+var articleVisible = document.body.classList.contains('is-article-visible');
+var heroBottom = hero.getBoundingClientRect().bottom;
+if (articleVisible || heroBottom < 0) {
+nav.classList.add('is-visible');
+} else {
+nav.classList.remove('is-visible');
+}
+}
+window.addEventListener('scroll', checkScroll, { passive: true });
+// Re-check whenever body class changes (article open/close)
+new MutationObserver(checkScroll).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+checkScroll();
+})();
+
+// === Nav links: close modal first, then scroll to section ===
+(function () {
+var navLinks = document.querySelectorAll('#site-nav .nav-links a[href^="#"]');
+navLinks.forEach(function (link) {
+link.addEventListener('click', function (e) {
+if (!document.body.classList.contains('is-article-visible')) return;
+e.preventDefault();
+var target = link.getAttribute('href');
+// Use jQuery to close modal via Dimension's _hide
+if (window.jQuery) {
+jQuery('#main')._hide(true);
+setTimeout(function () {
+var el = document.querySelector(target);
+if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}, 700);
+}
+});
+});
+// Brand link — close modal and scroll to top
+var brand = document.querySelector('#site-nav .nav-brand');
+if (brand) {
+brand.addEventListener('click', function (e) {
+if (!document.body.classList.contains('is-article-visible')) return;
+e.preventDefault();
+if (window.jQuery) {
+jQuery('#main')._hide(true);
+setTimeout(function () { window.scrollTo({ top: 0, behavior: 'smooth' }); }, 700);
+}
+});
+}
+})();
+
+// === Main Animations & Particles ===
+window.addEventListener('load', function () {
+
+// Typed.js
+var typedTarget = document.querySelector('.typed-text');
+if (typedTarget && window.Typed) {
+new Typed(typedTarget, {
+strings: [
+'Mechatronics @ Waterloo',
+'SDE @ Ford',
+'Ex-Tesla Software Intern',
+'AI + Robotics Enthusiast',
+'Everything Earned. Nothing Given.',
+'P.S Collect All The Particles!'
+],
+typeSpeed: 48,
+backSpeed: 24,
+backDelay: 1600,
+loop: true,
+smartBackspace: true
+});
+}
+
+// Particle Canvas
+var canvas = document.getElementById('bg-canvas');
+if (!canvas) return;
+
+var ctx = canvas.getContext('2d');
+var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var particles = [];
+var particleCount = prefersReducedMotion ? 20 : 40;
+var mouse = { x: null, y: null, radius: prefersReducedMotion ? 70 : 150, active: false };
+var collectedParticles = 0;
+var easterEggActivated = false;
+var celebrationColors = {
+particle: 'rgba(255, 215, 0, 0.75)',
+shadow: 'rgba(255, 215, 0, 0.6)',
+line: 'rgba(255, 215, 0, ',
+bg1: 'rgba(255, 215, 0, 0.22)',
+bg2: 'rgba(255, 140, 0, 0.18)',
+bg3: 'rgba(255, 69, 0, 0.16)'
+};
+
+var counterElement = document.getElementById('particle-counter');
+var countSpan = counterElement.querySelector('.count');
+var totalSpan = counterElement.querySelector('.total');
+
+function updateCounter() {
+countSpan.textContent = collectedParticles;
+totalSpan.textContent = particleCount;
+if (collectedParticles > 0) counterElement.classList.add('visible');
+if (collectedParticles >= particleCount) counterElement.classList.add('completed');
+}
+updateCounter();
+
+function interpolateColor(progress) {
+var r = Math.round(0 + (255 - 0) * progress);
+var g = Math.round(234 + (215 - 234) * progress);
+var b = Math.round(255 + (0 - 255) * progress);
+return 'rgba(' + r + ', ' + g + ', ' + b + ', 0.75)';
+}
+function interpolateShadowColor(progress) {
+var r = Math.round(0 + (255 - 0) * progress);
+var g = Math.round(234 + (215 - 234) * progress);
+var b = Math.round(255 + (0 - 255) * progress);
+return 'rgba(' + r + ', ' + g + ', ' + b + ', 0.6)';
+}
+function interpolateLineColor(progress) {
+var r = Math.round(0 + (255 - 0) * progress);
+var g = Math.round(234 + (215 - 234) * progress);
+var b = Math.round(255 + (0 - 255) * progress);
+return 'rgba(' + r + ', ' + g + ', ' + b + ', ';
+}
+
+function resizeCanvas() {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+}
+
+function handlePointer(x, y) {
+mouse.x = x;
+mouse.y = y;
+mouse.active = true;
+}
+
+window.addEventListener('resize', function () {
+resizeCanvas();
+if (prefersReducedMotion) renderStaticFrame();
+});
+window.addEventListener('mousemove', function (e) { handlePointer(e.clientX, e.clientY); });
+window.addEventListener('mouseout', function (e) {
+if (!e.relatedTarget || e.relatedTarget.nodeName === 'HTML') mouse.active = false;
+});
+window.addEventListener('touchmove', function (e) {
+if (e.touches && e.touches.length > 0) handlePointer(e.touches[0].clientX, e.touches[0].clientY);
+}, { passive: true });
+window.addEventListener('touchend', function () { mouse.active = false; });
+
+function Particle() { this.reset(); }
+Particle.prototype.reset = function () {
+this.x = Math.random() * canvas.width;
+this.y = Math.random() * canvas.height;
+this.vx = (Math.random() - 0.5) * 0.65;
+this.vy = (Math.random() - 0.5) * 0.65;
+this.size = Math.random() * 3.5 + 1.5;
+this.collected = false;
+};
+
+Particle.prototype.update = function () {
+this.x += this.vx;
+this.y += this.vy;
+
+if (mouse.active && mouse.x !== null && mouse.y !== null) {
+var dx = mouse.x - this.x;
+var dy = mouse.y - this.y;
+var distSq = dx * dx + dy * dy;
+var maxDist = mouse.radius * mouse.radius;
+
+// Collect if within 50px — easier to catch
+if (!this.collected && distSq < 2500) {
+this.collected = true;
+collectedParticles++;
+updateCounter();
+if (collectedParticles >= particleCount && !easterEggActivated) {
+easterEggActivated = true;
+var bgCanvas = document.getElementById('bg-canvas');
+if (bgCanvas) {
+bgCanvas.style.background =
+'radial-gradient(circle at 15% 20%, ' + celebrationColors.bg1 + ', transparent 55%), ' +
+'radial-gradient(circle at 80% 25%, ' + celebrationColors.bg2 + ', transparent 60%), ' +
+'radial-gradient(circle at 55% 80%, ' + celebrationColors.bg3 + ', transparent 55%), ' +
+'transparent';
+}
+}
+}
+
+if (distSq < maxDist) {
+var dist = Math.sqrt(distSq) || 1;
+var force = (mouse.radius - dist) / mouse.radius;
+this.vx += (dx / dist) * force * 0.35;
+this.vy += (dy / dist) * force * 0.35;
+}
+}
+
+this.vx *= 0.97;
+this.vy *= 0.97;
+var speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+var maxSpeed = 1.5;
+if (speed > maxSpeed) {
+var scale = maxSpeed / speed;
+this.vx *= scale;
+this.vy *= scale;
+}
+if (this.x < 0 || this.x > canvas.width) {
+this.vx *= -1;
+this.x = Math.max(0, Math.min(this.x, canvas.width));
+}
+if (this.y < 0 || this.y > canvas.height) {
+this.vy *= -1;
+this.y = Math.max(0, Math.min(this.y, canvas.height));
+}
+};
+
+Particle.prototype.draw = function () {
+if (this.collected) return;
+var progress = collectedParticles / particleCount;
+ctx.save();
+ctx.beginPath();
+ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+if (easterEggActivated) {
+ctx.fillStyle = celebrationColors.particle;
+ctx.shadowBlur = 15;
+ctx.shadowColor = celebrationColors.shadow;
+} else {
+ctx.fillStyle = interpolateColor(progress);
+ctx.shadowBlur = 10 + (progress * 5);
+ctx.shadowColor = interpolateShadowColor(progress);
+}
+ctx.fill();
+ctx.restore();
+if (mouse.active && mouse.x !== null && mouse.y !== null) {
+var dx = mouse.x - this.x;
+var dy = mouse.y - this.y;
+var dist = Math.sqrt(dx * dx + dy * dy);
+if (dist < mouse.radius) {
+ctx.beginPath();
+ctx.moveTo(this.x, this.y);
+ctx.lineTo(mouse.x, mouse.y);
+if (easterEggActivated) {
+ctx.strokeStyle = celebrationColors.line + (0.2 * (1 - dist / mouse.radius)) + ')';
+} else {
+ctx.strokeStyle = interpolateLineColor(progress) + (0.2 * (1 - dist / mouse.radius)) + ')';
+}
+ctx.lineWidth = 0.6;
+ctx.stroke();
+}
+}
+};
+
+function renderStaticFrame() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+particles.forEach(function (p) { p.draw(); });
+}
+
+function animate() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+if (!prefersReducedMotion) {
+ctx.fillStyle = 'rgba(6, 13, 32, 0.12)';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+particles.forEach(function (p) { p.update(); p.draw(); });
+if (!prefersReducedMotion) requestAnimationFrame(animate);
+}
+
+resizeCanvas();
+for (var i = 0; i < particleCount; i++) particles.push(new Particle());
+if (prefersReducedMotion) { renderStaticFrame(); } else { animate(); }
+});
+</script>
+
+</body>
 </html>
