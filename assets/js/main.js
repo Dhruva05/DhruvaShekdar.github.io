@@ -53,6 +53,27 @@
 		}
 		lastFocusedElement = null;
 	}
+
+	function resetArticleScroll() {
+		if ($main.length === 0)
+			return;
+
+		var forceReset = function() {
+			$window.scrollTop(0).triggerHandler('resize.flexbox-fix');
+			$main.scrollTop(0);
+			if (typeof $main[0].scrollTo === 'function')
+				$main[0].scrollTo({ top: 0, left: 0, behavior: 'auto' });
+			$main[0].scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+			document.body.scrollTop = 0;
+		};
+
+		forceReset();
+		window.requestAnimationFrame(forceReset);
+		window.setTimeout(forceReset, 0);
+		window.setTimeout(forceReset, 60);
+		window.setTimeout(forceReset, 225);
+	}
 	
 	function getSourceSection(articleId) {
 		// Map article IDs to scroll section anchors
@@ -155,6 +176,7 @@
 							// Activate article.
 								$article.addClass('active');
 								setupFocusTrap($article);
+								resetArticleScroll();
 
 							// Unlock.
 								locked = false;
@@ -195,10 +217,7 @@
 										setupFocusTrap($article);
 
 										// Window stuff.
-											$window
-												.scrollTop(0)
-												.triggerHandler('resize.flexbox-fix');
-												$main.scrollTop(0);
+											resetArticleScroll();
 
 										// Unlock.
 											setTimeout(function() {
@@ -236,10 +255,7 @@
 										setupFocusTrap($article);
 
 										// Window stuff.
-											$window
-												.scrollTop(0)
-												.triggerHandler('resize.flexbox-fix');
-												$main.scrollTop(0);
+											resetArticleScroll();
 
 										// Unlock.
 											setTimeout(function() {
@@ -289,18 +305,14 @@
 
 							// Unmark as visible.
 								$body.removeClass('is-article-visible');
+								document.getElementById('site-nav').classList.remove('nav-peek');
 
 							// Unlock.
 								locked = false;
 
 							// Unmark as switching.
 								$body.removeClass('is-switching');
-
-							// Window stuff.
-								$window
-									.scrollTop(0)
-									.triggerHandler('resize.flexbox-fix');
-									$main.scrollTop(0);
+								resetArticleScroll();
 
 							return;
 
@@ -328,12 +340,8 @@
 							setTimeout(function() {
 
 								$body.removeClass('is-article-visible');
-
-								// Window stuff.
-									$window
-										.scrollTop(0)
-										.triggerHandler('resize.flexbox-fix');
-										$main.scrollTop(0);
+								document.getElementById('site-nav').classList.remove('nav-peek');
+									resetArticleScroll();
 
 								// Unlock.
 									setTimeout(function() {
@@ -392,6 +400,24 @@
 			});
 
 		// Events.
+			$body.on('click', 'a[href^="#project-"]', function(event) {
+
+				var href = $(this).attr('href');
+
+				if (!href || $main_articles.filter(href).length === 0)
+					return;
+
+				event.preventDefault();
+				event.stopPropagation();
+
+				if (location.hash !== href)
+					history.pushState(null, null, href);
+
+				resetArticleScroll();
+				$main._show(href.substr(1));
+
+			});
+
 			$body.on('click', function(event) {
 
 				// Article visible? Hide.
