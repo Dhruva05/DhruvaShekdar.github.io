@@ -1,0 +1,27 @@
+# Dependencies
+/node_modules
+
+# Next.js build output
+/.next
+/out
+
+# Local environment
+.env
+.env.local
+.env.*.local
+
+# Test and tooling output
+/coverage
+*.log
+/.superpowers/
+
+# macOS metadata
+.DS_Store
+**/.DS_Store
+
+# Local design references
+/lance_html.txt
+/lance_landing.html
+
+# TypeScript
+*.tsbuildinfo
