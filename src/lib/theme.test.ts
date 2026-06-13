@@ -74,4 +74,24 @@ describe("theme preference", () => {
     expect(toggle).toContain("removeEventListener");
     expect(navigation).toContain("<ThemeToggle />");
   });
+
+  it("defines graphite theme tokens and responsive toggle styles", () => {
+    const styles = readFileSync(
+      path.join(process.cwd(), "src/app/globals.css"),
+      "utf8",
+    );
+
+    expect(styles).toContain(':root[data-theme="dark"]');
+    expect(styles).toContain("--header-background:");
+    expect(styles).toContain("--grid-line:");
+    expect(styles).toContain("--panel-translucent:");
+    expect(styles).toContain("--footer-muted:");
+    expect(styles).toContain(".theme-toggle");
+    expect(styles).toContain(".theme-toggle__track");
+    expect(styles).toContain(".theme-toggle__thumb");
+    expect(styles).toContain(
+      ':root[data-theme="dark"] .theme-toggle__thumb',
+    );
+    expect(styles).toContain("@media (prefers-reduced-motion: reduce)");
+  });
 });
