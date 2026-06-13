@@ -12,4 +12,15 @@ describe("GitHub Pages deployment workflow", () => {
     expect(workflow).toContain("uses: actions/configure-pages@v5");
     expect(workflow).not.toContain("static_site_generator: next");
   });
+
+  it("keeps ESLint isolated from enclosing worktree configurations", () => {
+    const eslintConfig = JSON.parse(
+      readFileSync(
+        path.join(process.cwd(), ".eslintrc.json"),
+        "utf8",
+      ),
+    ) as { root?: boolean };
+
+    expect(eslintConfig.root).toBe(true);
+  });
 });
