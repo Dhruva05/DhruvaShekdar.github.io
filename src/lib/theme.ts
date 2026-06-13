@@ -22,3 +22,23 @@ export function applyTheme(theme: Theme) {
   document.documentElement.dataset.theme = theme;
   document.documentElement.style.colorScheme = theme;
 }
+
+export const themeInitializationScript = `(() => {
+  const storageKey = ${JSON.stringify(THEME_STORAGE_KEY)};
+  const query = ${JSON.stringify(DARK_MODE_QUERY)};
+  let storedTheme = null;
+
+  try {
+    storedTheme = window.localStorage.getItem(storageKey);
+  } catch {}
+
+  const theme =
+    storedTheme === "light" || storedTheme === "dark"
+      ? storedTheme
+      : window.matchMedia(query).matches
+        ? "dark"
+        : "light";
+
+  document.documentElement.dataset.theme = theme;
+  document.documentElement.style.colorScheme = theme;
+})();`;

@@ -1,9 +1,12 @@
+import { readFileSync } from "node:fs";
+import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 import {
   THEME_STORAGE_KEY,
   getInitialTheme,
   isTheme,
+  themeInitializationScript,
 } from "./theme";
 
 describe("theme preference", () => {
@@ -22,5 +25,24 @@ describe("theme preference", () => {
     expect(isTheme("light")).toBe(true);
     expect(isTheme("dark")).toBe(true);
     expect(isTheme("system")).toBe(false);
+  });
+
+  it("builds a defensive pre-paint initialization script", () => {
+    expect(themeInitializationScript).toContain(THEME_STORAGE_KEY);
+    expect(themeInitializationScript).toContain("localStorage.getItem");
+    expect(themeInitializationScript).toContain("matchMedia");
+    expect(themeInitializationScript).toContain("dataset.theme");
+    expect(themeInitializationScript).toContain("colorScheme");
+    expect(themeInitializationScript).toContain("catch");
+  });
+
+  it("runs the theme initialization script in the root layout", () => {
+    const layout = readFileSync(
+      path.join(process.cwd(), "src/app/layout.tsx"),
+      "utf8",
+    );
+
+    expect(layout).toContain("themeInitializationScript");
+    expect(layout).toContain("suppressHydrationWarning");
   });
 });

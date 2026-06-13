@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Footer } from "@/components/layout/footer";
 import { Navigation } from "@/components/layout/navigation";
+import { themeInitializationScript } from "@/lib/theme";
 
 const instrumentSans = localFont({
   src: [
@@ -97,10 +98,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${instrumentSans.variable} ${ibmPlexMono.variable}`}
       >
+        <script
+          dangerouslySetInnerHTML={{ __html: themeInitializationScript }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
