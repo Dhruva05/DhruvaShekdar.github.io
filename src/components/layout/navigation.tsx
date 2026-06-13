@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { profile } from "@/content/portfolio";
 import { assetPath } from "@/lib/paths";
 
@@ -36,6 +37,7 @@ export function Navigation() {
           >
             GitHub
           </Link>
+          <ThemeToggle />
           {resume ? (
             <Link
               href={resume.href}

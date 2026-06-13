@@ -45,4 +45,33 @@ describe("theme preference", () => {
     expect(layout).toContain("themeInitializationScript");
     expect(layout).toContain("suppressHydrationWarning");
   });
+
+  it("defines an accessible persistent theme toggle in navigation", () => {
+    const toggle = readFileSync(
+      path.join(
+        process.cwd(),
+        "src/components/layout/theme-toggle.tsx",
+      ),
+      "utf8",
+    );
+    const navigation = readFileSync(
+      path.join(
+        process.cwd(),
+        "src/components/layout/navigation.tsx",
+      ),
+      "utf8",
+    );
+
+    expect(toggle).toContain('"use client"');
+    expect(toggle).toContain("<button");
+    expect(toggle).toContain('type="button"');
+    expect(toggle).toContain("aria-pressed");
+    expect(toggle).toContain("Switch to dark mode");
+    expect(toggle).toContain("Switch to light mode");
+    expect(toggle).toContain("localStorage.setItem");
+    expect(toggle).toContain("matchMedia");
+    expect(toggle).toContain("addEventListener");
+    expect(toggle).toContain("removeEventListener");
+    expect(navigation).toContain("<ThemeToggle />");
+  });
 });
