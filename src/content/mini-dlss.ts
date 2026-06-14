@@ -48,6 +48,21 @@ export const miniDlssMetrics: MiniDlssMetric[] = [
   },
 ];
 
+export const miniDlssReportFacts = {
+  bestCheckpointStep: "80,000",
+  trainingRunSteps: "150,000",
+  tpsnrGainOverBicubic: "+0.2578 dB",
+  temporalErrorEnergy: {
+    temporal: "0.0105",
+    bicubic: "0.0108",
+    singleFrame: "0.0145",
+  },
+  onnxLatencyReduction: "38.2%",
+  evaluationClip: "240 frames at 64x64 LR",
+  singleFrameBaseline: "300-step pipeline baseline",
+  reportTitle: "Technical Summary and Evaluation Report",
+} as const;
+
 export const miniDlssResults: MiniDlssResult[] = [
   {
     method: "Bicubic",

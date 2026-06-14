@@ -15,6 +15,7 @@ import {
   miniDlssLinks,
   miniDlssMetrics,
   miniDlssPipelineStages,
+  miniDlssReportFacts,
   miniDlssResults,
 } from "@/content/mini-dlss";
 import { assetPath } from "@/lib/paths";
@@ -186,6 +187,9 @@ export default function MiniDlssPage() {
             <p>
               Config-driven entry points keep training, evaluation, artifacts,
               and deployment reproducible across local and Colab workflows.
+              The best validation checkpoint occurred at{" "}
+              {miniDlssReportFacts.bestCheckpointStep} steps during the{" "}
+              {miniDlssReportFacts.trainingRunSteps}-step training run.
             </p>
           </div>
         </div>
@@ -195,8 +199,11 @@ export default function MiniDlssPage() {
         />
         <div className="case-study__facts">
           <div>
-            <p>Training data</p>
-            <strong>Vimeo-90K septuplets</strong>
+            <p>Best checkpoint</p>
+            <strong>
+              {miniDlssReportFacts.bestCheckpointStep} of{" "}
+              {miniDlssReportFacts.trainingRunSteps} steps
+            </strong>
           </div>
           <div>
             <p>Evaluation domain</p>
@@ -216,12 +223,23 @@ export default function MiniDlssPage() {
             <h2>Measured results</h2>
             <p>
               Image fidelity and temporal behavior are reported separately.
-              The single-frame run is included only as a fast-cycle pipeline
-              sanity baseline, not a budget-matched ablation.
+              The temporal model improves tPSNR by{" "}
+              {miniDlssReportFacts.tpsnrGainOverBicubic} over bicubic. The
+              single-frame comparison is a{" "}
+              {miniDlssReportFacts.singleFrameBaseline}, not a fair or
+              budget-matched temporal ablation.
             </p>
           </div>
         </div>
         <ResultsTable results={miniDlssResults} />
+        <p className="case-study__technical-note">
+          Target-relative temporal error energy is{" "}
+          {miniDlssReportFacts.temporalErrorEnergy.temporal} for the temporal
+          model, {miniDlssReportFacts.temporalErrorEnergy.bicubic} for bicubic,
+          and {miniDlssReportFacts.temporalErrorEnergy.singleFrame} for the
+          single-frame baseline. This diagnostic compares predicted motion with
+          target motion rather than measuring raw output smoothness alone.
+        </p>
         <div className="case-study__runtime">
           <div>
             <p>PyTorch CPU demo</p>
@@ -232,9 +250,11 @@ export default function MiniDlssPage() {
             <strong>21.589 ms/frame</strong>
           </div>
           <p>
-            Both measurements use the same fixed 240-frame clip on the local
-            machine. They are deployment measurements, not device-independent
-            real-time claims.
+            ONNX Runtime CPU latency is{" "}
+            {miniDlssReportFacts.onnxLatencyReduction} lower than the PyTorch CPU demo
+            on the same evaluation clip: {miniDlssReportFacts.evaluationClip}.
+            These local-machine deployment measurements are device-specific, not
+            device-independent real-time claims.
           </p>
         </div>
       </section>
@@ -307,9 +327,10 @@ export default function MiniDlssPage() {
         <div>
           <h2>Read the technical paper</h2>
           <p>
-            The paper expands the model equations, data contracts, training and
-            evaluation flows, computational complexity, research context,
-            failure modes, and theory-to-implementation mapping.
+            The concise{" "}
+            <strong>{miniDlssReportFacts.reportTitle}</strong> covers scope and
+            claim boundaries, model design, the data and evaluation protocol,
+            final evidence, deployment, limitations, and next steps.
           </p>
         </div>
         <div className="case-study__paper-actions">
