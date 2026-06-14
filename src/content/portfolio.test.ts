@@ -73,16 +73,24 @@ describe("portfolio content", () => {
     );
   });
 
-  it("links Mini-DLSS to its case study with final audited metrics", () => {
+  it("keeps the Mini-DLSS homepage metrics unchanged", () => {
     const miniDlss = projects.find(
       (project) => project.slug === "mini-dlss",
     );
 
+    expect(miniDlss).toBeDefined();
     expect(miniDlss?.metrics).toEqual([
       { value: "38.33 dB", label: "PSNR-Y" },
       { value: "+1.52 dB", label: "over bicubic" },
       { value: "21.59 ms", label: "ONNX CPU / frame" },
     ]);
+  });
+
+  it("links Mini-DLSS to its case study", () => {
+    const miniDlss = projects.find(
+      (project) => project.slug === "mini-dlss",
+    );
+
     expect(miniDlss?.caseStudyHref).toBe("/projects/mini-dlss");
   });
 

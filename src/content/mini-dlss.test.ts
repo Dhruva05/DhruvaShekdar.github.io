@@ -1,8 +1,11 @@
+import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 
-import {
+import * as miniDlssContent from "./mini-dlss";
+
+const {
   miniDlssArchitectureStages,
   miniDlssAssets,
   miniDlssFutureWork,
@@ -11,7 +14,22 @@ import {
   miniDlssMetrics,
   miniDlssPipelineStages,
   miniDlssResults,
-} from "./mini-dlss";
+} = miniDlssContent;
+
+const expectedReportFacts = {
+  bestCheckpointStep: "80,000",
+  trainingRunSteps: "150,000",
+  tpsnrGainOverBicubic: "+0.2578 dB",
+  temporalErrorEnergy: {
+    temporal: "0.0105",
+    bicubic: "0.0108",
+    singleFrame: "0.0145",
+  },
+  onnxLatencyReduction: "38.2%",
+  evaluationClip: "240 frames at 64x64 LR",
+  singleFrameBaseline: "300-step pipeline baseline",
+  reportTitle: "Technical Summary and Evaluation Report",
+};
 
 describe("Mini-DLSS case-study content", () => {
   it("has a dedicated typed content module", () => {
@@ -80,6 +98,16 @@ describe("Mini-DLSS case-study content", () => {
         highlight: true,
       },
     ]);
+  });
+
+  it("locks the revised technical report facts", () => {
+    const reportFacts = (
+      miniDlssContent as typeof miniDlssContent & {
+        miniDlssReportFacts?: unknown;
+      }
+    ).miniDlssReportFacts;
+
+    expect(reportFacts).toEqual(expectedReportFacts);
   });
 
   it("defines the architecture, pipeline, limitations, and future work", () => {
@@ -196,10 +224,34 @@ describe("Mini-DLSS case-study content", () => {
 
     expect(routeSource).toContain("miniDlssAssets.paper");
     expect(routeSource).toContain("miniDlssLinks.repository");
+    expect(routeSource).toContain("miniDlssReportFacts");
+    expect(routeSource).toContain(
+      "Target-relative temporal error energy",
+    );
+    expect(routeSource).toContain(
+      "lower than the PyTorch CPU demo",
+    );
+    expect(routeSource).toContain(
+      "miniDlssReportFacts.reportTitle",
+    );
     expect(routeSource).toContain('href={assetPath("/#work")}');
     expect(routeSource).not.toContain('<Link href="/#work"');
     expect(routeSource).toContain('loading="eager"');
     expect(sitemapSource).toContain("/projects/mini-dlss");
+  });
+
+  it("hosts the exact revised technical report PDF", () => {
+    const pdfPath = path.join(
+      process.cwd(),
+      "public/papers/mini-dlss-technical-paper.pdf",
+    );
+    const pdfHash = createHash("sha256")
+      .update(readFileSync(pdfPath))
+      .digest("hex");
+
+    expect(pdfHash).toBe(
+      "250bd2cebcefc30f7a049d34870ff7be31b32c756f6cb0ea5606bf8e1fda59cf",
+    );
   });
 
   it("defines responsive case-study styles", () => {
