@@ -224,15 +224,25 @@ describe("Mini-DLSS case-study content", () => {
 
     expect(routeSource).toContain("miniDlssAssets.paper");
     expect(routeSource).toContain("miniDlssLinks.repository");
-    expect(routeSource).toContain("miniDlssReportFacts");
+    for (const reportFactReference of [
+      "miniDlssReportFacts.bestCheckpointStep",
+      "miniDlssReportFacts.trainingRunSteps",
+      "miniDlssReportFacts.tpsnrGainOverBicubic",
+      "miniDlssReportFacts.temporalErrorEnergy.temporal",
+      "miniDlssReportFacts.temporalErrorEnergy.bicubic",
+      "miniDlssReportFacts.temporalErrorEnergy.singleFrame",
+      "miniDlssReportFacts.onnxLatencyReduction",
+      "miniDlssReportFacts.evaluationClip",
+      "miniDlssReportFacts.singleFrameBaseline",
+      "miniDlssReportFacts.reportTitle",
+    ]) {
+      expect(routeSource).toContain(reportFactReference);
+    }
     expect(routeSource).toContain(
       "Target-relative temporal error energy",
     );
     expect(routeSource).toContain(
       "lower than the PyTorch CPU demo",
-    );
-    expect(routeSource).toContain(
-      "miniDlssReportFacts.reportTitle",
     );
     expect(routeSource).toContain('href={assetPath("/#work")}');
     expect(routeSource).not.toContain('<Link href="/#work"');
